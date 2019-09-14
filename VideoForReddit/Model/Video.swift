@@ -50,7 +50,7 @@ class Video: NSManagedObject,Codable {
         if let url = URL.init(string: try container.decode(String.self, forKey: .thumbnail)) {
             self.thumbnail_data = try NSData.init(contentsOf: url) as Data
         }
-            
+        
         print(self.url + " -> " + self.id)
     }
     

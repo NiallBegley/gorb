@@ -11,6 +11,7 @@ import CoreData
 
 protocol VideoControllerDelegate : class {
     func finishedRefresh(error: Error?)
+    func updateProgress(percentage : Float)
 
 }
 class VideoController: NSObject {
@@ -21,6 +22,8 @@ class VideoController: NSObject {
     init(container: NSPersistentContainer) {
         self.persistentContainer = container
     }
+    
+    // MARK: - Deletion
     
     func deleteAll() -> Bool {
         guard let context = self.persistentContainer?.viewContext else {
@@ -40,6 +43,8 @@ class VideoController: NSObject {
         
         return true
     }
+    
+    // MARK: - Fetching Existing
     
     func getAllVideos() -> [Video] {
         
@@ -61,8 +66,16 @@ class VideoController: NSObject {
         return []
     }
     
+    // MARK: - Network Refresh
+    
     func refreshVideos() {
-        guard let url = URL(string: "https://www.reddit.com/r/videos/hot.json") else { return }
+        guard var urlcomp = URLComponents(string: "https://www.reddit.com/r/videos/hot.json") else { return }
+        urlcomp.queryItems = [
+            URLQueryItem.init(name: "limit", value: "100")
+        ]
+        
+        guard let url = urlcomp.url else {  return }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
@@ -88,9 +101,13 @@ class VideoController: NSObject {
                     let data = jsonData["data"],
                     let children = data["children"] as? [[String:AnyObject]] else { return }
                 
+                var count = 0
+                
                 for entry in children {
                     if let videoData = entry["data"] {
                         _ = self.parse(try JSONSerialization.data(withJSONObject: videoData, options: .init()), entity: Video.self)
+                        count += 1
+                        self.delegate?.updateProgress(percentage: Float(count) / Float(children.count))
                     }
                 }
                 

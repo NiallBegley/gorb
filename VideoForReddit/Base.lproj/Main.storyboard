@@ -18,6 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viL-9o-LFU">
+                                <rect key="frame" x="175" y="438" width="64" height="30"/>
+                                <state key="normal" title="Try Again"/>
+                                <connections>
+                                    <action selector="buttonClickedTryAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pF5-Kw-kE3"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vGd-gI-5E2">
+                                <rect key="frame" x="132" y="447" width="150" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="PYR-Ql-dJK"/>
+                                </constraints>
+                            </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N84-QU-O3j" customClass="YTPlayerView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -30,19 +43,18 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPG-Im-crh">
-                                <rect key="frame" x="5" y="47" width="40" height="18"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPG-Im-crh">
+                                <rect key="frame" x="5" y="47" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lo-86-g3g">
-                                <rect key="frame" x="5.0000000000000018" y="67" width="28.666666666666671" height="13.333333333333329"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lo-86-g3g">
+                                <rect key="frame" x="5" y="49" width="0.0" height="0.0"/>
+                                <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FAU-he-F1u">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FAU-he-F1u">
                                 <rect key="frame" x="0.0" y="408" width="414" height="454"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -93,13 +105,17 @@
                             <constraint firstItem="FAU-he-F1u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3pq-iJ-wde"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Lo-86-g3g" secondAttribute="trailing" constant="5" id="6pf-xC-EXc"/>
                             <constraint firstItem="4Lo-86-g3g" firstAttribute="top" secondItem="WPG-Im-crh" secondAttribute="bottom" constant="2" id="71w-lz-xaU"/>
+                            <constraint firstItem="vGd-gI-5E2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="B5K-5g-xdd"/>
                             <constraint firstItem="WPG-Im-crh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="DqV-6r-hQK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WPG-Im-crh" secondAttribute="trailing" constant="5" id="HP1-hj-vJ5"/>
                             <constraint firstItem="WPG-Im-crh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="Hjv-Ox-qnd"/>
+                            <constraint firstItem="vGd-gI-5E2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YD0-bQ-VNW"/>
                             <constraint firstAttribute="bottom" secondItem="N84-QU-O3j" secondAttribute="bottom" id="aCh-qO-czy"/>
                             <constraint firstItem="4Lo-86-g3g" firstAttribute="leading" secondItem="WPG-Im-crh" secondAttribute="leading" id="aHm-xr-rha"/>
                             <constraint firstItem="N84-QU-O3j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="etr-4e-7EJ"/>
                             <constraint firstItem="FAU-he-F1u" firstAttribute="top" secondItem="N84-QU-O3j" secondAttribute="bottom" id="g1O-pA-4yq"/>
+                            <constraint firstItem="viL-9o-LFU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="it6-Za-fBO"/>
+                            <constraint firstItem="viL-9o-LFU" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="s1I-dw-sep"/>
                             <constraint firstItem="N84-QU-O3j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tiZ-BQ-XeN"/>
                             <constraint firstItem="FAU-he-F1u" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zRa-5d-RhD"/>
                             <constraint firstItem="N84-QU-O3j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="zm0-5J-SD1"/>
@@ -119,8 +135,10 @@
                     <connections>
                         <outlet property="detailsLabel" destination="4Lo-86-g3g" id="dwb-kw-Wnt"/>
                         <outlet property="playerView" destination="N84-QU-O3j" id="g07-mK-5fN"/>
+                        <outlet property="progressView" destination="vGd-gI-5E2" id="ew3-36-dHx"/>
                         <outlet property="tableView" destination="FAU-he-F1u" id="fYP-4T-uPd"/>
                         <outlet property="titleLabel" destination="WPG-Im-crh" id="Ow0-ON-ZGk"/>
+                        <outlet property="tryAgainButton" destination="viL-9o-LFU" id="WZP-7l-gqR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
