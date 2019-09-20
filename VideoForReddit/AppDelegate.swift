@@ -17,8 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        if let rootVC = window?.rootViewController as? ViewController {
-            rootVC.persistentContainer = persistentContainer
+        if let rootVC = window?.rootViewController as? UINavigationController,
+            let vc = rootVC.viewControllers.first as? ViewController{
+            
+            vc.persistentContainer = persistentContainer
         }
         
         return true

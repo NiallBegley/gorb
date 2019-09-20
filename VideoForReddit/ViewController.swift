@@ -10,7 +10,7 @@ import UIKit
 import youtube_ios_player_helper
 import CoreData
 
-class ViewController: UIViewController, VideoControllerDelegate, UITableViewDelegate, UITableViewDataSource, YTPlayerViewDelegate {
+class ViewController: UIViewController, VideoControllerDelegate, UITableViewDelegate, UITableViewDataSource, YTPlayerViewDelegate, SettingsDelegate {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -50,6 +50,19 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         let tapTitle = UITapGestureRecognizer(target: self, action: #selector(linkTapped(_:)))
         tapTitle.numberOfTapsRequired = 1
         titleLabel.addGestureRecognizer(tapTitle)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SETTINGS_SEGUE",
+            let vc = segue.destination as? SettingsTableViewController {
+                vc.delegate = self
+        }
     }
     
     // MARK: - Interaction Callbacks
@@ -156,6 +169,12 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
             self.progressView.setProgress(percentage, animated: true)
             
         }
+    }
+    
+    // MARK: - SettingsDelegate
+    func needsUpdate() {
+        videoController?.deleteAll()
+        videoController?.refreshVideos()
     }
     
     // MARK: - TableView
