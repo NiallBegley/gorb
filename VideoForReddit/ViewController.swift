@@ -26,6 +26,9 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UserDefaults.standard.setDefaults()
+        
+        
         if let persistentContainer = persistentContainer {
             videoController = VideoController.init(container: persistentContainer)
             videoController?.delegate = self
@@ -95,6 +98,17 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
     
     // MARK: - VideoControllerDelegate
     
+    func updateThumbnails(indexPaths: [IndexPath]) {
+        
+        DispatchQueue.main.async() {
+            
+            self.tableView.beginUpdates()
+            
+            self.tableView.reloadRows(at: indexPaths, with: .none)
+            self.tableView.endUpdates()
+            
+        }
+    }
     func finishedRefresh(error: Error?) {
         
         if let videoController = videoController,
@@ -179,7 +193,7 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
     
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
         
-        if self.autoplay {
+        if self.autoplay, UserDefaults.standard.getAutoplay() {
             playerView.playVideo()
         }
     }

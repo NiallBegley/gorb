@@ -28,6 +28,8 @@ class Video: NSManagedObject,Codable {
     @NSManaged var ups : Int
     @NSManaged var permalink : String
     @NSManaged var thumbnail_data : Data
+    @NSManaged var thumbnail : String
+    
     
     required convenience init(from decoder: Decoder) throws {
         
@@ -46,12 +48,11 @@ class Video: NSManagedObject,Codable {
         self.num_comments = try container.decode(Int.self, forKey: .ups)
         self.id = extractYoutubeID(from: url)
         self.permalink = try container.decode(String.self, forKey: .permalink)
+        self.thumbnail = try container.decode(String.self, forKey: .thumbnail)
         
-        if let url = URL.init(string: try container.decode(String.self, forKey: .thumbnail)) {
-            self.thumbnail_data = try NSData.init(contentsOf: url) as Data
-        }
-        
-        print(self.url + " -> " + self.id)
+//        if let url = URL.init(string: try container.decode(String.self, forKey: .thumbnail)) {
+//            self.thumbnail_data = try NSData.init(contentsOf: url) as Data
+//        }
     }
     
     // MARK: - Encodable
