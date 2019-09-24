@@ -193,6 +193,8 @@ class VideoController: NSObject {
         }
     }
     
+    // MARK: - Parsing
+    
     func parse<T: Decodable> (_ jsonData: Data, entity: T.Type) -> T? {
         do {
             guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {

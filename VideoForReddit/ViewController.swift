@@ -49,13 +49,9 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         
         let tapTitle = UITapGestureRecognizer(target: self, action: #selector(linkTapped(_:)))
         tapTitle.numberOfTapsRequired = 1
-        titleLabel.addGestureRecognizer(tapTitle)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        titleLabel.superview?.addGestureRecognizer(tapTitle)
         
-        navigationController?.isNavigationBarHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
