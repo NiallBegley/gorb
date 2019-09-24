@@ -18,6 +18,7 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
         case autoplay
         case subreddit
         case fullscreen
+        case oldReddit
     }
     
     weak var delegate : SettingsDelegate?
@@ -58,7 +59,7 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,6 +81,12 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SWITCH_CELL") as! SwitchTableViewCell
             cell.setControlFuncs(set: UserDefaults.standard.setFullscreen(value:), get: UserDefaults.standard.getFullscreen)
             cell.label.text = "Fullscreen"
+            return cell
+            
+        } else if indexPath.row == Settings.oldReddit.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SWITCH_CELL") as! SwitchTableViewCell
+            cell.setControlFuncs(set: UserDefaults.standard.setOldReddit(value:), get: UserDefaults.standard.getOldReddit)
+            cell.label.text = "Use \"old.reddit\" for external links"
             return cell
             
         } else {

@@ -17,9 +17,9 @@ extension URL {
     }
     
     static func openURL(string : String) -> UIAlertController? {
-        let alert = UIAlertController.init(title: "Open Link", message: "Choose a default application to open this link (this can be changed later in the settings)", preferredStyle: .actionSheet)
+        let alert = UIAlertController.init(title: "Open Link", message: "Choose a default application to open these types of links going forward (this can be changed later in the settings)", preferredStyle: .actionSheet)
         
-        let redditLink = "www.reddit.com" + string
+        let redditLink = (UserDefaults.standard.getOldReddit() ? "http://old.reddit.com" : "www.reddit.com") + string
         var capabilities = [SupportedSchemes]()
         
         if let redditScheme = URL.init(string: "reddit://" + redditLink) {
@@ -33,7 +33,7 @@ extension URL {
         
         if let narwhalScheme = URL.init(string: "narwhal://open-url/" + redditLink) {
             if UIApplication.shared.canOpenURL(narwhalScheme) {
-                capabilities.append(.apollo)
+                capabilities.append(.narwhal)
                 alert.addAction(UIAlertAction.init(title: "Narwhal", style: .default, handler: {(alert : UIAlertAction) in
                     UIApplication.shared.open(narwhalScheme, options: [:], completionHandler: nil)
                 }))
