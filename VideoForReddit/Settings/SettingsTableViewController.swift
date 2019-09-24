@@ -17,6 +17,7 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
     private enum Settings : Int {
         case autoplay
         case subreddit
+        case fullscreen
     }
     
     weak var delegate : SettingsDelegate?
@@ -57,7 +58,7 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,6 +76,12 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
             cell.detail.text = UserDefaults.standard.getSubreddit()
             
             return cell
+        } else if indexPath.row == Settings.fullscreen.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SWITCH_CELL") as! SwitchTableViewCell
+            cell.setControlFuncs(set: UserDefaults.standard.setFullscreen(value:), get: UserDefaults.standard.getFullscreen)
+            cell.label.text = "Fullscreen"
+            return cell
+            
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PICKER_CELL") as! PickerTableViewCell
             return cell

@@ -96,8 +96,8 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         DispatchQueue.main.async() {
             
             let options = [
-                "playsinline" : 1,
-                //According to bug reports, the autoplay variable doesn't work as intended
+                "playsinline" : UserDefaults.standard.getFullscreen() ? 0 : 1,
+                //According to bug reports, the autoplay variable doesn't work as intended (or at all, really)
                 "autoplay" : autoplay ? 1 : 0
             ]
             

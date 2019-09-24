@@ -14,6 +14,7 @@ extension UserDefaults {
         case autoplay
         case subreddit
         case defaultsSet
+        case fullscreen
     }
     
     func setDefaults() {
@@ -21,6 +22,7 @@ extension UserDefaults {
             setDefaultsSet(value: true)
             setSubreddit(value: "Videos")
             setAutoplay(value: true)
+            setFullscreen(value: false)
         }
     }
     
@@ -38,6 +40,14 @@ extension UserDefaults {
     
     func setAutoplay(value: Bool) {
         set(value, forKey: UserDefaultStrings.autoplay.rawValue)
+    }
+    
+    func getFullscreen() -> Bool {
+        return bool(forKey: UserDefaultStrings.fullscreen.rawValue)
+    }
+    
+    func setFullscreen(value: Bool) {
+        set(value, forKey: UserDefaultStrings.fullscreen.rawValue)
     }
     
     func setSubreddit(value : String) {
