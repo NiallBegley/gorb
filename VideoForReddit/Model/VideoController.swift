@@ -11,7 +11,6 @@ import CoreData
 
 protocol VideoControllerDelegate : class {
     func finishedRefresh(error: Error?)
-    func updateProgress(percentage : Float)
     func updateThumbnails(indexPaths : [IndexPath])
 }
 class VideoController: NSObject {
@@ -63,12 +62,14 @@ class VideoController: NSObject {
     
     func getAllVideos() -> [Video] {
         
-        guard let context = self.persistentContainer?.viewContext else {
+        
+        guard let context = Thread.isMainThread ? self.persistentContainer?.viewContext : self.backgroundContext else {
             return []
         }
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Video")
-        fetchRequest.predicate = NSPredicate.init(format: "url CONTAINS[cd] %@ OR url CONTAINS[cd] %@", "youtube.com", "youtu.be")
+        fetchRequest.predicate = NSPredicate.init(format: "(url CONTAINS[cd] %@ OR url CONTAINS[cd] %@) AND id.length > 0", "youtube.com", "youtu.be")
+        fetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "created_at", ascending: true)]
         
         do {
             
@@ -116,28 +117,25 @@ class VideoController: NSObject {
                     let data = jsonData["data"],
                     let children = data["children"] as? [[String:AnyObject]] else { return }
                 
-                var count = 0
-                var videos : [Video] = []
-                
-                for entry in children {
-                    if let videoData = entry["data"] {
-                        if let video = self.parse(try JSONSerialization.data(withJSONObject: videoData, options: .init()), entity: Video.self) {
-                            videos.append(video)
-                        }
-                        count += 1
-                        self.delegate?.updateProgress(percentage: Float(count) / Float(children.count))
-                    }
+                let entries = children.map {
+                    (entry) -> AnyObject? in
+                    return entry["data"]
                 }
                 
+                //We're not going to use the return of parse() here because we want to filter out the same videos the ViewController does (ie non-youtube videos).  If we work off different sets of data the update calls for the thumbnail data have a chance of crashing
+                _ = self.parse(try JSONSerialization.data(withJSONObject: entries, options: .init()), entity: [Video].self)
+                let videos = self.getAllVideos()
+                
                 let videoIds : [NSManagedObjectID] = videos.map{(video) -> NSManagedObjectID in
-                        return video.objectID
-                    }
+                    return video.objectID
+                }
+                
+                self.delegate?.finishedRefresh(error: nil)
                 
                 self.serialQueue.async {
                     self.downloadThumbnails(videoIds)
                 }
-                
-                self.delegate?.finishedRefresh(error: nil)
+            
                 
             } catch let error {
                 print(error)
@@ -178,13 +176,13 @@ class VideoController: NSObject {
                         print(error)
                     }
                     
-                    
                     self.delegate?.updateThumbnails(indexPaths: indexPaths)
                     
                     indexPaths.removeAll()
                 }
             } catch {
                 //Just continue on to the next one
+                print("Failed to download thumbnail")
             }
         }
         
@@ -194,6 +192,7 @@ class VideoController: NSObject {
             print(error)
         }
     }
+    
     func parse<T: Decodable> (_ jsonData: Data, entity: T.Type) -> T? {
         do {
             guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
@@ -201,7 +200,7 @@ class VideoController: NSObject {
             }
             
             // Parse JSON data
-            guard let managedObjectContext = self.persistentContainer?.newBackgroundContext() else {
+            guard let managedObjectContext = self.backgroundContext else {
                 return nil
             }
             
@@ -210,6 +209,7 @@ class VideoController: NSObject {
             let decoder = JSONDecoder()
             decoder.userInfo[codingUserInfoKeyManagedObjectContext] = managedObjectContext
             let entities = try decoder.decode(entity, from: jsonData)
+            
             try managedObjectContext.save()
             
             return entities

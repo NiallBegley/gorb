@@ -11,7 +11,7 @@ import youtube_ios_player_helper
 import CoreData
 
 class ViewController: UIViewController, VideoControllerDelegate, UITableViewDelegate, UITableViewDataSource, YTPlayerViewDelegate, SettingsDelegate {
-    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var progressView: UIActivityIndicatorView!
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -112,7 +112,6 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
     // MARK: - VideoControllerDelegate
     
     func updateThumbnails(indexPaths: [IndexPath]) {
-        
         DispatchQueue.main.async() {
             
             self.tableView.beginUpdates()
@@ -126,10 +125,9 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         
         if let videoController = videoController,
             error == nil {
-            
-            
+        
             videos = videoController.getAllVideos()
-            
+
             DispatchQueue.main.async() {
                 
                 self.tableView.isHidden = false
@@ -164,16 +162,9 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         }
     }
     
-    func updateProgress(percentage: Float) {
-        DispatchQueue.main.async() {
-            self.progressView.setProgress(percentage, animated: true)
-            
-        }
-    }
-    
     // MARK: - SettingsDelegate
     func needsUpdate() {
-        videoController?.deleteAll()
+        _ = videoController?.deleteAll()
         videoController?.refreshVideos()
     }
     
