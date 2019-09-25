@@ -44,6 +44,9 @@ class Video: NSManagedObject,Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.url = try container.decode(String.self, forKey: .url)
         self.title = try container.decode(String.self, forKey: .title)
+        self.title = convertSpecialCharacters(string: self.title)
+        
+        
         self.ups = try container.decode(Int.self, forKey: .ups)
         self.num_comments = try container.decode(Int.self, forKey: .ups)
         self.id = extractYoutubeID(from: url)
@@ -51,6 +54,21 @@ class Video: NSManagedObject,Codable {
         self.thumbnail = try container.decode(String.self, forKey: .thumbnail)
         self.created_at = Date()
         
+    }
+    
+    func convertSpecialCharacters(string: String) -> String {
+            var newString = string
+            let char_dictionary = [
+                "&amp;" : "&",
+                "&lt;" : "<",
+                "&gt;" : ">",
+                "&quot;" : "\"",
+                "&apos;" : "'"
+            ];
+            for (escaped_char, unescaped_char) in char_dictionary {
+                newString = newString.replacingOccurrences(of: escaped_char, with: unescaped_char, options: NSString.CompareOptions.literal, range: nil)
+            }
+            return newString
     }
     
     // MARK: - Encodable
