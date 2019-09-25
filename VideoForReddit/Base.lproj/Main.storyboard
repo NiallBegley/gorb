@@ -55,6 +55,9 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zb6-kY-9XA">
                                         <rect key="frame" x="352" y="7" width="57" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="57" id="FGU-Fk-3Ib"/>
+                                        </constraints>
                                         <state key="normal" title="Settings"/>
                                         <connections>
                                             <segue destination="hGL-m7-dhY" kind="show" identifier="SETTINGS_SEGUE" id="au8-6e-6SA"/>
@@ -65,11 +68,11 @@
                                 <constraints>
                                     <constraint firstItem="Zb6-kY-9XA" firstAttribute="centerY" secondItem="GiE-Ks-pd4" secondAttribute="centerY" id="00C-8B-TK1"/>
                                     <constraint firstAttribute="trailing" secondItem="Zb6-kY-9XA" secondAttribute="trailing" constant="5" id="GpU-Ob-9ZK"/>
-                                    <constraint firstItem="Zb6-kY-9XA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WPG-Im-crh" secondAttribute="trailing" constant="3" id="HGE-lR-c8m"/>
+                                    <constraint firstItem="Zb6-kY-9XA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WPG-Im-crh" secondAttribute="trailing" priority="999" constant="3" id="HGE-lR-c8m"/>
                                     <constraint firstItem="4Lo-86-g3g" firstAttribute="top" secondItem="WPG-Im-crh" secondAttribute="bottom" constant="2" id="IU9-as-mB2"/>
                                     <constraint firstItem="WPG-Im-crh" firstAttribute="leading" secondItem="GiE-Ks-pd4" secondAttribute="leading" constant="8" id="Nse-dN-rq0"/>
                                     <constraint firstItem="WPG-Im-crh" firstAttribute="top" secondItem="GiE-Ks-pd4" secondAttribute="top" constant="3" id="YRS-Wg-j0b"/>
-                                    <constraint firstItem="Zb6-kY-9XA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4Lo-86-g3g" secondAttribute="trailing" constant="3" id="eyW-0P-T39"/>
+                                    <constraint firstItem="Zb6-kY-9XA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4Lo-86-g3g" secondAttribute="trailing" priority="999" constant="3" id="eyW-0P-T39"/>
                                     <constraint firstItem="4Lo-86-g3g" firstAttribute="leading" secondItem="WPG-Im-crh" secondAttribute="leading" id="jJz-2q-Zmn"/>
                                     <constraint firstAttribute="height" constant="44" id="rVY-gM-gxE"/>
                                 </constraints>

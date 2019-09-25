@@ -117,6 +117,14 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
             
         }
     }
+    
+    func toggleControls(hidden hide : Bool) {
+        self.tableView.isHidden = hide
+        self.playerView.isHidden = hide
+        self.titleLabel.isHidden = hide
+        self.detailsLabel.isHidden = hide
+    }
+    
     func finishedRefresh(error: Error?) {
         
         if let videoController = videoController,
@@ -126,13 +134,9 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
 
             DispatchQueue.main.async() {
                 
-                self.tableView.isHidden = false
-                self.playerView.isHidden = false
-                self.titleLabel.isHidden = false
-                self.detailsLabel.isHidden = false
+                self.toggleControls(hidden: false)
+                self.progressView.isHidden = false
                 self.tryAgainButton.isHidden = true
-                self.progressView.isHidden = true
-                
                 self.tableView.reloadData()
             }
             
@@ -143,11 +147,8 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         } else if error != nil {
             
             DispatchQueue.main.async() {
-                
-                self.tableView.isHidden = true
-                self.playerView.isHidden = true
-                self.titleLabel.isHidden = true
-                self.detailsLabel.isHidden = true
+                self.toggleControls(hidden: true)
+                self.progressView.isHidden = true
                 self.tryAgainButton.isHidden = false
                 
                 //We're going to force cast this error now that we know it isn't nil
@@ -160,6 +161,10 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
     
     // MARK: - SettingsDelegate
     func needsUpdate() {
+        DispatchQueue.main.async() {
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+            self.toggleControls(hidden: true)
+        }
         _ = videoController?.deleteAll()
         videoController?.refreshVideos()
     }

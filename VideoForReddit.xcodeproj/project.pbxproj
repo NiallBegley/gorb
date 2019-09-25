@@ -96,12 +96,12 @@
 				397FA78923266ED700DDBB06 /* Model */,
 				391354C12323CA8A00FCE75C /* AppDelegate.swift */,
 				391354C32323CA8A00FCE75C /* ViewController.swift */,
+				3914D7D1232AD32100B34A3B /* VideoTableViewCell.swift */,
 				391354C52323CA8A00FCE75C /* Main.storyboard */,
 				391354CB2323CA8C00FCE75C /* Assets.xcassets */,
 				391354CD2323CA8C00FCE75C /* LaunchScreen.storyboard */,
 				391354D02323CA8C00FCE75C /* Info.plist */,
 				391354C82323CA8A00FCE75C /* VideoForReddit.xcdatamodeld */,
-				3914D7D1232AD32100B34A3B /* VideoTableViewCell.swift */,
 			);
 			path = VideoForReddit;
 			sourceTree = "<group>";
