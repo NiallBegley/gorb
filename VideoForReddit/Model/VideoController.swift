@@ -159,30 +159,34 @@ class VideoController: NSObject {
                 //The docs for .object() say that it always returns an object, so we should be okay force casting this
                 let video = managedObjectContext.object(with: videoID) as! Video
                 
+                //Try downloading the thumbnail from the reddit object, but if that doesn't exist, just grab it from Youtube
                 if let url = URL.init(string: video.thumbnail) {
                     video.thumbnail_data = try NSData.init(contentsOf: url) as Data
-                    //                                print("downloaded thumbnail for " + video.title)
+                } else if let url = URL.init(string: "https://img.youtube.com/vi/\(video.id)/1.jpg") {
+                    video.thumbnail_data = try NSData.init(contentsOf: url) as Data
                 }
                 
+                //Add this video indexPath to our list to update 
                 indexPaths.append(IndexPath(row: i, section: 0))
                 
-                i += 1
-                if i % 5 == 0 {
-                    
-                    do {
-                        try managedObjectContext.save()
-                        
-                    } catch let error {
-                        print(error)
-                    }
-                    
-                    self.delegate?.updateThumbnails(indexPaths: indexPaths)
-                    
-                    indexPaths.removeAll()
-                }
             } catch {
                 //Just continue on to the next one
                 print("Failed to download thumbnail")
+            }
+            
+            i += 1
+            if i % 5 == 0 {
+                
+                do {
+                    try managedObjectContext.save()
+                    
+                } catch let error {
+                    print(error)
+                }
+                
+                self.delegate?.updateThumbnails(indexPaths: indexPaths)
+                
+                indexPaths.removeAll()
             }
         }
         
