@@ -181,6 +181,9 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         return videos.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "/r/\(UserDefaults.standard.getSubreddit())"
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 66.0
     }
