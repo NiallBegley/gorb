@@ -32,7 +32,7 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         if let persistentContainer = persistentContainer {
             videoController = VideoController.init(container: persistentContainer)
             videoController?.delegate = self
-            videoController?.deleteAll()
+            _ = videoController?.deleteAll()
             videoController?.refreshVideos()
         }
         
@@ -52,7 +52,10 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         titleLabel.superview?.addGestureRecognizer(tapTitle)
         
         navigationController?.setNavigationBarHidden(true, animated: false)
+        
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SETTINGS_SEGUE",
@@ -84,7 +87,7 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
     }
     
     @IBAction func buttonClickedTryAgain(_ sender: Any) {
-        self.progressView.isHidden = false
+        self.progressView.isHidden = true
         videoController?.refreshVideos()
     }
     
@@ -188,7 +191,8 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         if indexPath.row < videos.count {
             let video = videos[indexPath.row]
             cell.title.text = video.title
-            let image = UIImage(data: video.thumbnail_data)
+            
+            let image = video.thumbnail_data.count > 0 ? UIImage(data: video.thumbnail_data) : UIImage(named: "placeholder")
             cell.thumbnail.image = image
         }
         

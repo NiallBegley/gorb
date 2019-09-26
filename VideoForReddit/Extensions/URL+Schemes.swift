@@ -19,7 +19,10 @@ extension URL {
     static func openURL(string : String) -> UIAlertController? {
         let alert = UIAlertController.init(title: "Open Link", message: "Choose a default application to open these types of links going forward (this can be changed later in the settings)", preferredStyle: .actionSheet)
         
-        let redditLink = (UserDefaults.standard.getOldReddit() ? "http://old.reddit.com" : "www.reddit.com") + string
+        let browserLink = (UserDefaults.standard.getOldReddit() ? "https://old.reddit.com" : "https://www.reddit.com") + string
+        let redditLink = "www.reddit.com" + string
+
+
         var capabilities = [SupportedSchemes]()
         
         if let redditScheme = URL.init(string: "reddit://" + redditLink) {
@@ -50,7 +53,7 @@ extension URL {
         }
         
         alert.addAction(UIAlertAction.init(title: "Safari", style: .default, handler: {(alert : UIAlertAction) in
-            if let url = URL.init(string: redditLink) {
+            if let url = URL.init(string: browserLink) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }))

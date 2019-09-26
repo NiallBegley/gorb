@@ -77,9 +77,10 @@
                                     <constraint firstAttribute="height" constant="44" id="rVY-gM-gxE"/>
                                 </constraints>
                             </view>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FAU-he-F1u">
-                                <rect key="frame" x="0.0" y="452" width="414" height="410"/>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FAU-he-F1u">
+                                <rect key="frame" x="0.0" y="452" width="414" height="444"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <viewLayoutGuide key="safeArea" id="bBB-eQ-6Xd"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="VIDEO_TABLE_VIEW_CELL" rowHeight="66" id="QU5-b7-l46" customClass="VideoTableViewCell" customModule="VideoForReddit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="66"/>
@@ -88,7 +89,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d0t-gA-oiP">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="d0t-gA-oiP">
                                                     <rect key="frame" x="8" y="0.0" width="66" height="66"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="66" id="eDp-r0-rp2"/>
@@ -134,10 +135,10 @@
                             <constraint firstAttribute="bottom" secondItem="N84-QU-O3j" secondAttribute="bottom" id="aCh-qO-czy"/>
                             <constraint firstItem="N84-QU-O3j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="etr-4e-7EJ"/>
                             <constraint firstItem="FAU-he-F1u" firstAttribute="top" secondItem="N84-QU-O3j" secondAttribute="bottom" id="g1O-pA-4yq"/>
+                            <constraint firstAttribute="bottom" secondItem="FAU-he-F1u" secondAttribute="bottom" id="guC-CE-5rd"/>
                             <constraint firstItem="viL-9o-LFU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="it6-Za-fBO"/>
                             <constraint firstItem="viL-9o-LFU" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="s1I-dw-sep"/>
                             <constraint firstItem="N84-QU-O3j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tiZ-BQ-XeN"/>
-                            <constraint firstItem="FAU-he-F1u" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zRa-5d-RhD"/>
                             <constraint firstItem="N84-QU-O3j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="zm0-5J-SD1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -164,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1039.1304347826087" y="138.58695652173915"/>
+            <point key="canvasLocation" x="1039.1304347826087" y="137.94642857142856"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="2b5-BF-jqr">
@@ -305,4 +306,7 @@
             <point key="canvasLocation" x="131.8840579710145" y="138.58695652173915"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder" width="300" height="300"/>
+    </resources>
 </document>
