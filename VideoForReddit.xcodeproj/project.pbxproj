@@ -22,6 +22,7 @@
 		39269488232DA09F00CA0FD1 /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39269487232DA09F00CA0FD1 /* PickerTableViewCell.swift */; };
 		3926948A232DA0C100CA0FD1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39269489232DA0C100CA0FD1 /* SettingsTableViewController.swift */; };
 		3926948C232DA3A700CA0FD1 /* UserDefaults+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3926948B232DA3A700CA0FD1 /* UserDefaults+Default.swift */; };
+		3930905723421A8B003F858F /* ViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3930905623421A8B003F858F /* ViewController+UITableViewDelegate.swift */; };
 		397FA78B23266EFE00DDBB06 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397FA78A23266EFE00DDBB06 /* Video.swift */; };
 		397FA78E2326703600DDBB06 /* CodingUserInfoKey+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397FA78D2326703600DDBB06 /* CodingUserInfoKey+Util.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		39269487232DA09F00CA0FD1 /* PickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTableViewCell.swift; sourceTree = "<group>"; };
 		39269489232DA0C100CA0FD1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		3926948B232DA3A700CA0FD1 /* UserDefaults+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Default.swift"; sourceTree = "<group>"; };
+		3930905623421A8B003F858F /* ViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		397FA78A23266EFE00DDBB06 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		397FA78D2326703600DDBB06 /* CodingUserInfoKey+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+Util.swift"; sourceTree = "<group>"; };
 		3CF31B9DC92EFE7623CFD951 /* Pods-VideoForReddit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoForReddit.release.xcconfig"; path = "Target Support Files/Pods-VideoForReddit/Pods-VideoForReddit.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				391354C12323CA8A00FCE75C /* AppDelegate.swift */,
 				391354C32323CA8A00FCE75C /* ViewController.swift */,
 				3914D7D1232AD32100B34A3B /* VideoTableViewCell.swift */,
+				3930905623421A8B003F858F /* ViewController+UITableViewDelegate.swift */,
 				391354C52323CA8A00FCE75C /* Main.storyboard */,
 				391354CB2323CA8C00FCE75C /* Assets.xcassets */,
 				391354CD2323CA8C00FCE75C /* LaunchScreen.storyboard */,
@@ -271,6 +274,7 @@
 				39269486232DA09200CA0FD1 /* SwitchTableViewCell.swift in Sources */,
 				391354C22323CA8A00FCE75C /* AppDelegate.swift in Sources */,
 				391354CA2323CA8A00FCE75C /* VideoForReddit.xcdatamodeld in Sources */,
+				3930905723421A8B003F858F /* ViewController+UITableViewDelegate.swift in Sources */,
 				391A3FB1233397720026A802 /* PickerTableViewController.swift in Sources */,
 				397FA78E2326703600DDBB06 /* CodingUserInfoKey+Util.swift in Sources */,
 			);
@@ -422,6 +426,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L8674XBK9C;
 				INFOPLIST_FILE = VideoForReddit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -441,6 +446,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L8674XBK9C;
 				INFOPLIST_FILE = VideoForReddit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

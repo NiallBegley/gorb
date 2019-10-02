@@ -8,10 +8,17 @@
 
 import UIKit
 
+protocol VideoTableViewCellDelegate : class {
+    func linkTapped(_ permalink : String)
+}
 class VideoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var linkButton: UIButton!
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var title: UILabel!
+    weak var delegate : VideoTableViewCellDelegate?
+    var permalink : String?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,4 +30,10 @@ class VideoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func onLinkButton(_ sender: Any) {
+        if let permalink = permalink {
+            delegate?.linkTapped(permalink)
+        }
+        
+    }
 }

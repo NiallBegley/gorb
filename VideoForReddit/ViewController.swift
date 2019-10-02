@@ -9,19 +9,22 @@
 import UIKit
 import youtube_ios_player_helper
 import CoreData
+import ChameleonFramework
 
-class ViewController: UIViewController, VideoControllerDelegate, UITableViewDelegate, UITableViewDataSource, YTPlayerViewDelegate, SettingsDelegate {
+class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDelegate, SettingsDelegate, VideoTableViewCellDelegate {
     @IBOutlet weak var progressView: UIActivityIndicatorView!
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var playerView: YTPlayerView!
-    @IBOutlet weak var detailsLabel: UILabel!
     var persistentContainer: NSPersistentContainer?
     var videoController : VideoController?
     var videos : [Video] = []
     var index = 0
     var autoplay = false
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +50,9 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         view.addGestureRecognizer(left)
         view.addGestureRecognizer(right)
         
-        let tapTitle = UITapGestureRecognizer(target: self, action: #selector(linkTapped(_:)))
-        tapTitle.numberOfTapsRequired = 1
-        titleLabel.superview?.addGestureRecognizer(tapTitle)
-        
         navigationController?.setNavigationBarHidden(true, animated: false)
         
+        view.backgroundColor = UIColor.black
     }
     
     
@@ -64,17 +64,20 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         }
     }
     
-    // MARK: - Interaction Callbacks
+    // MARK: - VideoTableViewCellDelegate
     
-    @objc func linkTapped(_ sender: UITapGestureRecognizer)
-    {
-        if let alert = URL.openURL(string: videos[index].permalink) {
+    func linkTapped(_ permalink : String) {
+        if let alert = URL.openURL(string: permalink) {
             present(alert, animated: true, completion: nil)
         }
     }
     
+    // MARK: - Interaction Callbacks
+    
     @objc func userSwiped(_ sender:UISwipeGestureRecognizer)
     {
+        let oldIndex = index
+        
         if sender.direction == .left {
             index += 1
         } else if sender.direction == .right {
@@ -82,6 +85,9 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         }
         
         if self.index > 0, self.index < self.videos.count {
+
+            updateLinkButtons(forCurrentIndex: oldIndex, newIndex: IndexPath.init(row: index, section: 0))
+            
             loadVideo(videos[index], autoplay: true)
         }
     }
@@ -101,8 +107,6 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
             ]
             
             self.autoplay = autoplay
-            self.titleLabel.text = video.title
-            self.detailsLabel.text = String.init(format: "%d Upvotes - %d Comments", video.ups, video.num_comments)
             self.playerView.load(withVideoId: video.id, playerVars: options)
             self.tableView.selectRow(at: IndexPath(row: self.index, section: 0), animated: true, scrollPosition: .middle)
         }
@@ -124,8 +128,6 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
     func toggleControls(hidden hide : Bool) {
         self.tableView.isHidden = hide
         self.playerView.isHidden = hide
-        self.titleLabel.isHidden = hide
-        self.detailsLabel.isHidden = hide
     }
     
     func finishedRefresh(error: Error?) {
@@ -172,41 +174,6 @@ class ViewController: UIViewController, VideoControllerDelegate, UITableViewDele
         videoController?.refreshVideos()
     }
     
-    // MARK: - TableView
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return videos.count
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "/r/\(UserDefaults.standard.getSubreddit())"
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 66.0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "VIDEO_TABLE_VIEW_CELL") as! VideoTableViewCell
-        
-        if indexPath.row < videos.count {
-            let video = videos[indexPath.row]
-            cell.title.text = video.title
-            
-            let image = video.thumbnail_data.count > 0 ? UIImage(data: video.thumbnail_data) : UIImage(named: "placeholder")
-            cell.thumbnail.image = image
-        }
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        index = indexPath.row
-        loadVideo(videos[index], autoplay: true)
-    }
-
     // MARK: - YTPlayerViewDelegate
     
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
