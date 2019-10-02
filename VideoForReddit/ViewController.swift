@@ -21,6 +21,7 @@ class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDel
     var videos : [Video] = []
     var index = 0
     var autoplay = false
+    let refreshControl = UIRefreshControl()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -31,12 +32,13 @@ class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDel
         
         UserDefaults.standard.setDefaults()
         
+        refreshControl.addTarget(self, action: #selector(refreshAllVideos(_:)), for: .valueChanged)
+        tableView.refreshControl = refreshControl
         
         if let persistentContainer = persistentContainer {
             videoController = VideoController.init(container: persistentContainer)
             videoController?.delegate = self
-            _ = videoController?.deleteAll()
-            videoController?.refreshVideos()
+            refreshAllVideos(self)
         }
         
         playerView.delegate = self
@@ -73,6 +75,10 @@ class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDel
     }
     
     // MARK: - Interaction Callbacks
+    @objc func refreshAllVideos(_ sender: Any) {
+        _ = videoController?.deleteAll()
+        videoController?.refreshVideos()
+    }
     
     @objc func userSwiped(_ sender:UISwipeGestureRecognizer)
     {
@@ -138,6 +144,15 @@ class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDel
             videos = videoController.getAllVideos()
 
             DispatchQueue.main.async() {
+                self.refreshControl.endRefreshing()
+
+                if self.videos.count > 0 {
+                    let video = self.videos[0]
+                    let formatter = DateFormatter.hhmma
+                    let date = formatter.string(from: video.created_at)
+                    
+                    self.refreshControl.attributedTitle = NSAttributedString(string: "Last Updated: \(date)")
+                }
                 
                 self.toggleControls(hidden: false)
                 self.progressView.isHidden = false
@@ -152,6 +167,7 @@ class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDel
         } else if error != nil {
             
             DispatchQueue.main.async() {
+                self.refreshControl.endRefreshing()
                 self.toggleControls(hidden: true)
                 self.progressView.isHidden = true
                 self.tryAgainButton.isHidden = false
