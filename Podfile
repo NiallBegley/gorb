@@ -7,5 +7,7 @@ target 'VideoForReddit' do
 
   # Pods for VideoForReddit
   pod "youtube-ios-player-helper", "~> 0.1.4"
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/luckychris/Chameleon'
+  
 
 end
