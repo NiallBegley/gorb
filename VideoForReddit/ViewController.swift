@@ -128,6 +128,14 @@ class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDel
             
             self.tableView.reloadRows(at: indexPaths, with: .none)
             self.tableView.endUpdates()
+
+            //Maintain the selection of the first cell after reload
+            if indexPaths.contains(IndexPath.init(row: 0, section: 0)),
+                self.index == 0 {
+                    self.tableView.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .none)
+                         
+                         
+            }
             
         }
     }
@@ -159,6 +167,10 @@ class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDel
                 self.progressView.isHidden = false
                 self.tryAgainButton.isHidden = true
                 self.tableView.reloadData()
+                
+                //Select the first video in the tableview
+                self.tableView.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .none)
+                    
             }
             
             index = 0
@@ -184,6 +196,7 @@ class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDel
     // MARK: - SettingsDelegate
     func needsUpdate() {
         DispatchQueue.main.async() {
+            self.view.backgroundColor = UIColor.black
             self.navigationController?.setNavigationBarHidden(true, animated: true)
             self.toggleControls(hidden: true)
         }

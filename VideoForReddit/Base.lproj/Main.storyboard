@@ -107,7 +107,7 @@
                                                     </constraints>
                                                     <state key="normal" image="gear" catalog="system"/>
                                                     <connections>
-                                                        <segue destination="hGL-m7-dhY" kind="show" id="tew-M3-Li8"/>
+                                                        <segue destination="hGL-m7-dhY" kind="show" identifier="SETTINGS_SEGUE" id="tew-M3-Li8"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2D-8i-bCk">
