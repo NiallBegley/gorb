@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38A0F058B87B4FFD5EF483FA /* Pods_VideoForReddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01B8307DB7468B4A919F513A /* Pods_VideoForReddit.framework */; };
+		3911AB8923462640009E92EA /* SubredditHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3911AB8823462640009E92EA /* SubredditHeaderTableViewCell.swift */; };
 		391354C22323CA8A00FCE75C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391354C12323CA8A00FCE75C /* AppDelegate.swift */; };
 		391354C42323CA8A00FCE75C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391354C32323CA8A00FCE75C /* ViewController.swift */; };
 		391354C72323CA8A00FCE75C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391354C52323CA8A00FCE75C /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		01B8307DB7468B4A919F513A /* Pods_VideoForReddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoForReddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3911AB8823462640009E92EA /* SubredditHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubredditHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		391354BE2323CA8A00FCE75C /* VideoForReddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoForReddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		391354C12323CA8A00FCE75C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		391354C32323CA8A00FCE75C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				391354CD2323CA8C00FCE75C /* LaunchScreen.storyboard */,
 				391354D02323CA8C00FCE75C /* Info.plist */,
 				391354C82323CA8A00FCE75C /* VideoForReddit.xcdatamodeld */,
+				3911AB8823462640009E92EA /* SubredditHeaderTableViewCell.swift */,
 			);
 			path = VideoForReddit;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				397FA78B23266EFE00DDBB06 /* Video.swift in Sources */,
 				39269486232DA09200CA0FD1 /* SwitchTableViewCell.swift in Sources */,
 				391354C22323CA8A00FCE75C /* AppDelegate.swift in Sources */,
+				3911AB8923462640009E92EA /* SubredditHeaderTableViewCell.swift in Sources */,
 				391354CA2323CA8A00FCE75C /* VideoForReddit.xcdatamodeld in Sources */,
 				3930905723421A8B003F858F /* ViewController+UITableViewDelegate.swift in Sources */,
 				391A3FB1233397720026A802 /* PickerTableViewController.swift in Sources */,

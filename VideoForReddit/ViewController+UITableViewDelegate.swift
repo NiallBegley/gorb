@@ -70,4 +70,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return 44.0
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HEADER_CELL") as! SubredditHeaderTableViewCell
+            cell.title.text = ("/r/\(UserDefaults.standard.getSubreddit())" as NSString).uppercased
+            
+            return cell.contentView
+        }
+        
+        return nil
+    }
+    
 }

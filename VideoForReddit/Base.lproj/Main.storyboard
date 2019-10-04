@@ -24,6 +24,8 @@
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fcC-o7-nae">
                                 <rect key="frame" x="188.66666666666666" y="385.66666666666669" width="37" height="37"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N84-QU-O3j" customClass="YTPlayerView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
@@ -90,6 +92,42 @@
                                             <outlet property="title" destination="Bls-kz-0dK" id="J0m-LM-z2L"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="HEADER_CELL" rowHeight="44" id="amq-PC-udt" customClass="SubredditHeaderTableViewCell" customModule="VideoForReddit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="121.33333206176758" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="amq-PC-udt" id="nou-9M-faI">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdQ-uL-UxY">
+                                                    <rect key="frame" x="358" y="6.3333333333333321" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="CT5-cx-3wC"/>
+                                                        <constraint firstAttribute="width" constant="44" id="ctE-e0-Vqo"/>
+                                                    </constraints>
+                                                    <state key="normal" image="gear" catalog="system"/>
+                                                    <connections>
+                                                        <segue destination="hGL-m7-dhY" kind="show" id="tew-M3-Li8"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2D-8i-bCk">
+                                                    <rect key="frame" x="20" y="20.333333333333332" width="33" height="15.666666666666668"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="i2D-8i-bCk" secondAttribute="bottom" constant="8" id="E4Y-rN-EXf"/>
+                                                <constraint firstItem="i2D-8i-bCk" firstAttribute="leading" secondItem="nou-9M-faI" secondAttribute="leading" constant="20" id="EeK-uV-nd0"/>
+                                                <constraint firstAttribute="trailing" secondItem="JdQ-uL-UxY" secondAttribute="trailing" constant="12" id="Kpi-OA-eSc"/>
+                                                <constraint firstItem="JdQ-uL-UxY" firstAttribute="centerY" secondItem="i2D-8i-bCk" secondAttribute="centerY" id="UDN-x4-6ei"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="i2D-8i-bCk" id="duW-0g-adZ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="4PO-ns-022"/>
@@ -142,7 +180,7 @@
             <objects>
                 <tableViewController id="hGL-m7-dhY" customClass="SettingsTableViewController" customModule="VideoForReddit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5qk-Ul-Jy9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -212,6 +250,7 @@
                             <outlet property="delegate" destination="hGL-m7-dhY" id="85i-9g-2cB"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="TpJ-Qd-0VT"/>
                     <connections>
                         <segue destination="PgK-27-6KC" kind="show" identifier="PICKER_SEGUE" id="txh-Qg-5tr"/>
                     </connections>
@@ -225,7 +264,7 @@
             <objects>
                 <tableViewController id="PgK-27-6KC" customClass="PickerTableViewController" customModule="VideoForReddit" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="82E-xA-Buu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -252,6 +291,7 @@
                             <outlet property="delegate" destination="PgK-27-6KC" id="6Td-vK-zFT"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="2kN-6Z-soM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5W-ag-bvo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -262,7 +302,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AIe-QV-zCN" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="4kf-dv-0bk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="4kf-dv-0bk">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -277,6 +317,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="64" height="60"/>
         <image name="placeholder" width="300" height="300"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>

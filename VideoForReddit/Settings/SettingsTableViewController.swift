@@ -27,6 +27,8 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
         super.viewDidLoad()
 
         navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        view.backgroundColor = UIColor.white
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,6 +42,7 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
         
         if isMovingFromParent {
             navigationController?.setNavigationBarHidden(true, animated: true)
+            view.backgroundColor = UIColor.black
         }
     }
 

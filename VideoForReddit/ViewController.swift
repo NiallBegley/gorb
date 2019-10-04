@@ -62,6 +62,7 @@ class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDel
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SETTINGS_SEGUE",
             let vc = segue.destination as? SettingsTableViewController {
+                view.backgroundColor = UIColor.white
                 vc.delegate = self
         }
     }
