@@ -56,12 +56,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     func updateLinkButtons(forCurrentIndex index : Int, newIndex indexPath : IndexPath) {
         if index >= 0, index < videos.count {
-            let oldCell = tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) as! VideoTableViewCell
-            oldCell.linkButton.isHidden = true
+            if let oldCell = tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) as? VideoTableViewCell {
+                oldCell.linkButton.isHidden = true
+            }
         }
         
-        let newCell = tableView.cellForRow(at: indexPath) as! VideoTableViewCell
-        newCell.linkButton.isHidden = false
+        if let newCell = tableView.cellForRow(at: indexPath) as? VideoTableViewCell {
+            newCell.linkButton.isHidden = false
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
