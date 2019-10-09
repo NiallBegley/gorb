@@ -28,10 +28,10 @@
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N84-QU-O3j" customClass="YTPlayerView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="310.66666666666669"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="N84-QU-O3j" secondAttribute="height" multiplier="207:160" id="loh-r3-PcM"/>
+                                    <constraint firstAttribute="width" secondItem="N84-QU-O3j" secondAttribute="height" multiplier="4:3" id="loh-r3-PcM"/>
                                 </constraints>
                                 <variation key="heightClass=compact">
                                     <mask key="constraints">
@@ -40,7 +40,7 @@
                                 </variation>
                             </view>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="FAU-he-F1u">
-                                <rect key="frame" x="0.0" y="320" width="414" height="488"/>
+                                <rect key="frame" x="0.0" y="310.66666666666674" width="414" height="497.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <viewLayoutGuide key="safeArea" id="bBB-eQ-6Xd"/>
                                 <prototypes>
@@ -216,8 +216,25 @@
                                     <outlet property="switchControl" destination="Wgl-qf-kOJ" id="wIW-p4-Rk6"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PICKER_CELL" textLabel="gep-Sd-XOZ" detailTextLabel="h3w-EH-5GD" style="IBUITableViewCellStyleValue1" id="Lez-2I-a0b" customClass="PickerTableViewCell" customModule="VideoForReddit" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BASIC_CELL" textLabel="EwG-IT-bMg" style="IBUITableViewCellStyleDefault" id="1rm-5b-80e">
                                 <rect key="frame" x="0.0" y="71.666667938232422" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1rm-5b-80e" id="QAT-h9-ePL">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EwG-IT-bMg">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PICKER_CELL" textLabel="gep-Sd-XOZ" detailTextLabel="h3w-EH-5GD" style="IBUITableViewCellStyleValue1" id="Lez-2I-a0b" customClass="PickerTableViewCell" customModule="VideoForReddit" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="115.33333587646484" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lez-2I-a0b" id="cld-36-8pn">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>

@@ -10,12 +10,22 @@ import Foundation
 
 extension UserDefaults {
     
+    enum LinkScheme : Int {
+        case unknown
+        case reddit
+        case apollo
+        case narwhal
+        case safari
+    }
+    
     private enum UserDefaultStrings : String {
         case autoplay
         case subreddit
         case defaultsSet
         case fullscreen
         case oldReddit
+        case scheme
+        case availableSchemes
     }
     
     func setDefaults() {
@@ -25,6 +35,7 @@ extension UserDefaults {
             setAutoplay(value: true)
             setFullscreen(value: false)
             setOldReddit(value: false)
+            clearSchemes()
         }
     }
     
@@ -34,6 +45,35 @@ extension UserDefaults {
     
     private func setDefaultsSet(value : Bool) {
         set(value, forKey: UserDefaultStrings.defaultsSet.rawValue)
+    }
+    
+    func clearSchemes() {
+        setScheme(value: .unknown)
+        setAvailableSchemes(values: [])
+    }
+    func getScheme() -> LinkScheme {
+        let val =  integer(forKey: UserDefaultStrings.scheme.rawValue)
+        return LinkScheme(rawValue: val) ?? .unknown
+    }
+    
+    func setScheme(value : LinkScheme) {
+        set(value.rawValue, forKey: UserDefaultStrings.scheme.rawValue)
+    }
+    
+    func getAvailableSchemes() -> [LinkScheme] {
+        let schemes = array(forKey: UserDefaultStrings.availableSchemes.rawValue) as? [Int] ?? [Int]()
+        
+        let schemeEnums = schemes.map{(rawValue) -> LinkScheme in
+            return (LinkScheme(rawValue: rawValue) ?? .unknown)
+        }
+        return schemeEnums
+    }
+    
+    func setAvailableSchemes(values : [LinkScheme]) {
+        let rawvals = values.map{(val) -> Int in
+            return val.rawValue
+        }
+        set(rawvals, forKey: UserDefaultStrings.availableSchemes.rawValue)
     }
     
     func getAutoplay() -> Bool {

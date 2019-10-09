@@ -70,8 +70,11 @@ class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDel
     // MARK: - VideoTableViewCellDelegate
     
     func linkTapped(_ permalink : String) {
-        if let alert = URL.openURL(string: permalink) {
+    
+        if let alert = determineSchemes(permalink) {
             present(alert, animated: true, completion: nil)
+        } else {
+            URL.openURL(string: permalink)
         }
     }
     

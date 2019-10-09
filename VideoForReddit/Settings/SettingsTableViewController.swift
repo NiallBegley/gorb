@@ -19,6 +19,7 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
         case subreddit
         case fullscreen
         case oldReddit
+        case resetComments
     }
     
     weak var delegate : SettingsDelegate?
@@ -48,11 +49,14 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PICKER_SEGUE",
-            let vc = segue.destination as? PickerTableViewController {
+            let vc = segue.destination as? PickerTableViewController,
+            let indexPath = sender as? IndexPath {
             
-            //TODO: Need to store this somewhere else
-            vc.setData(["Videos", "YoutubeHaiku", "MealtimeVideos", "Games", "ArtisanVideos"], withGetter: UserDefaults.standard.getSubreddit, andSetter: UserDefaults.standard.setSubreddit(value:))
-            vc.delegate = self
+            if indexPath.row == Settings.subreddit.rawValue {
+                //TODO: Need to store this somewhere else
+                vc.setData(["Videos", "YoutubeHaiku", "MealtimeVideos", "Games", "ArtisanVideos"], withGetter: UserDefaults.standard.getSubreddit, andSetter: UserDefaults.standard.setSubreddit(value:))
+                vc.delegate = self
+            }
         }
     }
     
@@ -70,7 +74,7 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,7 +104,14 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
             cell.label.text = "Use \"old.reddit\" for external links"
             return cell
             
-        } else {
+        } else if indexPath.row == Settings.resetComments.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BASIC_CELL") as! UITableViewCell
+            cell.textLabel?.text = "Reset comment handler"
+            
+            return cell
+        }
+        
+        else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PICKER_CELL") as! PickerTableViewCell
             return cell
         }
@@ -108,7 +119,19 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == Settings.subreddit.rawValue {
-            performSegue(withIdentifier: "PICKER_SEGUE", sender: nil)
+            performSegue(withIdentifier: "PICKER_SEGUE", sender: indexPath)
+        } else if indexPath.row == Settings.resetComments.rawValue {
+            let alert = UIAlertController.init(title: "Warning", message: "Reset the current default choice for opening comments?  You will be prompted next time you try and open a link to comments.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "Yes", style: .default, handler: {(alert : UIAlertAction) in
+                    UserDefaults.standard.clearSchemes()
+            }))
+            
+            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+            
+            present(alert, animated: true, completion: {() in
+                tableView.deselectRow(at: indexPath, animated: true)
+            })
+            
         }
     }
     

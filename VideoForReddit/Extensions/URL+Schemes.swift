@@ -10,69 +10,39 @@ import UIKit
 
 extension URL {
 
-    enum SupportedSchemes {
-        case reddit
-        case apollo
-        case narwhal
+    static func schemeURL(forScheme scheme : UserDefaults.LinkScheme, forLink redditLink : String) -> URL? {
+        
+        var schemeIdentifier = ""
+        
+        switch scheme {
+            case .apollo:
+                schemeIdentifier = "apollo://"
+                break;
+            
+            case .reddit:
+                schemeIdentifier = "reddit://"
+                break;
+            
+            case .narwhal:
+                schemeIdentifier = "narwhal://open-url/"
+                break;
+            
+            default:
+                break;
+        }
+        
+        return schemeIdentifier.isEmpty ? nil : URL.init(string: schemeIdentifier + redditLink)
     }
     
-    static func openURL(string : String) -> UIAlertController? {
-        let alert = UIAlertController.init(title: "Open Link", message: "Choose a default application to open these types of links going forward (this can be changed later in the settings)", preferredStyle: .actionSheet)
-        
+    static func openURL(string : String) {
         let browserLink = (UserDefaults.standard.getOldReddit() ? "https://old.reddit.com" : "https://www.reddit.com") + string
         let redditLink = "www.reddit.com" + string
-
-
-        var capabilities = [SupportedSchemes]()
         
-        if let redditScheme = URL.init(string: "reddit://" + redditLink) {
-            if UIApplication.shared.canOpenURL(redditScheme) {
-                capabilities.append(.reddit)
-                alert.addAction(UIAlertAction.init(title: "Reddit", style: .default, handler: {(alert : UIAlertAction) in
-                    UIApplication.shared.open(redditScheme, options: [:], completionHandler: nil)
-                }))
-            }
-        }
-        
-        if let narwhalScheme = URL.init(string: "narwhal://open-url/" + redditLink) {
-            if UIApplication.shared.canOpenURL(narwhalScheme) {
-                capabilities.append(.narwhal)
-                alert.addAction(UIAlertAction.init(title: "Narwhal", style: .default, handler: {(alert : UIAlertAction) in
-                    UIApplication.shared.open(narwhalScheme, options: [:], completionHandler: nil)
-                }))
-            }
-        }
-        
-        if let apolloScheme = URL.init(string: "apollo://" + redditLink) {
-            if UIApplication.shared.canOpenURL(apolloScheme) {
-                capabilities.append(.apollo)
-                alert.addAction(UIAlertAction.init(title: "Apollo", style: .default, handler: {(alert : UIAlertAction) in
-                    UIApplication.shared.open(apolloScheme, options: [:], completionHandler: nil)
-                }))
-            }
-        }
-        
-        alert.addAction(UIAlertAction.init(title: "Safari", style: .default, handler: {(alert : UIAlertAction) in
-            if let url = URL.init(string: browserLink) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-        }))
-        
-        
-        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-        
-//        if let existingCapabilities = UserDefaults.standard.array(forKey: "schemes") as? [SupportedSchemes] {
-//            if existingCapabilities == capabilities {
-//                if let url = URL.init(string: redditLink) {
-//                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-//                }
-//                return nil
-//            }
-//        } else {
-//            UserDefaults.standard.set(capabilities, forKey: "schemes")
-//        }
-        
-        return alert
-        
+        if let url = schemeURL(forScheme: UserDefaults.standard.getScheme(), forLink: redditLink) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else if let url = URL.init(string: browserLink) {
+           UIApplication.shared.open(url, options: [:], completionHandler: nil)
+       }
     }
+    
 }
