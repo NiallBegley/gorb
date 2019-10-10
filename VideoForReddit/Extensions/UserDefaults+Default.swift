@@ -26,6 +26,7 @@ extension UserDefaults {
         case oldReddit
         case scheme
         case availableSchemes
+        case subreddits
     }
     
     func setDefaults() {
@@ -35,6 +36,7 @@ extension UserDefaults {
             setAutoplay(value: true)
             setFullscreen(value: false)
             setOldReddit(value: false)
+            setDefaultSubreddits()
             clearSchemes()
         }
     }
@@ -45,6 +47,18 @@ extension UserDefaults {
     
     private func setDefaultsSet(value : Bool) {
         set(value, forKey: UserDefaultStrings.defaultsSet.rawValue)
+    }
+    
+    func setDefaultSubreddits() {
+        set(["Videos", "YoutubeHaiku", "MealtimeVideos", "Games", "ArtisanVideos"], forKey: UserDefaultStrings.subreddits.rawValue)
+    }
+    func getSubreddits() -> [String] {
+        let subreddits =  array(forKey: UserDefaultStrings.subreddits.rawValue) as? [String] ?? [String]()
+        return subreddits
+    }
+    
+    func setSubreddits(value: [String]) {
+        set(value, forKey: UserDefaultStrings.subreddits.rawValue)
     }
     
     func clearSchemes() {

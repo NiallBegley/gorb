@@ -53,8 +53,8 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
             let indexPath = sender as? IndexPath {
             
             if indexPath.row == Settings.subreddit.rawValue {
-                //TODO: Need to store this somewhere else
-                vc.setData(["Videos", "YoutubeHaiku", "MealtimeVideos", "Games", "ArtisanVideos"], withGetter: UserDefaults.standard.getSubreddit, andSetter: UserDefaults.standard.setSubreddit(value:))
+                vc.setData(UserDefaults.standard.getSubreddits(), withDataSetter: UserDefaults.standard.setSubreddits(value:), valueGetter: UserDefaults.standard.getSubreddit, andSetter: UserDefaults.standard.setSubreddit(value:))
+                
                 vc.delegate = self
             }
         }

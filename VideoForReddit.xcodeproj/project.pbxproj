@@ -15,6 +15,7 @@
 		391354CA2323CA8A00FCE75C /* VideoForReddit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 391354C82323CA8A00FCE75C /* VideoForReddit.xcdatamodeld */; };
 		391354CC2323CA8C00FCE75C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 391354CB2323CA8C00FCE75C /* Assets.xcassets */; };
 		391354CF2323CA8C00FCE75C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391354CD2323CA8C00FCE75C /* LaunchScreen.storyboard */; };
+		3913591D234F5A8D002E4B49 /* PickerCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3913591C234F5A8D002E4B49 /* PickerCustomTableViewCell.swift */; };
 		39139E09234CB87B00874F51 /* ViewController+Schemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39139E08234CB87B00874F51 /* ViewController+Schemes.swift */; };
 		3914D7D2232AD32100B34A3B /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3914D7D1232AD32100B34A3B /* VideoTableViewCell.swift */; };
 		391847792344C56600327482 /* DateFormatter+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391847782344C56600327482 /* DateFormatter+Util.swift */; };
@@ -41,6 +42,7 @@
 		391354CB2323CA8C00FCE75C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		391354CE2323CA8C00FCE75C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		391354D02323CA8C00FCE75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3913591C234F5A8D002E4B49 /* PickerCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCustomTableViewCell.swift; sourceTree = "<group>"; };
 		39139E08234CB87B00874F51 /* ViewController+Schemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Schemes.swift"; sourceTree = "<group>"; };
 		3914D7D1232AD32100B34A3B /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		391847782344C56600327482 /* DateFormatter+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Util.swift"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				39269487232DA09F00CA0FD1 /* PickerTableViewCell.swift */,
 				39269489232DA0C100CA0FD1 /* SettingsTableViewController.swift */,
 				391A3FB0233397720026A802 /* PickerTableViewController.swift */,
+				3913591C234F5A8D002E4B49 /* PickerCustomTableViewCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			files = (
 				391354C42323CA8A00FCE75C /* ViewController.swift in Sources */,
 				39269488232DA09F00CA0FD1 /* PickerTableViewCell.swift in Sources */,
+				3913591D234F5A8D002E4B49 /* PickerCustomTableViewCell.swift in Sources */,
 				391AF75C23290D67003F4617 /* VideoController.swift in Sources */,
 				391847792344C56600327482 /* DateFormatter+Util.swift in Sources */,
 				39139E09234CB87B00874F51 /* ViewController+Schemes.swift in Sources */,
