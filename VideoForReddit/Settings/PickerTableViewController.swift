@@ -38,6 +38,27 @@ class PickerTableViewController: UITableViewController, UITextFieldDelegate {
         
         tableView.reloadData()
     }
+    
+    fileprivate func commitExistingData() {
+        if let cell = tableView.cellForRow(at: IndexPath.init(row: data.count, section: 0)) as? PickerCustomTableViewCell,
+            let text = cell.textField.text {
+            if !text.isEmpty {
+                data.append(text)
+            }
+        }
+        
+        if let dataSetter = self.dataSetter {
+            dataSetter(data)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if isMovingFromParent || isBeingDismissed,
+            tableView.isEditing {
+            
+            commitExistingData()
+        }
+    }
 
     // MARK: - User Interaction
     
@@ -47,9 +68,8 @@ class PickerTableViewController: UITableViewController, UITextFieldDelegate {
         if tableView.isEditing {
             button.title = "Edit"
             tableView.setEditing(false, animated: true)
-            if let dataSetter = self.dataSetter {
-                dataSetter(data)
-            }
+            
+            commitExistingData()
         } else {
             button.title = "Done"
             tableView.setEditing(true, animated: true)
