@@ -1,6 +1,0 @@
-framework module Pods_VideoForReddit {
-  umbrella header "Pods-VideoForReddit-umbrella.h"
-
-  export *
-  module * { export * }
-}
