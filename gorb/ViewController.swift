@@ -7,15 +7,15 @@
 //
 
 import UIKit
-import youtube_ios_player_helper
+import YoutubePlayer_in_WKWebView
 import CoreData
 import ChameleonFramework
 
-class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDelegate, SettingsDelegate, VideoTableViewCellDelegate {
+class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewDelegate, SettingsDelegate, VideoTableViewCellDelegate {
     @IBOutlet weak var progressView: UIActivityIndicatorView!
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var playerView: YTPlayerView!
+    @IBOutlet weak var playerView: WKYTPlayerView!
     var persistentContainer: NSPersistentContainer?
     var videoController : VideoController?
     var videos : [Video] = []
@@ -121,6 +121,8 @@ class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDel
             self.autoplay = autoplay
             self.playerView.load(withVideoId: video.id, playerVars: options)
             self.tableView.selectRow(at: IndexPath(row: self.index, section: 0), animated: true, scrollPosition: .middle)
+            
+           
         }
     }
     
@@ -211,7 +213,7 @@ class ViewController: UIViewController, VideoControllerDelegate, YTPlayerViewDel
     
     // MARK: - YTPlayerViewDelegate
     
-    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+    func playerViewDidBecomeReady(_ playerView: WKYTPlayerView) {
         
         if self.autoplay, UserDefaults.standard.getAutoplay() {
             playerView.playVideo()

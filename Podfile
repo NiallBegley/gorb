@@ -6,7 +6,7 @@ target 'gorb' do
   use_frameworks!
 
   # Pods for gorb
-  pod "youtube-ios-player-helper", "~> 0.1.4"
+  pod "YoutubePlayer-in-WKWebView", "~> 0.3.0"
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/luckychris/Chameleon'
   
 
