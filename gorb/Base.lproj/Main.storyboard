@@ -58,8 +58,8 @@
                                                         <constraint firstAttribute="height" constant="66" id="jDT-RG-fDu"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bls-kz-0dK">
-                                                    <rect key="frame" x="82" y="14" width="33" height="15.666666666666664"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bls-kz-0dK">
+                                                    <rect key="frame" x="82" y="11" width="268" height="15.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -80,10 +80,11 @@
                                                 <constraint firstItem="Bls-kz-0dK" firstAttribute="leading" secondItem="d0t-gA-oiP" secondAttribute="trailing" constant="8" id="BeN-Dg-qFH"/>
                                                 <constraint firstAttribute="trailing" secondItem="m2M-IZ-CS2" secondAttribute="trailing" constant="12" id="FIO-Jl-HbG"/>
                                                 <constraint firstItem="d0t-gA-oiP" firstAttribute="leading" secondItem="Y4x-Nh-aym" secondAttribute="leading" constant="8" id="NVW-xv-eIr"/>
-                                                <constraint firstItem="Bls-kz-0dK" firstAttribute="top" secondItem="Y4x-Nh-aym" secondAttribute="topMargin" constant="3" id="ON9-kl-vBO"/>
+                                                <constraint firstItem="Bls-kz-0dK" firstAttribute="top" secondItem="Y4x-Nh-aym" secondAttribute="topMargin" id="ON9-kl-vBO"/>
                                                 <constraint firstItem="m2M-IZ-CS2" firstAttribute="centerY" secondItem="Y4x-Nh-aym" secondAttribute="centerY" id="WDu-3c-ljn"/>
-                                                <constraint firstItem="m2M-IZ-CS2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bls-kz-0dK" secondAttribute="trailing" constant="8" id="dLS-QN-LQT"/>
+                                                <constraint firstItem="m2M-IZ-CS2" firstAttribute="leading" secondItem="Bls-kz-0dK" secondAttribute="trailing" constant="8" id="dLS-QN-LQT"/>
                                                 <constraint firstItem="d0t-gA-oiP" firstAttribute="top" secondItem="Y4x-Nh-aym" secondAttribute="top" id="iaB-8z-Odt"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Bls-kz-0dK" secondAttribute="bottom" id="z2E-9H-La8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
