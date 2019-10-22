@@ -25,27 +25,21 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        //If the row is selected, recalculate the height so that we can show the entire height instead of the truncated version
-        if tableView.indexPathForSelectedRow?.row == indexPath.row {
+        //We can't grab the actual cell from the tableview here because there is a high likelihood that the tableview is in the process of updating, so just grab a empty cell so we can easily reference the width of the title label and calculate the real height from that
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "VIDEO_TABLE_VIEW_CELL") as? VideoTableViewCell,
+            let textLabel = cell.title,
+            indexPath.row > 0,
+            indexPath.row < videos.count {
             
-            //We can't grab the actual cell from the tableview here because there is a high likelihood that the tableview is in the process of updating, so just grab a empty cell so we can easily reference the width of the title label and calculate the real height from that
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "VIDEO_TABLE_VIEW_CELL") as? VideoTableViewCell,
-                let textLabel = cell.title {
-                let text = videos[index].title
-                
-                let constrainedBox = CGSize(width: textLabel.bounds.width, height: .greatestFiniteMagnitude)
-                let boundingBox = text.boundingRect(with: constrainedBox, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: textLabel.font], context: nil)
-                return max(66.0, ceil(boundingBox.height) + 20)
-            }
+            let text = videos[indexPath.row].title
+            
+            let constrainedBox = CGSize(width: textLabel.bounds.width, height: .greatestFiniteMagnitude)
+            let boundingBox = text.boundingRect(with: constrainedBox, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: textLabel.font], context: nil)
+            return max(66.0, ceil(boundingBox.height) + 20)
         }
             
         return 66.0
         
-    }
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-           //Fire off an update to trigger a recalculation of the tableviewcell heights - this will allow us to show the entire video title if it is currently being truncated.
-           self.tableView.beginUpdates()
-           self.tableView.endUpdates()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
