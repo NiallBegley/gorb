@@ -138,7 +138,7 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="dJd-pi-UWa"/>
                                         </connections>
                                     </tableView>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subreddit doesn't exist (or contains no videos)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRV-Lr-2nP">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subreddit doesn't exist (or contains no videos)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRV-Lr-2nP">
                                         <rect key="frame" x="29.333333333333343" y="238.33333333333331" width="355.66666666666663" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -149,7 +149,9 @@
                                 <constraints>
                                     <constraint firstItem="FAU-he-F1u" firstAttribute="leading" secondItem="r0Q-Bv-X52" secondAttribute="leading" id="3X3-2e-bum"/>
                                     <constraint firstItem="FAU-he-F1u" firstAttribute="top" secondItem="r0Q-Bv-X52" secondAttribute="top" id="EJ1-gi-vuY"/>
+                                    <constraint firstItem="GRV-Lr-2nP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r0Q-Bv-X52" secondAttribute="leading" constant="20" id="LMe-kT-a2v"/>
                                     <constraint firstItem="GRV-Lr-2nP" firstAttribute="centerX" secondItem="r0Q-Bv-X52" secondAttribute="centerX" id="cAO-zi-hbK"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GRV-Lr-2nP" secondAttribute="trailing" constant="20" id="gIn-Yb-Gyu"/>
                                     <constraint firstAttribute="trailing" secondItem="FAU-he-F1u" secondAttribute="trailing" id="hHQ-c8-bQT"/>
                                     <constraint firstItem="GRV-Lr-2nP" firstAttribute="centerY" secondItem="r0Q-Bv-X52" secondAttribute="centerY" id="iHr-93-XV6"/>
                                     <constraint firstAttribute="bottom" secondItem="FAU-he-F1u" secondAttribute="bottom" id="xuc-3S-lQB"/>
