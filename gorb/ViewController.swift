@@ -16,6 +16,7 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     @IBOutlet weak var tryAgainButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var playerView: WKYTPlayerView!
+    @IBOutlet weak var noVideosLabel: UILabel!
     var persistentContainer: NSPersistentContainer?
     var videoController : VideoController?
     var videos : [Video] = []
@@ -168,6 +169,13 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
                     let date = formatter.string(from: video.created_at)
                     
                     self.refreshControl.attributedTitle = NSAttributedString(string: "Last Updated: \(date)")
+                    
+                    self.tableView.isHidden = false
+                    self.noVideosLabel.isHidden = true
+                }
+                else {
+                    self.tableView.isHidden = true
+                    self.noVideosLabel.isHidden = false
                 }
                 
                 self.toggleControls(hidden: false)
@@ -203,6 +211,8 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     // MARK: - SettingsDelegate
     func needsUpdate() {
         DispatchQueue.main.async() {
+            //Reset the playerview in case this subreddit contains no videos - we don't want it showing a video thumbnail from the previous subreddit
+            self.playerView.load(withVideoId: "")
             self.view.backgroundColor = UIColor.black
             self.navigationController?.setNavigationBarHidden(true, animated: true)
             self.toggleControls(hidden: true)
