@@ -106,7 +106,8 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     }
     
     @IBAction func buttonClickedTryAgain(_ sender: Any) {
-        self.progressView.isHidden = true
+        self.progressView.isHidden = false
+        self.tryAgainButton.isHidden = true
         videoController?.refreshVideos()
     }
     
@@ -149,7 +150,7 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     }
     
     func toggleControls(hidden hide : Bool) {
-        self.tableView.isHidden = hide
+        self.tableView.superview?.isHidden = hide
         self.playerView.isHidden = hide
     }
     

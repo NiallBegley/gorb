@@ -17,7 +17,9 @@
                         <subviews>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viL-9o-LFU">
                                 <rect key="frame" x="175" y="372" width="64" height="30"/>
-                                <state key="normal" title="Try Again"/>
+                                <state key="normal" title="Try Again">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="buttonClickedTryAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pF5-Kw-kE3"/>
                                 </connections>

@@ -107,9 +107,9 @@
 				397FA78C2326701000DDBB06 /* Extensions */,
 				397FA78923266ED700DDBB06 /* Model */,
 				391354C12323CA8A00FCE75C /* AppDelegate.swift */,
-				391354C32323CA8A00FCE75C /* ViewController.swift */,
 				3911AB8823462640009E92EA /* SubredditHeaderTableViewCell.swift */,
 				3914D7D1232AD32100B34A3B /* VideoTableViewCell.swift */,
+				391354C32323CA8A00FCE75C /* ViewController.swift */,
 				39139E08234CB87B00874F51 /* ViewController+Schemes.swift */,
 				3930905623421A8B003F858F /* ViewController+UITableViewDelegate.swift */,
 				391354C52323CA8A00FCE75C /* Main.storyboard */,
@@ -444,7 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 83PFD7WM4U;
 				INFOPLIST_FILE = gorb/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -465,7 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 83PFD7WM4U;
 				INFOPLIST_FILE = gorb/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
