@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-extension ViewController {
+struct SchemeHandler {
     
     // MARK: - Schemes
     
-    fileprivate func createSchemeAlertAction(forRedditLink link: String, withScheme scheme : UserDefaults.LinkScheme, _ title: String, addToSchemeList currentSchemes: inout [UserDefaults.LinkScheme]) -> UIAlertAction? {
+    fileprivate static func createSchemeAlertAction(forRedditLink link: String, withScheme scheme : UserDefaults.LinkScheme, _ title: String, addToSchemeList currentSchemes: inout [UserDefaults.LinkScheme]) -> UIAlertAction? {
         
         if let redditScheme = URL.schemeURL(forScheme: scheme, forLink: link) {
             if UIApplication.shared.canOpenURL(redditScheme) {
@@ -28,7 +28,7 @@ extension ViewController {
         return nil
     }
     
-    func determineSchemes(_ permalink : String) -> UIAlertController?{
+    static func determineSchemes(_ permalink : String) -> UIAlertController?{
         
         let alert = UIAlertController.init(title: "Open Link", message: "Choose a default application to open these types of links going forward (this can be changed later in the settings)", preferredStyle: .actionSheet)
         

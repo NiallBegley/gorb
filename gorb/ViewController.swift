@@ -11,18 +11,17 @@ import YoutubePlayer_in_WKWebView
 import CoreData
 import ChameleonFramework
 
-class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewDelegate, SettingsDelegate, VideoTableViewCellDelegate {
+class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewDelegate, SettingsDelegate {
     @IBOutlet weak var progressView: UIActivityIndicatorView!
     @IBOutlet weak var tryAgainButton: UIButton!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var playerView: WKYTPlayerView!
     @IBOutlet weak var noVideosLabel: UILabel!
     var persistentContainer: NSPersistentContainer?
-    var videoController : VideoController?
-    var videos : [Video] = []
-    var index = 0
+    fileprivate var videoController : VideoController?
+    fileprivate var videos : [Video] = []
+    fileprivate var index = 0
     var autoplay = false
-    let refreshControl = UIRefreshControl()
+    var tableViewController : VideoTableViewController?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -33,13 +32,10 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
         
         UserDefaults.standard.setDefaults()
         
-        refreshControl.addTarget(self, action: #selector(refreshAllVideos(_:)), for: .valueChanged)
-        tableView.refreshControl = refreshControl
-        
         if let persistentContainer = persistentContainer {
             videoController = VideoController.init(container: persistentContainer)
             videoController?.delegate = self
-            refreshAllVideos(self)
+            refreshAllVideos()
         }
         
         playerView.delegate = self
@@ -67,22 +63,17 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
             let vc = segue.destination as? SettingsTableViewController {
                 view.backgroundColor = UIColor.white
                 vc.delegate = self
-        }
-    }
-    
-    // MARK: - VideoTableViewCellDelegate
-    
-    func linkTapped(_ permalink : String) {
-    
-        if let alert = determineSchemes(permalink) {
-            present(alert, animated: true, completion: nil)
-        } else {
-            URL.openURL(string: permalink)
-        }
+        } else if segue.identifier == "TABLE_VIEW_EMBED_SEGUE",
+            let vc = segue.destination as? VideoTableViewController {
+                tableViewController = vc
+            tableViewController?.parentController = self
+                
+            }
+        
     }
     
     // MARK: - Interaction Callbacks
-    @objc func refreshAllVideos(_ sender: Any) {
+    func refreshAllVideos() {
         _ = videoController?.deleteAll()
         videoController?.refreshVideos()
     }
@@ -99,7 +90,7 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
         
         if self.index > 0, self.index < self.videos.count {
 
-            updateLinkButtons(forCurrentIndex: oldIndex, newIndex: IndexPath.init(row: index, section: 0))
+            tableViewController?.updateLinkButtons(forCurrentIndex: oldIndex, newIndex: IndexPath.init(row: index, section: 0))
             
             loadVideo(videos[index], autoplay: true)
         }
@@ -109,6 +100,11 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
         self.progressView.isHidden = false
         self.tryAgainButton.isHidden = true
         videoController?.refreshVideos()
+    }
+    
+    func loadVideo(at index : Int) {
+        self.index = index
+        loadVideo(videos[index], autoplay: true)
     }
     
     func loadVideo(_ video : Video, autoplay: Bool) {
@@ -122,7 +118,7 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
             
             self.autoplay = autoplay
             self.playerView.load(withVideoId: video.id, playerVars: options)
-            self.tableView.selectRow(at: IndexPath(row: self.index, section: 0), animated: true, scrollPosition: .middle)
+            self.tableViewController?.selectRow(at: IndexPath(row: self.index, section: 0), animated: true)
             
            
         }
@@ -132,16 +128,12 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     
     func updateThumbnails(indexPaths: [IndexPath]) {
         DispatchQueue.main.async() {
-            
-            self.tableView.beginUpdates()
-            
-            self.tableView.reloadRows(at: indexPaths, with: .none)
-            self.tableView.endUpdates()
-
+            self.tableViewController?.reloadRows(at: indexPaths)
+     
             //Maintain the selection of the first cell after reload
             if indexPaths.contains(IndexPath.init(row: 0, section: 0)),
                 self.index == 0 {
-                    self.tableView.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .none)
+                self.tableViewController?.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false)
                          
                          
             }
@@ -150,7 +142,7 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     }
     
     func toggleControls(hidden hide : Bool) {
-        self.tableView.superview?.isHidden = hide
+        self.tableViewController?.view.isHidden = hide
         self.playerView.isHidden = hide
     }
     
@@ -160,33 +152,16 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
             error == nil {
         
             videos = videoController.getAllVideos()
-
+            
             DispatchQueue.main.async() {
-                self.refreshControl.endRefreshing()
+               
+            self.tableViewController?.finishedRefresh(withVideos: self.videos, error: error)
 
-                if self.videos.count > 0 {
-                    let video = self.videos[0]
-                    let formatter = DateFormatter.hhmma
-                    let date = formatter.string(from: video.created_at)
-                    
-                    self.refreshControl.attributedTitle = NSAttributedString(string: "Last Updated: \(date)")
-                    
-                    self.tableView.isHidden = false
-                    self.noVideosLabel.isHidden = true
-                }
-                else {
-                    self.tableView.isHidden = true
-                    self.noVideosLabel.isHidden = false
-                }
-                
+                self.noVideosLabel.isHidden = (self.videos.count > 0)
                 self.toggleControls(hidden: false)
-                self.progressView.isHidden = false
+                self.progressView.isHidden = true
                 self.tryAgainButton.isHidden = true
-                self.tableView.reloadData()
                 
-                //Select the first video in the tableview
-                self.tableView.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .none)
-                    
             }
             
             index = 0
@@ -196,7 +171,6 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
         } else if error != nil {
             
             DispatchQueue.main.async() {
-                self.refreshControl.endRefreshing()
                 self.toggleControls(hidden: true)
                 self.progressView.isHidden = true
                 self.tryAgainButton.isHidden = false
@@ -231,7 +205,23 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
         }
     }
 
+    // MARK: - Videos Array Accessors
     
+    func getVideo(at index: Int) -> Video? {
+        if index >= 0, index < videos.count {
+            return videos[index]
+        }
+        
+        return nil
+    }
+    
+    func getVideoCount() -> Int {
+        return videos.count
+    }
+    
+    func getIndex() -> Int {
+        return index
+    }
     
 }
 
