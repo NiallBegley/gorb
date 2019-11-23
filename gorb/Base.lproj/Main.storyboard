@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ct-6v-9wd">
-                                <rect key="frame" x="0.0" y="310.66666666666674" width="414" height="463.33333333333326"/>
+                                <rect key="frame" x="0.0" y="310.66666666666674" width="414" height="497.33333333333326"/>
                                 <connections>
                                     <segue destination="N1t-gG-edc" kind="embed" identifier="TABLE_VIEW_EMBED_SEGUE" id="SS3-mW-na2"/>
                                 </connections>
@@ -76,13 +76,13 @@
                             <constraint firstItem="r0Q-Bv-X52" firstAttribute="top" secondItem="N84-QU-O3j" secondAttribute="bottom" id="OMY-cU-9QG"/>
                             <constraint firstItem="fcC-o7-nae" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QyM-NO-3je"/>
                             <constraint firstItem="r0Q-Bv-X52" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RXc-Au-Em3"/>
+                            <constraint firstAttribute="bottom" secondItem="2ct-6v-9wd" secondAttribute="bottom" id="TX6-SI-ZyE"/>
                             <constraint firstAttribute="bottom" secondItem="N84-QU-O3j" secondAttribute="bottom" id="aCh-qO-czy"/>
                             <constraint firstItem="N84-QU-O3j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="etr-4e-7EJ"/>
                             <constraint firstItem="viL-9o-LFU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="it6-Za-fBO"/>
                             <constraint firstItem="r0Q-Bv-X52" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qF3-Rt-HAk"/>
                             <constraint firstItem="2ct-6v-9wd" firstAttribute="top" secondItem="N84-QU-O3j" secondAttribute="bottom" id="qr6-s3-Ns2"/>
                             <constraint firstItem="viL-9o-LFU" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="s1I-dw-sep"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2ct-6v-9wd" secondAttribute="bottom" id="t66-kK-Lyl"/>
                             <constraint firstItem="N84-QU-O3j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tiZ-BQ-XeN"/>
                             <constraint firstItem="N84-QU-O3j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zm0-5J-SD1"/>
                         </constraints>
@@ -104,6 +104,7 @@
                         <outlet property="playerView" destination="N84-QU-O3j" id="g07-mK-5fN"/>
                         <outlet property="progressView" destination="fcC-o7-nae" id="sOA-pd-DU4"/>
                         <outlet property="tryAgainButton" destination="viL-9o-LFU" id="WZP-7l-gqR"/>
+                        <segue destination="hGL-m7-dhY" kind="show" identifier="SETTINGS_SEGUE" id="Iey-lj-zZ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -115,7 +116,7 @@
             <objects>
                 <tableViewController id="hGL-m7-dhY" customClass="SettingsTableViewController" customModule="gorb" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5qk-Ul-Jy9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -216,7 +217,7 @@
             <objects>
                 <tableViewController id="PgK-27-6KC" customClass="PickerTableViewController" customModule="gorb" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="82E-xA-Buu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -304,13 +305,13 @@
         <scene sceneID="E5y-HN-gg7">
             <objects>
                 <tableViewController id="N1t-gG-edc" customClass="VideoTableViewController" customModule="gorb" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wC7-zY-9nZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="463.33333333333331"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="wC7-zY-9nZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="497.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="VIDEO_TABLE_VIEW_CELL" rowHeight="66" id="UGE-En-m4u" customClass="VideoTableViewCell" customModule="gorb" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="66"/>
+                                <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UGE-En-m4u" id="H0b-ps-SAR">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
@@ -359,7 +360,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="HEADER_CELL" rowHeight="44" id="dVL-GW-05i" customClass="SubredditHeaderTableViewCell" customModule="gorb" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="94" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="121.33333206176758" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dVL-GW-05i" id="gJR-zv-LVC">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
@@ -372,6 +373,9 @@
                                                 <constraint firstAttribute="width" constant="44" id="mR3-Ur-WUT"/>
                                             </constraints>
                                             <state key="normal" image="gear" catalog="system"/>
+                                            <connections>
+                                                <action selector="onBtnClickedSettings:" destination="N1t-gG-edc" eventType="touchUpInside" id="NdY-tE-q2B"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1z-cV-TyO">
                                             <rect key="frame" x="20" y="20.333333333333332" width="33" height="15.666666666666668"/>

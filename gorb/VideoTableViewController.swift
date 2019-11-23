@@ -14,14 +14,21 @@ class VideoTableViewController: UITableViewController, VideoTableViewCellDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refreshAllVideos(_:)), for: .valueChanged)
-        tableView.refreshControl = refreshControl
+//        tableView.refreshControl = refreshControl
         
     }
     
     @objc func refreshAllVideos(_ sender: Any) {
         parentController.refreshAllVideos()
       }
+    
+    // MARK: - Actions
+    
+    @IBAction func onBtnClickedSettings(_ sender: Any) {
+        parentController.performSegue(withIdentifier: "SETTINGS_SEGUE", sender: self)
+    }
     
     // MARK: - Methods for Parent VC - must be called from main thread
     func selectRow(at indexPath: IndexPath, animated: Bool) {

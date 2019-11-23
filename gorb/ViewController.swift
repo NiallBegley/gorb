@@ -21,7 +21,7 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     fileprivate var videos : [Video] = []
     fileprivate var index = 0
     var autoplay = false
-    var tableViewController : VideoTableViewController?
+    weak var tableViewController : VideoTableViewController?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
