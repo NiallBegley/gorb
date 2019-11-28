@@ -18,7 +18,9 @@ class PickerTableViewController: UITableViewController, UITextFieldDelegate {
     private var getter : (() -> String)?
     private var dataSetter : ((_ : [String]) -> ())?
     private var data : [String] = []
+    private var validator : ((_ : String) -> Bool)?
     var delegate : PickerDelegate?
+    private var validatorErrorMessage : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,16 +41,25 @@ class PickerTableViewController: UITableViewController, UITextFieldDelegate {
         tableView.reloadData()
     }
     
+    func setValidator(_ validator : @escaping((_ : String) -> Bool), withErrorMessage errormsg : String) {
+        self.validator = validator
+        validatorErrorMessage = errormsg
+    }
+    
     fileprivate func commitExistingData() {
-        if let cell = tableView.cellForRow(at: IndexPath.init(row: data.count, section: 0)) as? PickerCustomTableViewCell,
-            let text = cell.textField.text {
-            if !text.isEmpty {
-                data.append(text)
+        if let cell = tableView.cellForRow(at: IndexPath.init(row: data.count, section: 0)) as? PickerCustomTableViewCell {
+            
+            //Only validate the text in the last row if it isn't empty.  Return without commiting if it isn't valid
+            if let text = cell.textField.text,
+                !text.isEmpty,
+                !validateText(text) {
+                    return
+                }
+            
+            if let dataSetter = self.dataSetter {
+                dataSetter(data)
             }
-        }
-        
-        if let dataSetter = self.dataSetter {
-            dataSetter(data)
+
         }
     }
     
@@ -82,16 +93,31 @@ class PickerTableViewController: UITableViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
-        if let text = textField.text,
-            !text.isEmpty{
-                data.append(text)
-                tableView.reloadData()
-        }
-        
+        _ = validateText(textField.text)
         
         return false
     }
     
+    func validateText(_ string : String?) -> Bool {
+        if let text = string,
+            !text.isEmpty,
+            let valid = validator {
+            if(valid(text)) {
+                data.append(text)
+                tableView.reloadData()
+                
+                return true
+            } else {
+                
+                let alert = UIAlertController.init(title: "Error", message: validatorErrorMessage, preferredStyle: .alert)
+                alert.addAction(UIAlertAction.init(title: "Okay", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+                
+            }
+        }
+
+        return false
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -108,24 +134,37 @@ class PickerTableViewController: UITableViewController, UITextFieldDelegate {
         if editingStyle == .delete,
             indexPath.row >= 0,
             indexPath.row < data.count {
-                data.remove(at: indexPath.row)
+                
+                //Deselect the row if its selected before we delete it
+                if let get = getter,
+                    let set = setter,
+                    data[indexPath.row] == get() {
+                    set(data[0])
+                }
+            
+            
+           // tableView.beginUpdates()
+            data.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+          //  tableView.endUpdates()
         } else if editingStyle == .insert {
             
         }
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        if indexPath.row == data.count {
-            return .insert
-        } else if data.count == 1 {
-            return .none
-        } else {
-            return .delete
+        if tableView.isEditing {
+            if indexPath.row == data.count {
+                return .insert
+            } else if data.count == 1 {
+                return .none
+            } else {
+                return .delete
+            }
         }
+        
+        return .none
     }
-    
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -137,7 +176,6 @@ class PickerTableViewController: UITableViewController, UITextFieldDelegate {
 
                 if let get = getter,
                     data[indexPath.row] == get() {
-                    
                     cell.accessoryType = .checkmark
                 } else {
                     cell.accessoryType = .none

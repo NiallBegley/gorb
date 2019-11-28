@@ -55,9 +55,25 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
             if indexPath.row == Settings.subreddit.rawValue {
                 vc.setData(UserDefaults.standard.getSubreddits(), withDataSetter: UserDefaults.standard.setSubreddits(value:), valueGetter: UserDefaults.standard.getSubreddit, andSetter: UserDefaults.standard.setSubreddit(value:))
                 
+                vc.setValidator(validateSubreddit(_:), withErrorMessage: "Subreddit is too long, contains a space, or has an invalid character")
                 vc.delegate = self
             }
         }
+    }
+    
+    func validateSubreddit(_ subreddit : String) -> Bool {
+        let pattern = "^[A-Za-z0-9][A-Za-z0-9_]{2,20}$"
+
+        let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+        let range = NSRange(location: 0, length: subreddit.count)
+        
+        guard let _ = regex?.firstMatch(in: subreddit, range: range) else {
+            return false
+        }
+        
+//        return (url as NSString).substring(with: result.range)
+        
+        return true
     }
     
     func didSelect(_ value: String) {
