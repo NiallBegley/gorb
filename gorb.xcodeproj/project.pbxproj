@@ -33,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		3911AB8823462640009E92EA /* SubredditHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubredditHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		391354BE2323CA8A00FCE75C /* gorb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gorb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		391354BE2323CA8A00FCE75C /* rang.tv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rang.tv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		391354C12323CA8A00FCE75C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		391354C32323CA8A00FCE75C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		391354C62323CA8A00FCE75C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		391354BF2323CA8A00FCE75C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				391354BE2323CA8A00FCE75C /* gorb.app */,
+				391354BE2323CA8A00FCE75C /* rang.tv.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,7 +183,7 @@
 			);
 			name = gorb;
 			productName = VideoForReddit;
-			productReference = 391354BE2323CA8A00FCE75C /* gorb.app */;
+			productReference = 391354BE2323CA8A00FCE75C /* rang.tv.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -444,7 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 83PFD7WM4U;
 				INFOPLIST_FILE = gorb/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -453,7 +453,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.niallbegley.gorb;
-				PRODUCT_NAME = gorb;
+				PRODUCT_NAME = rang.tv;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -465,7 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 83PFD7WM4U;
 				INFOPLIST_FILE = gorb/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -474,7 +474,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.niallbegley.gorb;
-				PRODUCT_NAME = gorb;
+				PRODUCT_NAME = rang.tv;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

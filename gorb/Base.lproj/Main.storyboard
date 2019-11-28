@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="gorb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rang_tv" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,13 +114,13 @@
         <!--Settings Table View Controller-->
         <scene sceneID="2b5-BF-jqr">
             <objects>
-                <tableViewController id="hGL-m7-dhY" customClass="SettingsTableViewController" customModule="gorb" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="hGL-m7-dhY" customClass="SettingsTableViewController" customModule="rang_tv" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5qk-Ul-Jy9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SWITCH_CELL" id="55j-lx-xEF" customClass="SwitchTableViewCell" customModule="gorb" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SWITCH_CELL" id="55j-lx-xEF" customClass="SwitchTableViewCell" customModule="rang_tv" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="55j-lx-xEF" id="hxw-Oh-dAb">
@@ -169,7 +169,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PICKER_CELL" textLabel="gep-Sd-XOZ" detailTextLabel="h3w-EH-5GD" style="IBUITableViewCellStyleValue1" id="Lez-2I-a0b" customClass="PickerTableViewCell" customModule="gorb" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PICKER_CELL" textLabel="gep-Sd-XOZ" detailTextLabel="h3w-EH-5GD" style="IBUITableViewCellStyleValue1" id="Lez-2I-a0b" customClass="PickerTableViewCell" customModule="rang_tv" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="115.33333587646484" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lez-2I-a0b" id="cld-36-8pn">
@@ -215,13 +215,13 @@
         <!--Picker Table View Controller-->
         <scene sceneID="eFG-Uy-gh3">
             <objects>
-                <tableViewController id="PgK-27-6KC" customClass="PickerTableViewController" customModule="gorb" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="PgK-27-6KC" customClass="PickerTableViewController" customModule="rang_tv" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="82E-xA-Buu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PICKER_CUSTOM_CELL" id="RTL-VN-xeb" customClass="PickerCustomTableViewCell" customModule="gorb" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PICKER_CUSTOM_CELL" id="RTL-VN-xeb" customClass="PickerCustomTableViewCell" customModule="rang_tv" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RTL-VN-xeb" id="HUi-jl-eSP">
@@ -231,7 +231,7 @@
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add new item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K2K-ih-XiJ">
                                             <rect key="frame" x="16" y="12" width="358" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="done"/>
                                             <connections>
                                                 <action selector="textField:" destination="hQS-Rr-xQb" eventType="editingDidEnd" id="NFx-hb-BhS"/>
                                             </connections>
@@ -304,13 +304,13 @@
         <!--Video Table View Controller-->
         <scene sceneID="E5y-HN-gg7">
             <objects>
-                <tableViewController id="N1t-gG-edc" customClass="VideoTableViewController" customModule="gorb" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="N1t-gG-edc" customClass="VideoTableViewController" customModule="rang_tv" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="wC7-zY-9nZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="497.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="VIDEO_TABLE_VIEW_CELL" rowHeight="66" id="UGE-En-m4u" customClass="VideoTableViewCell" customModule="gorb" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="VIDEO_TABLE_VIEW_CELL" rowHeight="66" id="UGE-En-m4u" customClass="VideoTableViewCell" customModule="rang_tv" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.333332061767578" width="414" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UGE-En-m4u" id="H0b-ps-SAR">
@@ -359,7 +359,7 @@
                                     <outlet property="title" destination="X0s-Hf-lT5" id="NPe-2o-3cB"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="HEADER_CELL" rowHeight="44" id="dVL-GW-05i" customClass="SubredditHeaderTableViewCell" customModule="gorb" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="HEADER_CELL" rowHeight="44" id="dVL-GW-05i" customClass="SubredditHeaderTableViewCell" customModule="rang_tv" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="121.33333206176758" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dVL-GW-05i" id="gJR-zv-LVC">
