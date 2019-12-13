@@ -22,6 +22,7 @@ class VideoTableViewController: UITableViewController, VideoTableViewCellDelegat
     
     @objc func refreshAllVideos(_ sender: Any) {
         parentController.refreshAllVideos()
+        refreshControl?.endRefreshing()
       }
     
     // MARK: - Actions
@@ -143,14 +144,36 @@ class VideoTableViewController: UITableViewController, VideoTableViewCellDelegat
         return nil
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let shareAction = UIContextualAction.init(style: .normal, title: "Share") { (action, view, completionHandler) in
+            
+            if let video = self.parentController.getVideo(at: indexPath.row)
+            {
+                let browserLink = (UserDefaults.standard.getOldReddit() ? "https://old.reddit.com" : "https://www.reddit.com") + video.permalink
+                guard let url = URL.init(string: browserLink) else { return }
+                
+                let activityController = UIActivityViewController.init(activityItems: [url], applicationActivities: nil)
+                DispatchQueue.main.async() {
+                    self.present(activityController, animated: true, completion: nil)
+                    
+                }
+        
+            }
+        }
+        shareAction.backgroundColor = UIColor.flatBlue()
+        
+        return UISwipeActionsConfiguration.init(actions: [shareAction])
+        
+    }
+    
     // MARK: - VideoTableViewCellDelegate
        
-       func linkTapped(_ permalink : String) {
-       
-        if let alert = SchemeHandler.determineSchemes(permalink) {
-               present(alert, animated: true, completion: nil)
-           } else {
-               URL.openURL(string: permalink)
-           }
+   func linkTapped(_ permalink : String) {
+   
+    if let alert = SchemeHandler.determineSchemes(permalink) {
+           present(alert, animated: true, completion: nil)
+       } else {
+           URL.openURL(string: permalink)
        }
+   }
 }
