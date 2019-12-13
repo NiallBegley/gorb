@@ -27,6 +27,7 @@ extension UserDefaults {
         case scheme
         case availableSchemes
         case subreddits
+        case wifiOnly
     }
     
     func setDefaults() {
@@ -37,6 +38,7 @@ extension UserDefaults {
             setFullscreen(value: false)
             setOldReddit(value: false)
             setDefaultSubreddits()
+            setWifiOnly(value: false)
             clearSchemes()
         }
     }
@@ -124,5 +126,13 @@ extension UserDefaults {
         } else {
             return "Videos"
         }
+    }
+    
+    func setWifiOnly(value: Bool) {
+        set(value, forKey: UserDefaultStrings.wifiOnly.rawValue)
+    }
+    
+    func getWifiOnly() -> Bool {
+        return bool(forKey: UserDefaultStrings.wifiOnly.rawValue)
     }
 }
