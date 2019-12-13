@@ -16,6 +16,7 @@
 		391354CF2323CA8C00FCE75C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 391354CD2323CA8C00FCE75C /* LaunchScreen.storyboard */; };
 		3913591D234F5A8D002E4B49 /* PickerCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3913591C234F5A8D002E4B49 /* PickerCustomTableViewCell.swift */; };
 		3914D7D2232AD32100B34A3B /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3914D7D1232AD32100B34A3B /* VideoTableViewCell.swift */; };
+		39174AD723A00168006FAC7D /* WifiMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39174AD623A00168006FAC7D /* WifiMonitor.swift */; };
 		3917C4732384296600935512 /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3917C4722384296600935512 /* VideoTableViewController.swift */; };
 		391847792344C56600327482 /* DateFormatter+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391847782344C56600327482 /* DateFormatter+Util.swift */; };
 		391A0CA1232BD88B0063EBF1 /* URL+Schemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391A0CA0232BD88B0063EBF1 /* URL+Schemes.swift */; };
@@ -42,6 +43,7 @@
 		391354D02323CA8C00FCE75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3913591C234F5A8D002E4B49 /* PickerCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCustomTableViewCell.swift; sourceTree = "<group>"; };
 		3914D7D1232AD32100B34A3B /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		39174AD623A00168006FAC7D /* WifiMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiMonitor.swift; sourceTree = "<group>"; };
 		3917C4722384296600935512 /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
 		391847782344C56600327482 /* DateFormatter+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Util.swift"; sourceTree = "<group>"; };
 		391A0CA0232BD88B0063EBF1 /* URL+Schemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Schemes.swift"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				3917C4722384296600935512 /* VideoTableViewController.swift */,
 				3914D7D1232AD32100B34A3B /* VideoTableViewCell.swift */,
 				391354C32323CA8A00FCE75C /* ViewController.swift */,
+				39174AD623A00168006FAC7D /* WifiMonitor.swift */,
 				391354C52323CA8A00FCE75C /* Main.storyboard */,
 				391354CB2323CA8C00FCE75C /* Assets.xcassets */,
 				391354CD2323CA8C00FCE75C /* LaunchScreen.storyboard */,
@@ -294,6 +297,7 @@
 				397FA78B23266EFE00DDBB06 /* Video.swift in Sources */,
 				39269486232DA09200CA0FD1 /* SwitchTableViewCell.swift in Sources */,
 				391354C22323CA8A00FCE75C /* AppDelegate.swift in Sources */,
+				39174AD723A00168006FAC7D /* WifiMonitor.swift in Sources */,
 				3911AB8923462640009E92EA /* SubredditHeaderTableViewCell.swift in Sources */,
 				391A3FB1233397720026A802 /* PickerTableViewController.swift in Sources */,
 				397FA78E2326703600DDBB06 /* CodingUserInfoKey+Util.swift in Sources */,
@@ -444,7 +448,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 83PFD7WM4U;
 				INFOPLIST_FILE = gorb/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -465,7 +469,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 83PFD7WM4U;
 				INFOPLIST_FILE = gorb/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

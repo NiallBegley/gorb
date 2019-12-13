@@ -10,6 +10,7 @@ import UIKit
 import YoutubePlayer_in_WKWebView
 import CoreData
 import ChameleonFramework
+import Network
 
 class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewDelegate, SettingsDelegate {
     @IBOutlet weak var progressView: UIActivityIndicatorView!
@@ -22,6 +23,7 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     fileprivate var index = 0
     var autoplay = false
     weak var tableViewController : VideoTableViewController?
+    fileprivate let wifiMonitor = WifiMonitor.init()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -30,13 +32,12 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserDefaults.standard.setDefaults()
-        
-        if let persistentContainer = persistentContainer {
-            videoController = VideoController.init(container: persistentContainer)
-            videoController?.delegate = self
-            refreshAllVideos()
+        if let persistentContainer = self.persistentContainer {
+            self.videoController = VideoController.init(container: persistentContainer)
+            self.videoController?.delegate = self
         }
+        
+        UserDefaults.standard.setDefaults()
         
         playerView.delegate = self
         
@@ -52,6 +53,12 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
         navigationController?.setNavigationBarHidden(true, animated: false)
         
         view.backgroundColor = UIColor.black
+        
+        if !wifiMonitor.isExpensive {
+            videoController?.refreshVideos()
+        } else {
+            finishedRefresh(error: wifiMonitor.getWifiError())
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,13 +76,19 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
             tableViewController?.parentController = self
                 
             }
-        
     }
     
     // MARK: - Interaction Callbacks
     func refreshAllVideos() {
-        _ = videoController?.deleteAll()
-        videoController?.refreshVideos()
+        
+        if !wifiMonitor.isExpensive {
+            _ = videoController?.deleteAll()
+            videoController?.refreshVideos()
+        } else {
+            displayError(wifiMonitor.getWifiError())
+        }
+        
+        
     }
     
     @objc func userSwiped(_ sender:UISwipeGestureRecognizer)
@@ -97,6 +110,11 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     }
     
     @IBAction func buttonClickedTryAgain(_ sender: Any) {
+        if wifiMonitor.isExpensive {
+            displayError(wifiMonitor.getWifiError())
+            return
+        }
+        
         self.progressView.isHidden = false
         self.tryAgainButton.isHidden = true
         videoController?.refreshVideos()
@@ -108,6 +126,11 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     }
     
     func loadVideo(_ video : Video, autoplay: Bool) {
+        if wifiMonitor.isExpensive {
+            displayError(wifiMonitor.getWifiError())
+            return
+        }
+        
         DispatchQueue.main.async() {
             
             let options = [
@@ -170,18 +193,24 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
             }
         } else if error != nil {
             
-            DispatchQueue.main.async() {
-                self.toggleControls(hidden: true)
-                self.progressView.isHidden = true
-                self.tryAgainButton.isHidden = false
-                
-                //We're going to force cast this error now that we know it isn't nil
-                let alert = UIAlertController.init(title: "Error", message: "Error fetching video list: " + error!.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction.init(title: "Okay", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }
+            //We're going to force cast this error now that we know it isn't nil
+            displayError(error!)
+           
         }
     }
+    
+    func displayError(_ error : Error) {
+        DispatchQueue.main.async() {
+           self.toggleControls(hidden: true)
+           self.progressView.isHidden = true
+           self.tryAgainButton.isHidden = false
+           
+           
+           let alert = UIAlertController.init(title: "Error", message: "Error fetching video list: " + error.localizedDescription, preferredStyle: .alert)
+           alert.addAction(UIAlertAction.init(title: "Okay", style: .default, handler: nil))
+           self.present(alert, animated: true, completion: nil)
+       }
+   }
     
     // MARK: - SettingsDelegate
     func needsUpdate() {

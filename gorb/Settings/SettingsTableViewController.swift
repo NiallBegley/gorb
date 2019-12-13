@@ -19,6 +19,7 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
         case subreddit
         case fullscreen
         case oldReddit
+        case wifiOnly
         case resetComments
     }
     
@@ -90,7 +91,7 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -120,6 +121,11 @@ class SettingsTableViewController: UITableViewController, PickerDelegate {
             cell.label.text = "Use \"old.reddit\" for external links"
             return cell
             
+        } else if indexPath.row == Settings.wifiOnly.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SWITCH_CELL") as! SwitchTableViewCell
+            cell.setControlFuncs(set: UserDefaults.standard.setWifiOnly(value:), get: UserDefaults.standard.getWifiOnly)
+            cell.label.text = "WiFi Only"
+            return cell
         } else if indexPath.row == Settings.resetComments.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BASIC_CELL") as! UITableViewCell
             cell.textLabel?.text = "Reset comment handler"
