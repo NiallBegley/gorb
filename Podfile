@@ -8,6 +8,6 @@ target 'gorb' do
   # Pods for gorb
   pod "YoutubePlayer-in-WKWebView", "~> 0.3.0"
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/luckychris/Chameleon'
-  
+  pod 'CocoaLumberjack/Swift'
 
 end

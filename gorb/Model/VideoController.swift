@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CocoaLumberjack
 
 protocol VideoControllerDelegate : class {
     func finishedRefresh(error: Error?)
@@ -19,28 +20,43 @@ class VideoController: NSObject {
     weak var delegate : VideoControllerDelegate?
     let serialQueue = DispatchQueue(label: "thumbnailqueue")
     let backgroundContext : NSManagedObjectContext?
+    var task : URLSessionDataTask?
+    var downloadThumbnailsWorkItem : DispatchWorkItem?
     
     init(container: NSPersistentContainer) {
         backgroundContext = container.newBackgroundContext()
         super.init()
         
         self.persistentContainer = container
-        
+        DDLogDebug("Initializing VideoController")
         NotificationCenter.default.addObserver(self, selector: #selector(backgroundContextUpdated(_:)), name: .NSManagedObjectContextDidSave, object: backgroundContext)
     }
     
     deinit {
+        DDLogDebug("Deinitializing VideoController")
         NotificationCenter.default.removeObserver(self)
     }
     
     @objc func backgroundContextUpdated(_ notification : NSNotification) {
+        DDLogDebug("backgroundContextUpdated - merging changes")
         self.persistentContainer?.viewContext.mergeChanges(fromContextDidSave: notification as Notification)
     }
     
+    func cancelRefresh() {
+        DDLogDebug("cancelRefresh")
+        if task?.state == URLSessionDataTask.State.running {
+            DDLogDebug("Task is running - cancelling")
+            task?.cancel()
+        }
+        
+        downloadThumbnailsWorkItem?.cancel()
+    }
     // MARK: - Deletion
     
     func deleteAll() -> Bool {
+        DDLogDebug("deleteAll")
         guard let context = self.persistentContainer?.viewContext else {
+            DDLogError("Failed to get persistent container context")
             return false
         }
         
@@ -51,7 +67,7 @@ class VideoController: NSObject {
         do {
             try context.execute(deleteRequest)
         } catch let error as NSError {
-            print("Error deleting all Videos: " + error.localizedDescription)
+            DDLogError("Error deleting all Videos: " + error.localizedDescription)
             return false
         }
         
@@ -62,8 +78,9 @@ class VideoController: NSObject {
     
     func getAllVideos() -> [Video] {
         
-        
+        DDLogDebug("Getting videos from core data")
         guard let context = Thread.isMainThread ? self.persistentContainer?.viewContext : self.backgroundContext else {
+            DDLogError("Error getting context in getAllVideos")
             return []
         }
         
@@ -77,7 +94,7 @@ class VideoController: NSObject {
             return videos as! [Video]
             
         } catch let error as NSError {
-            print("Error fetching videos: " + error.localizedDescription)
+            DDLogError("Error fetching videos: " + error.localizedDescription)
         }
         return []
     }
@@ -85,6 +102,10 @@ class VideoController: NSObject {
     // MARK: - Network Refresh
     
     func refreshVideos() {
+        cancelRefresh()
+        
+        DDLogDebug("refreshing videos from network")
+        
         guard var urlcomp = URLComponents(string: "https://www.reddit.com/r/" + UserDefaults.standard.getSubreddit() + "/hot.json") else { return }
         urlcomp.queryItems = [
             URLQueryItem.init(name: "limit", value: "100")
@@ -95,19 +116,19 @@ class VideoController: NSObject {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            
+        task = URLSession.shared.dataTask(with: request) { data, response, error in
+            DDLogDebug("In data task")
             guard let data = data,
                 let response = response as? HTTPURLResponse,
                 error == nil else {                                              // check for fundamental networking error
-                    print("error", error ?? "Unknown error")
+                    DDLogError("Error in data task response \(String(describing: error))")
                     self.delegate?.finishedRefresh(error: error)
                     return
             }
             
             guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
-                print("statusCode should be 2xx, but is \(response.statusCode)")
-                print("response = \(response)")
+                DDLogError("statusCode should be 2xx, but is \(response.statusCode)")
+                DDLogError("response = \(response)")
                 self.delegate?.finishedRefresh(error: nil)
                 return
             }
@@ -115,7 +136,10 @@ class VideoController: NSObject {
             do {
                 guard let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject],
                     let data = jsonData["data"],
-                    let children = data["children"] as? [[String:AnyObject]] else { return }
+                    let children = data["children"] as? [[String:AnyObject]] else {
+                        DDLogError("Error parsing through response json")
+                        return
+                }
                 
                 let entries = children.map {
                     (entry) -> AnyObject? in
@@ -130,25 +154,37 @@ class VideoController: NSObject {
                     return video.objectID
                 }
                 
+                DDLogDebug("Finished parsing videos - calling finishedRefresh")
                 self.delegate?.finishedRefresh(error: nil)
                 
-                self.serialQueue.async {
+                DDLogDebug("Cancelling download thumbnails work item")
+                self.downloadThumbnailsWorkItem?.cancel()
+
+                self.downloadThumbnailsWorkItem = DispatchWorkItem(block: {
+                    DDLogDebug("Download thumbnails work item began")
                     self.downloadThumbnails(videoIds)
+                })
+
+                DDLogDebug("Starting new download thumbnails work item")
+                if self.downloadThumbnailsWorkItem != nil {
+                    self.serialQueue.async(execute: self.downloadThumbnailsWorkItem!)
                 }
-            
                 
             } catch let error {
-                print(error)
+                DDLogError("Error in data task try catch \(error)")
                 self.delegate?.finishedRefresh(error: error)
             }
         }
         
-        task.resume()
+        DDLogDebug("Starting data task to fetch videos over network")
+        task?.resume()
     }
     
     func downloadThumbnails(_ videoIds : [NSManagedObjectID]) {
+        DDLogDebug("downloadThumbnails")
         var i = 0
         guard let managedObjectContext = self.backgroundContext else {
+            DDLogError("Error fetching context")
             return
         }
         var indexPaths : [IndexPath] = []
@@ -171,19 +207,21 @@ class VideoController: NSObject {
                 
             } catch {
                 //Just continue on to the next one
-                print("Failed to download thumbnail")
+                DDLogError("Failed to download thumbnail for index \(i)")
             }
             
             i += 1
             if i % 5 == 0 {
                 
                 do {
+                    DDLogDebug("Saving context after 5 thumbnails")
                     try managedObjectContext.save()
                     
                 } catch let error {
-                    print(error)
+                    DDLogError("Error trying to save context while downloading thumbnails: \(error)")
                 }
                 
+                DDLogDebug("Updating thumbnails after 5 processed")
                 self.delegate?.updateThumbnails(indexPaths: indexPaths)
                 
                 indexPaths.removeAll()
@@ -193,13 +231,14 @@ class VideoController: NSObject {
         do {
             try managedObjectContext.save()
         } catch let error {
-            print(error)
+            DDLogError("Error trying to perform final save context while downloading thumbnails: \(error)")
         }
     }
     
     // MARK: - Parsing
     
     func parse<T: Decodable> (_ jsonData: Data, entity: T.Type) -> T? {
+        DDLogDebug("Parsing json data")
         do {
             guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
                 fatalError("Failed to retrieve context")
@@ -214,8 +253,11 @@ class VideoController: NSObject {
             
             let decoder = JSONDecoder()
             decoder.userInfo[codingUserInfoKeyManagedObjectContext] = managedObjectContext
+            
+            DDLogDebug("Going to decode from jsonData")
             let entities = try decoder.decode(entity, from: jsonData)
             
+            DDLogDebug("Saving context after decoding")
             try managedObjectContext.save()
             
             return entities

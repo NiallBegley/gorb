@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CocoaLumberjack
 
 class Video: NSManagedObject,Codable {
 
@@ -32,7 +33,6 @@ class Video: NSManagedObject,Codable {
     @NSManaged var created_at : Date
     
     required convenience init(from decoder: Decoder) throws {
-        
         guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
             let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
             let entity = NSEntityDescription.entity(forEntityName: "Video", in: managedObjectContext) else {

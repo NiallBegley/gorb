@@ -7,129 +7,219 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		015A05B381E25C2FA80A0DA797179580 /* Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 50988B537C0C281A22462E8258F05F2B /* Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07A0DFFBB0EA1EA20CE1C511B55C13B2 /* UIAppearance+Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 199563B2F70516369C0703685297E325 /* UIAppearance+Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07F4634E722082DB20A867BD271864CA /* UINavigationController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 57E526A4F7F8788FCE8B8D3C3D0BE69A /* UINavigationController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C2A824F41664B50CFCC10F00485FCEE /* Pods-gorb-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C46153364C84745A8D9992E973426ED /* Pods-gorb-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C66E72276B24115F4EE16246D0D11C0 /* UIView+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C86EA8AE35A2EAAA72DE03EB3B295A4 /* UIView+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		015A05B381E25C2FA80A0DA797179580 /* Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = F8C58D93C7E62D7964584D7A62525615 /* Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0265F252A09E5FA6C26381DA4CAF8079 /* CocoaLumberjack-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A9E75ACE431F62621D7785912FCE30 /* CocoaLumberjack-dummy.m */; };
+		051FAF71CAED233F64E10A1FE97ADEFD /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B6110EFC914E5C71001F37DD8FDBEC14 /* DDTTYLogger.m */; };
+		07A0DFFBB0EA1EA20CE1C511B55C13B2 /* UIAppearance+Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F186FFD4D9E67D681E10656065B085 /* UIAppearance+Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07F4634E722082DB20A867BD271864CA /* UINavigationController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = B8BA3EF65EA79779AC13228D1B3092DF /* UINavigationController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C66E72276B24115F4EE16246D0D11C0 /* UIView+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = A711DF84EA397ED10DA7E014627A4966 /* UIView+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1ACE18FB9618325E6761FC7BB8E35376 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B001213377E81D2BC75D985FE8C1DA5 /* DDLog.m */; };
 		1BBC582FCEA1B2926269F3CCE3F1D923 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE48DAC4AD4FC98EC01A9CC5B34AE82 /* Foundation.framework */; };
-		275CF53070F9850F9CF142A83F29F9D2 /* UIAppearance+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = D573A44DB09D7A0C04AC9A9A64A91E16 /* UIAppearance+Swift.m */; };
-		3C996FBEFFF38718E791135C621B8C59 /* UIButton+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF494452923D620AAECED373AA7D56 /* UIButton+Chameleon.m */; };
-		3F1D744AD2156DB3581A5513E500BDA0 /* Pods-gorb-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF647396C0783CE5517B53C36947A /* Pods-gorb-dummy.m */; };
-		4BBBDD52873061AC9A8355C11FCA5B44 /* YoutubePlayer-in-WKWebView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A90C18FD62B8B9150CFF863BB1D15E0C /* YoutubePlayer-in-WKWebView-dummy.m */; };
-		4DF43DB058D1638FE6E51EC9B5BA01B9 /* UIButton+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 341C8807E963FC7D557C3C67A9806F6C /* UIButton+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63B7FAF3B3F4BA5A42B1F016BEE0FC47 /* UIImage+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E62E670ABCD3B9957CFBE1EC2D9DFDA /* UIImage+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		693B98DE045C80265A735BD94C87953D /* ChameleonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E8E8573F3264395178065A397114A5 /* ChameleonConstants.m */; };
-		6B2DC678EA5CCC291354FE306DF0B28E /* Chameleon_.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A9949FF04E699D6CC60974173126F5 /* Chameleon_.m */; };
-		6C87CCC7E974983BF3DDB7CDDD1CCC6A /* Chameleon_.h in Headers */ = {isa = PBXBuildFile; fileRef = AA19C8AACEBD6FD8681362A978AB3CC8 /* Chameleon_.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20A6E70302CFB17A82915675AE33CB9A /* Pods-gorb-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C46153364C84745A8D9992E973426ED /* Pods-gorb-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22568D121F150FCFA640B0175197C7C4 /* DDLoggerNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A86C84AE4A8770CBA0A52ED263AFEDD /* DDLoggerNames.m */; };
+		27586B29124FABF82AAC55429964450A /* DDFileLogger+Buffering.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B0994906B011BEF1CE7E4632D3F02B3 /* DDFileLogger+Buffering.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		275CF53070F9850F9CF142A83F29F9D2 /* UIAppearance+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB9513FC5DCBD02B057C720A5005EF5 /* UIAppearance+Swift.m */; };
+		353FC14BE702BFB5D9BAD92F7338B3EB /* DDLog+LOGV.h in Headers */ = {isa = PBXBuildFile; fileRef = BEC3E0AC713AEF41CCA566BE4EBE3859 /* DDLog+LOGV.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C996FBEFFF38718E791135C621B8C59 /* UIButton+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EF4130D2ABB6410346D7322D0B3502 /* UIButton+Chameleon.m */; };
+		4BBBDD52873061AC9A8355C11FCA5B44 /* YoutubePlayer-in-WKWebView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C2298E9DEC2A7227B2B2F0B219CEA727 /* YoutubePlayer-in-WKWebView-dummy.m */; };
+		4DF43DB058D1638FE6E51EC9B5BA01B9 /* UIButton+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 79BD7806291DAEFA4501A28BC3394E65 /* UIButton+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5965234C5F96F04527E7FFBEBAF6E191 /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CB6A0A8A36F76A3E982BE453D99B403 /* DDTTYLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D56BA969D6EFFB8F15A0D7EB435C41F /* CocoaLumberjack-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 12C3C2958317EA8333F924FAB19EBD36 /* CocoaLumberjack-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63B7FAF3B3F4BA5A42B1F016BEE0FC47 /* UIImage+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B6540821CBDD367A507F4EEFB93317C /* UIImage+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		649A9096456A7DC5E1045E443722991D /* DDLoggerNames.h in Headers */ = {isa = PBXBuildFile; fileRef = C5D825AF0934E8728D6596715E4289BC /* DDLoggerNames.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65B3B0A18B7A1D742BB467F959FB9E41 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDDE998A298A50FFDFA77016DEB926 /* DDFileLogger.m */; };
+		66D72D5B6EA704BE40B393A6F0A1B5F6 /* DDAbstractDatabaseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 89DBCCF4B3C0D7480186CB5EC287C52E /* DDAbstractDatabaseLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		693B98DE045C80265A735BD94C87953D /* ChameleonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C4B08D502F90C97DF9A84C55C6C153 /* ChameleonConstants.m */; };
+		6B2DC678EA5CCC291354FE306DF0B28E /* Chameleon_.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBA0EE2995329875B7E972A0491B4B6 /* Chameleon_.m */; };
+		6C87CCC7E974983BF3DDB7CDDD1CCC6A /* Chameleon_.h in Headers */ = {isa = PBXBuildFile; fileRef = 04A36A0484B0727D13432A8E4349B5A8 /* Chameleon_.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74A40A682F3E7F665D2B3986EAF64E8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE48DAC4AD4FC98EC01A9CC5B34AE82 /* Foundation.framework */; };
+		77451FEEC21F5F4F94A37CE52F87CA58 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C1CE7923A2C3D820F28ED5B81187DC /* DDContextFilterLogFormatter.m */; };
+		7916B3022F0E241D986698991C745C16 /* DDContextFilterLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = E51A7730FB67D7391A4A97ECCC271CD4 /* DDContextFilterLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BFEE239D45EF5FC4026052A712A2D49 /* DDMultiFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = F0BEDF51DB69C3CB8CDE0516B135CA2B /* DDMultiFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C9E93D55FA61BE58D618F385193D640 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC52B314F24BC32CDA7B523FAA24A727 /* CoreGraphics.framework */; };
-		803A943F40E9733AC61489FB25186CF9 /* YoutubePlayer-in-WKWebView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30F0A0F2D622AC2C8860531717CBB9BE /* YoutubePlayer-in-WKWebView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8624349E44507A5863651CAB51E38F7F /* NSArray+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = C327F588BCE0CDB376DC7FC99C3FDCB3 /* NSArray+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8659D5863A89A6F9539AE15D673C07C5 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA8EFC2608C2E57F2F75AAB293118C0 /* UIViewController+Chameleon.m */; };
-		866A210E47AEF4ABB16E6D6F5B6A6E51 /* UIView+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = D16E5D4524DB41343E10F9D986C2AC4A /* UIView+ChameleonPrivate.m */; };
-		866B54511E7CBFADD1F78C285087AE8E /* ChameleonShorthand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6568CDB56ECE66ACC87FC7115FF4C64 /* ChameleonShorthand.swift */; };
-		874D8A04ABF919CED20EB0E440C44101 /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = A10333BA9A4E3CA0A78C5D9CF73A5BEA /* NSArray+Chameleon.m */; };
+		7D486A49BC79417C10B6ED59D1F29973 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 387E962FBCA869A3B1DFD259651FD5E0 /* DDASLLogger.m */; };
+		803A943F40E9733AC61489FB25186CF9 /* YoutubePlayer-in-WKWebView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DFED38B564683643F107C4689C60953E /* YoutubePlayer-in-WKWebView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82773CC13612C373B4D313D10D016985 /* CLIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B00C2DD2E5C674B2ACEB7959F33F20B /* CLIColor.m */; };
+		83EF552F3D8D3E12E3F0F3B7ADD6D3A4 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB1832692A5EC757CD39FD0EA933649 /* DDDispatchQueueLogFormatter.m */; };
+		8624349E44507A5863651CAB51E38F7F /* NSArray+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F26B1303836F01A004C89FD82F02DFB /* NSArray+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8659D5863A89A6F9539AE15D673C07C5 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 62883B7AC15DC3883D8E681956E7ADB3 /* UIViewController+Chameleon.m */; };
+		866A210E47AEF4ABB16E6D6F5B6A6E51 /* UIView+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D42D24C5A89D23A3477BF26250663D /* UIView+ChameleonPrivate.m */; };
+		866B54511E7CBFADD1F78C285087AE8E /* ChameleonShorthand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CCBA0A9DCA52CD7C745FF38B27C923 /* ChameleonShorthand.swift */; };
+		874D8A04ABF919CED20EB0E440C44101 /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0B7F3CF7AD1CD4A0CF70341F8A6243 /* NSArray+Chameleon.m */; };
 		88A569DC5FA4CEED7FCD51F8F762D4F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE48DAC4AD4FC98EC01A9CC5B34AE82 /* Foundation.framework */; };
-		918885B90BECC18ABC5F58D92E34EF13 /* UIViewController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = DD874C5A8802CC0D213F345617CD0300 /* UIViewController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9247AA02A534F1A201D929C39C057B50 /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F44FB7CD7B3A9B472067E9228BC423 /* UIColor+Chameleon.m */; };
-		936F268AB9257A3435DD4BAAB5A4A135 /* ChameleonFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D73439E29E37C14F61ACEAE76DD1D8D /* ChameleonFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9AD84D555FE3F3C4519344CBBAB1D565 /* WKYTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D874424D2DA020F2937825E2BEEA43BD /* WKYTPlayerView.m */; };
-		A68832C167B77BE09F6F3485A607A744 /* UILabel+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = B2AB5FE3A9C094A595D069A81B523616 /* UILabel+Chameleon.m */; };
+		8F5BD7EB4F1FDF034E047D01B616197D /* CocoaLumberjack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A67DA05212FA119F4674956EB4A5CC /* CocoaLumberjack.swift */; };
+		918885B90BECC18ABC5F58D92E34EF13 /* UIViewController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = EF76C93D76FB8BFA3BEE3C0AC9DB2F56 /* UIViewController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9247AA02A534F1A201D929C39C057B50 /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 11CC7D02C5D512EC845BDE56EF2BE2C7 /* UIColor+Chameleon.m */; };
+		936F268AB9257A3435DD4BAAB5A4A135 /* ChameleonFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 832D086A8587AA3AAE9B56221C3393B5 /* ChameleonFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A4D43262635B18C802B17485FAE2D38 /* DDLegacyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 119234675A386F8BFC42F9E50C9E9B63 /* DDLegacyMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9AD84D555FE3F3C4519344CBBAB1D565 /* WKYTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8F04C67090A6558ABF1231FD0FFF14 /* WKYTPlayerView.m */; };
+		A3DD30BA881E3D94258F0887BCF4944B /* DDFileLogger+Buffering.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4B97FB58FFF96DC9F41C2E95AF4013 /* DDFileLogger+Buffering.m */; };
+		A68832C167B77BE09F6F3485A607A744 /* UILabel+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 59987B1DEC02C3B95ABC24D8162BA29A /* UILabel+Chameleon.m */; };
+		A907EF76A9D5FF8E392290B10E97ED69 /* DDDispatchQueueLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = C33930A5F642609228EF19E8ED5DA200 /* DDDispatchQueueLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAC9ECA67A80A03C3761E73F34F043A3 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 9578D64C0FF598D48B2013DAF8048046 /* DDASLLogCapture.m */; };
 		B5A016EF854BECCCBA5FF11BBA529A85 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009A3CF530BDED85FCFB71F2D51670CA /* QuartzCore.framework */; };
+		B8FFCC85726A84D09376205AB404513D /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 09AA9D7607F6E0DF3AA7759CD7BBB41E /* DDLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B99DB958F2C7DA6223C0D2CABE7299AD /* DDOSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B561DE73FDD218066EBD735F86ACE20 /* DDOSLogger.m */; };
+		BA873BE7155FCC56E178360D4E54992B /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB9CCB6B8C54A5C403029A6CB2F83C /* DDAbstractDatabaseLogger.m */; };
 		BB8ADE41C116ED2F50BE43E1F1AB543B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71BBEAB859C48569C695B0B3FB39F6F9 /* UIKit.framework */; };
-		CAF49E2A54F794D5F6DD10F1FE77F321 /* ChameleonMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE040A085BCFF7DC7D6D5E60C36BD9D /* ChameleonMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CCF11406FC25C84082E70B3DE2871690 /* WKYTPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C742DB69C0C271D52C0A5CD82D34135 /* WKYTPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D334D5A0AA88F6DEE11C8667AAE43596 /* WKYTPlayerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C0C7E42887E9F095A3620273CFDF228 /* WKYTPlayerView.bundle */; };
-		DA97A7E5793FADE5749D21002AB10B57 /* UIImage+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FC0D78A5504FFD26E6ED7E2B221508 /* UIImage+ChameleonPrivate.m */; };
-		DD7B1A58C5C68491723265E6D763B26E /* ChameleonFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B2886BF4812957E573EFD49BD56FC /* ChameleonFramework-dummy.m */; };
-		DDBC762ABE86F3917C6553A64E722A70 /* UIColor+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C0C6158D62655B1CDAE8BB7372BBF97 /* UIColor+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E0DBD978FE1FBA3923D9A482352252D4 /* UIColor+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3B9C280E795F9446A183C99EF940E0 /* UIColor+ChameleonPrivate.m */; };
-		E7D344059042D076A5C61D13018BA0D8 /* ChameleonEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA14CC35BC991AC16EF9D8ABB983E19 /* ChameleonEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E82EF3AFD38848BAC02735643F4FBF6C /* UILabel+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB297EE2BEBC8C71698754ACB8A8D69 /* UILabel+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EEF22A1455C96635E480D1DCCE664913 /* UIColor+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 326D53589D3588F2C1CA3E875F82319B /* UIColor+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F5F63CF6B31A0700ABB37F17AEE969D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE48DAC4AD4FC98EC01A9CC5B34AE82 /* Foundation.framework */; };
-		FA49618EEDBE490B9BF56CAD65ABF8EA /* ChameleonConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = F67E7A78356ABC5C8AC5CD368DFD2A92 /* ChameleonConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE3A4BBC89893220B5590FC8A65C0233 /* UINavigationController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDC39E44C845C304EB236BF7D29586B /* UINavigationController+Chameleon.m */; };
+		C4E060E3D1AB869610D1ACBA2AD852FD /* DDASLLogCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EACC677038309A61ED6CCF98995DE3D /* DDASLLogCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA98B616E393378017EB03F4997E9476 /* DDOSLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 530288CFA4C695A8F768B6F1D9928227 /* DDOSLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAF49E2A54F794D5F6DD10F1FE77F321 /* ChameleonMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A4B7AC705DFFE5F7805291B69AA094 /* ChameleonMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CCF11406FC25C84082E70B3DE2871690 /* WKYTPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 75A7DA2BD7A7C39749937E3D5D3C9DD5 /* WKYTPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D334D5A0AA88F6DEE11C8667AAE43596 /* WKYTPlayerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 90BB7C7B8C7B25036267C441E6F2BF50 /* WKYTPlayerView.bundle */; };
+		DA2DD0CB6F0E3CC436D18CF167DA4484 /* DDLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = E1961F019D09A95282107E16F26EA7E9 /* DDLogMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA97A7E5793FADE5749D21002AB10B57 /* UIImage+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF650FA5C231C4DFE9940BB5D3D9153 /* UIImage+ChameleonPrivate.m */; };
+		DCB4BC4CB3BFC32F3A975995BEB6F92B /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 81013426E43FE66F3AC4CE4F1FE010BD /* DDMultiFormatter.m */; };
+		DD7B1A58C5C68491723265E6D763B26E /* ChameleonFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B804F420001745326A190EBC58E80343 /* ChameleonFramework-dummy.m */; };
+		DDBC762ABE86F3917C6553A64E722A70 /* UIColor+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = D025BA23742A941E1E438623D4CC401F /* UIColor+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0DBD978FE1FBA3923D9A482352252D4 /* UIColor+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0055C777870AB6BF1155155B3A52ED /* UIColor+ChameleonPrivate.m */; };
+		E28271382E0061543ADBF1D1A026692D /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = D6D0111B4DEF03D8051531A349B83305 /* DDASLLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3AEEA91A67D0F8E24F52FE562ABF1B6 /* DDFileLogger+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 39BCE8746F6032B5EB05A5C3C3F21BC1 /* DDFileLogger+Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E6EF9C4EE2E7816925C2D48EC6753D7C /* Pods-gorb-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2DF647396C0783CE5517B53C36947A /* Pods-gorb-dummy.m */; };
+		E7D344059042D076A5C61D13018BA0D8 /* ChameleonEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = EF1308507280003B6775ACA92C126F40 /* ChameleonEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E82EF3AFD38848BAC02735643F4FBF6C /* UILabel+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D23B211D68EC9B79F8C9325BF5AFA90 /* UILabel+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9E9554C02CA5FC8F7F134D4BA53B6C6 /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 53DD5B8A487183E6B43A9EFE71CD17D5 /* DDAssertMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EBD52493DDF31B7F9F1F731195214D80 /* SwiftLogLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = A5B419C48F7B09EE0F7DCA17EABF78EA /* SwiftLogLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECCD7732CF0D16FCC90DB83E75D73495 /* DDFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C3C70D0095FB9A07256D72BB963BF64 /* DDFileLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EEF22A1455C96635E480D1DCCE664913 /* UIColor+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = FFBA15B596DC2987920D1482D93C20D0 /* UIColor+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EFFCEE76EDA4E17534AA3E8D48523439 /* CocoaLumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = C54BAECDDD20A3B1D54A36FD06497893 /* CocoaLumberjack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6949BF2A8CF492225A02F703377EA0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE48DAC4AD4FC98EC01A9CC5B34AE82 /* Foundation.framework */; };
+		F7A1CB7A1DAC0FFC21CE547FFC3F09C6 /* DDAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196611C5715A75E169D2DE0722C426FE /* DDAssert.swift */; };
+		FA49618EEDBE490B9BF56CAD65ABF8EA /* ChameleonConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F55DB573EE8B5EFA82701F39D937DC0 /* ChameleonConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCFA53A0A359E33E514B981BB7AF7771 /* CLIColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 725C2639A9D351E5D47761398D8D49A4 /* CLIColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE3A4BBC89893220B5590FC8A65C0233 /* UINavigationController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F46F3D40489C10701414A071D9424 /* UINavigationController+Chameleon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C0F3F531437C076028364EA98E8CFE5F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 28BFDC89BA4363F4F3576DEC70EE10AE;
-			remoteInfo = ChameleonFramework;
-		};
-		CF176388BA2AD845C133C3875E855622 /* PBXContainerItemProxy */ = {
+		B2E4D186E1BFB6414357C5FCB965747C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DABE3AD6EBA3822D4F04FBC550E7158D;
 			remoteInfo = "YoutubePlayer-in-WKWebView";
 		};
+		DDF0A4B9B1B627244492FC9D6E218A94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28BFDC89BA4363F4F3576DEC70EE10AE;
+			remoteInfo = ChameleonFramework;
+		};
+		F4000CB05B2AA83E2B2A8FCAAEF4108C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E95654B155D25890BE8E26081FCA8265;
+			remoteInfo = CocoaLumberjack;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		009A3CF530BDED85FCFB71F2D51670CA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		03721B142CB2191489AD708246B46E5E /* CocoaLumberjack-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaLumberjack-prefix.pch"; sourceTree = "<group>"; };
 		0383903D05EDD5C442C682C1F7A1752D /* ChameleonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChameleonFramework.framework; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A6B2886BF4812957E573EFD49BD56FC /* ChameleonFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChameleonFramework-dummy.m"; sourceTree = "<group>"; };
-		0BA8EFC2608C2E57F2F75AAB293118C0 /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.m"; sourceTree = "<group>"; };
+		04A36A0484B0727D13432A8E4349B5A8 /* Chameleon_.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon_.h; path = "Pod/Classes/Objective-C/Chameleon_.h"; sourceTree = "<group>"; };
+		09AA9D7607F6E0DF3AA7759CD7BBB41E /* DDLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLog.h; path = Sources/CocoaLumberjack/include/DDLog.h; sourceTree = "<group>"; };
 		0C46153364C84745A8D9992E973426ED /* Pods-gorb-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-gorb-umbrella.h"; sourceTree = "<group>"; };
-		199563B2F70516369C0703685297E325 /* UIAppearance+Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAppearance+Swift.h"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.h"; sourceTree = "<group>"; };
-		1C0C6158D62655B1CDAE8BB7372BBF97 /* UIColor+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		119234675A386F8BFC42F9E50C9E9B63 /* DDLegacyMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLegacyMacros.h; path = "Sources/CocoaLumberjack/Supporting Files/DDLegacyMacros.h"; sourceTree = "<group>"; };
+		11CC7D02C5D512EC845BDE56EF2BE2C7 /* UIColor+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Chameleon.m"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.m"; sourceTree = "<group>"; };
+		12C3C2958317EA8333F924FAB19EBD36 /* CocoaLumberjack-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaLumberjack-umbrella.h"; sourceTree = "<group>"; };
+		196611C5715A75E169D2DE0722C426FE /* DDAssert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DDAssert.swift; path = Sources/CocoaLumberjackSwift/DDAssert.swift; sourceTree = "<group>"; };
+		1B001213377E81D2BC75D985FE8C1DA5 /* DDLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Sources/CocoaLumberjack/DDLog.m; sourceTree = "<group>"; };
+		1DF650FA5C231C4DFE9940BB5D3D9153 /* UIImage+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.m"; sourceTree = "<group>"; };
 		1EE48DAC4AD4FC98EC01A9CC5B34AE82 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		29CFCF5567C413598734F903F8FCFC99 /* YoutubePlayer-in-WKWebView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "YoutubePlayer-in-WKWebView.xcconfig"; sourceTree = "<group>"; };
-		30F0A0F2D622AC2C8860531717CBB9BE /* YoutubePlayer-in-WKWebView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YoutubePlayer-in-WKWebView-umbrella.h"; sourceTree = "<group>"; };
-		326D53589D3588F2C1CA3E875F82319B /* UIColor+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Chameleon.h"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.h"; sourceTree = "<group>"; };
-		341C8807E963FC7D557C3C67A9806F6C /* UIButton+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+Chameleon.h"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.h"; sourceTree = "<group>"; };
+		20F186FFD4D9E67D681E10656065B085 /* UIAppearance+Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAppearance+Swift.h"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.h"; sourceTree = "<group>"; };
+		24D42D24C5A89D23A3477BF26250663D /* UIView+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		387E962FBCA869A3B1DFD259651FD5E0 /* DDASLLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDASLLogger.m; path = Sources/CocoaLumberjack/DDASLLogger.m; sourceTree = "<group>"; };
+		39BCE8746F6032B5EB05A5C3C3F21BC1 /* DDFileLogger+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DDFileLogger+Internal.h"; path = "Sources/CocoaLumberjack/DDFileLogger+Internal.h"; sourceTree = "<group>"; };
 		3A215B410E67807C6E0CA0DF0889D993 /* Pods-gorb-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-gorb-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3C86EA8AE35A2EAAA72DE03EB3B295A4 /* UIView+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.h"; sourceTree = "<group>"; };
-		3D73439E29E37C14F61ACEAE76DD1D8D /* ChameleonFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-umbrella.h"; sourceTree = "<group>"; };
+		3B0055C777870AB6BF1155155B3A52ED /* UIColor+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		3B6540821CBDD367A507F4EEFB93317C /* UIImage+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		3CB6A0A8A36F76A3E982BE453D99B403 /* DDTTYLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = Sources/CocoaLumberjack/include/DDTTYLogger.h; sourceTree = "<group>"; };
 		3F9BEB1DF554E7D769991568033D4BBC /* Pods_gorb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_gorb.framework; path = "Pods-gorb.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		46FC0D78A5504FFD26E6ED7E2B221508 /* UIImage+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		45EF4130D2ABB6410346D7322D0B3502 /* UIButton+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Chameleon.m"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.m"; sourceTree = "<group>"; };
 		496515FE93DA41DC7EF3CD1FA9C9B004 /* Pods-gorb.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-gorb.modulemap"; sourceTree = "<group>"; };
-		49F44FB7CD7B3A9B472067E9228BC423 /* UIColor+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Chameleon.m"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.m"; sourceTree = "<group>"; };
-		4C742DB69C0C271D52C0A5CD82D34135 /* WKYTPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKYTPlayerView.h; path = WKYTPlayerView/WKYTPlayerView.h; sourceTree = "<group>"; };
-		4D3B9C280E795F9446A183C99EF940E0 /* UIColor+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.m"; sourceTree = "<group>"; };
-		50988B537C0C281A22462E8258F05F2B /* Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon.h; path = "Pod/Classes/Objective-C/Chameleon.h"; sourceTree = "<group>"; };
+		4A86C84AE4A8770CBA0A52ED263AFEDD /* DDLoggerNames.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDLoggerNames.m; path = Sources/CocoaLumberjack/DDLoggerNames.m; sourceTree = "<group>"; };
+		4A9C4F46D504281BE425FAB58011BEB1 /* YoutubePlayer-in-WKWebView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "YoutubePlayer-in-WKWebView.debug.xcconfig"; sourceTree = "<group>"; };
 		52F168D641AF8DCADE86860B6FD3D590 /* Pods-gorb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gorb.debug.xcconfig"; sourceTree = "<group>"; };
-		57E526A4F7F8788FCE8B8D3C3D0BE69A /* UINavigationController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Chameleon.h"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.h"; sourceTree = "<group>"; };
-		5BF5D6913EDFE2FBCECB8B0F247640A6 /* ChameleonFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChameleonFramework.modulemap; sourceTree = "<group>"; };
-		5C0C7E42887E9F095A3620273CFDF228 /* WKYTPlayerView.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = WKYTPlayerView.bundle; path = WKYTPlayerView/WKYTPlayerView.bundle; sourceTree = "<group>"; };
-		5EDC39E44C845C304EB236BF7D29586B /* UINavigationController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Chameleon.m"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.m"; sourceTree = "<group>"; };
-		5FAF494452923D620AAECED373AA7D56 /* UIButton+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Chameleon.m"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.m"; sourceTree = "<group>"; };
+		530288CFA4C695A8F768B6F1D9928227 /* DDOSLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDOSLogger.h; path = Sources/CocoaLumberjack/include/DDOSLogger.h; sourceTree = "<group>"; };
+		535C4059F3E34FF291D9F567226CDB1D /* CocoaLumberjack.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CocoaLumberjack.modulemap; sourceTree = "<group>"; };
+		53DD5B8A487183E6B43A9EFE71CD17D5 /* DDAssertMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDAssertMacros.h; path = Sources/CocoaLumberjack/include/DDAssertMacros.h; sourceTree = "<group>"; };
+		59987B1DEC02C3B95ABC24D8162BA29A /* UILabel+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Chameleon.m"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.m"; sourceTree = "<group>"; };
+		5C119EEA050DEE73B29040E63C7558E4 /* CocoaLumberjack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaLumberjack.debug.xcconfig; sourceTree = "<group>"; };
+		5EEB9CCB6B8C54A5C403029A6CB2F83C /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDAbstractDatabaseLogger.m; path = Sources/CocoaLumberjack/DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		62883B7AC15DC3883D8E681956E7ADB3 /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.m"; sourceTree = "<group>"; };
 		6319917386335A83EA9F16A1CBC4A80A /* Pods-gorb-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-gorb-Info.plist"; sourceTree = "<group>"; };
-		63A9949FF04E699D6CC60974173126F5 /* Chameleon_.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Chameleon_.m; path = "Pod/Classes/Objective-C/Chameleon_.m"; sourceTree = "<group>"; };
-		6BE040A085BCFF7DC7D6D5E60C36BD9D /* ChameleonMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonMacros.h; path = "Pod/Classes/Objective-C/ChameleonMacros.h"; sourceTree = "<group>"; };
+		63C1CE7923A2C3D820F28ED5B81187DC /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDContextFilterLogFormatter.m; path = Sources/CocoaLumberjack/Extensions/DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		6F26B1303836F01A004C89FD82F02DFB /* NSArray+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Chameleon.h"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.h"; sourceTree = "<group>"; };
 		71BBEAB859C48569C695B0B3FB39F6F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		725C2639A9D351E5D47761398D8D49A4 /* CLIColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLIColor.h; path = Sources/CocoaLumberjack/include/CLIColor.h; sourceTree = "<group>"; };
+		74CDDE998A298A50FFDFA77016DEB926 /* DDFileLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDFileLogger.m; path = Sources/CocoaLumberjack/DDFileLogger.m; sourceTree = "<group>"; };
+		75A7DA2BD7A7C39749937E3D5D3C9DD5 /* WKYTPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WKYTPlayerView.h; path = WKYTPlayerView/WKYTPlayerView.h; sourceTree = "<group>"; };
 		75BF9FE356CA81A70A00CD8A925C9C55 /* Pods-gorb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gorb.release.xcconfig"; sourceTree = "<group>"; };
-		7E62E670ABCD3B9957CFBE1EC2D9DFDA /* UIImage+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.h"; sourceTree = "<group>"; };
-		7E9AEFF63BB9C0A524F5E895C5AE41F8 /* ChameleonFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-prefix.pch"; sourceTree = "<group>"; };
-		96E8E8573F3264395178065A397114A5 /* ChameleonConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChameleonConstants.m; path = "Pod/Classes/Objective-C/ChameleonConstants.m"; sourceTree = "<group>"; };
-		9AA14CC35BC991AC16EF9D8ABB983E19 /* ChameleonEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonEnums.h; path = "Pod/Classes/Objective-C/ChameleonEnums.h"; sourceTree = "<group>"; };
+		772F42B214D6F799E6D0736FD63901D0 /* ChameleonFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-prefix.pch"; sourceTree = "<group>"; };
+		79BD7806291DAEFA4501A28BC3394E65 /* UIButton+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+Chameleon.h"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.h"; sourceTree = "<group>"; };
+		7B0994906B011BEF1CE7E4632D3F02B3 /* DDFileLogger+Buffering.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DDFileLogger+Buffering.h"; path = "Sources/CocoaLumberjack/include/DDFileLogger+Buffering.h"; sourceTree = "<group>"; };
+		7B8F04C67090A6558ABF1231FD0FFF14 /* WKYTPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKYTPlayerView.m; path = WKYTPlayerView/WKYTPlayerView.m; sourceTree = "<group>"; };
+		81013426E43FE66F3AC4CE4F1FE010BD /* DDMultiFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDMultiFormatter.m; path = Sources/CocoaLumberjack/Extensions/DDMultiFormatter.m; sourceTree = "<group>"; };
+		832D086A8587AA3AAE9B56221C3393B5 /* ChameleonFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-umbrella.h"; sourceTree = "<group>"; };
+		89DBCCF4B3C0D7480186CB5EC287C52E /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDAbstractDatabaseLogger.h; path = Sources/CocoaLumberjack/include/DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		8AC6D48C3D95C46784CF88346442C7B0 /* ChameleonFramework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ChameleonFramework-Info.plist"; sourceTree = "<group>"; };
+		8B00C2DD2E5C674B2ACEB7959F33F20B /* CLIColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CLIColor.m; path = Sources/CocoaLumberjack/CLI/CLIColor.m; sourceTree = "<group>"; };
+		8BBA0EE2995329875B7E972A0491B4B6 /* Chameleon_.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Chameleon_.m; path = "Pod/Classes/Objective-C/Chameleon_.m"; sourceTree = "<group>"; };
+		90BB7C7B8C7B25036267C441E6F2BF50 /* WKYTPlayerView.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = WKYTPlayerView.bundle; path = WKYTPlayerView/WKYTPlayerView.bundle; sourceTree = "<group>"; };
+		9578D64C0FF598D48B2013DAF8048046 /* DDASLLogCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDASLLogCapture.m; path = Sources/CocoaLumberjack/DDASLLogCapture.m; sourceTree = "<group>"; };
+		99451B3BDCF1D232F8F87B8CC7E532BC /* YoutubePlayer-in-WKWebView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "YoutubePlayer-in-WKWebView.release.xcconfig"; sourceTree = "<group>"; };
+		99899B4F1DAFBD00F86D3082001FB58F /* ChameleonFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChameleonFramework.modulemap; sourceTree = "<group>"; };
+		99A9E75ACE431F62621D7785912FCE30 /* CocoaLumberjack-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaLumberjack-dummy.m"; sourceTree = "<group>"; };
+		9B561DE73FDD218066EBD735F86ACE20 /* DDOSLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDOSLogger.m; path = Sources/CocoaLumberjack/DDOSLogger.m; sourceTree = "<group>"; };
+		9C3C70D0095FB9A07256D72BB963BF64 /* DDFileLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDFileLogger.h; path = Sources/CocoaLumberjack/include/DDFileLogger.h; sourceTree = "<group>"; };
+		9D23B211D68EC9B79F8C9325BF5AFA90 /* UILabel+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+Chameleon.h"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A10333BA9A4E3CA0A78C5D9CF73A5BEA /* NSArray+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Chameleon.m"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.m"; sourceTree = "<group>"; };
-		A6568CDB56ECE66ACC87FC7115FF4C64 /* ChameleonShorthand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChameleonShorthand.swift; path = Pod/Classes/Swift/ChameleonShorthand.swift; sourceTree = "<group>"; };
-		A90C18FD62B8B9150CFF863BB1D15E0C /* YoutubePlayer-in-WKWebView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YoutubePlayer-in-WKWebView-dummy.m"; sourceTree = "<group>"; };
-		AA19C8AACEBD6FD8681362A978AB3CC8 /* Chameleon_.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon_.h; path = "Pod/Classes/Objective-C/Chameleon_.h"; sourceTree = "<group>"; };
+		9EACC677038309A61ED6CCF98995DE3D /* DDASLLogCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogCapture.h; path = Sources/CocoaLumberjack/include/DDASLLogCapture.h; sourceTree = "<group>"; };
+		9F55DB573EE8B5EFA82701F39D937DC0 /* ChameleonConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonConstants.h; path = "Pod/Classes/Objective-C/ChameleonConstants.h"; sourceTree = "<group>"; };
+		A5A4B7AC705DFFE5F7805291B69AA094 /* ChameleonMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonMacros.h; path = "Pod/Classes/Objective-C/ChameleonMacros.h"; sourceTree = "<group>"; };
+		A5B419C48F7B09EE0F7DCA17EABF78EA /* SwiftLogLevel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftLogLevel.h; path = Sources/CocoaLumberjackSwiftSupport/include/SwiftLogLevel.h; sourceTree = "<group>"; };
+		A711DF84EA397ED10DA7E014627A4966 /* UIView+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		A9CCBA0A9DCA52CD7C745FF38B27C923 /* ChameleonShorthand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChameleonShorthand.swift; path = Pod/Classes/Swift/ChameleonShorthand.swift; sourceTree = "<group>"; };
 		AD2DF647396C0783CE5517B53C36947A /* Pods-gorb-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-gorb-dummy.m"; sourceTree = "<group>"; };
+		AE0B7F3CF7AD1CD4A0CF70341F8A6243 /* NSArray+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Chameleon.m"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.m"; sourceTree = "<group>"; };
 		B02B0C28EAD40CAF22BD3C4A7323C0C8 /* Pods-gorb-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-gorb-acknowledgements.plist"; sourceTree = "<group>"; };
-		B2AB5FE3A9C094A595D069A81B523616 /* UILabel+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Chameleon.m"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.m"; sourceTree = "<group>"; };
-		BEB297EE2BEBC8C71698754ACB8A8D69 /* UILabel+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+Chameleon.h"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.h"; sourceTree = "<group>"; };
-		C327F588BCE0CDB376DC7FC99C3FDCB3 /* NSArray+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Chameleon.h"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.h"; sourceTree = "<group>"; };
-		C5EEC8A16E522E774BDC901EF11ED0AF /* YoutubePlayer-in-WKWebView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "YoutubePlayer-in-WKWebView.modulemap"; sourceTree = "<group>"; };
-		C64CF3461A9C3F2841C8F710E9E34C49 /* ChameleonFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChameleonFramework.xcconfig; sourceTree = "<group>"; };
-		D16E5D4524DB41343E10F9D986C2AC4A /* UIView+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.m"; sourceTree = "<group>"; };
-		D573A44DB09D7A0C04AC9A9A64A91E16 /* UIAppearance+Swift.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAppearance+Swift.m"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.m"; sourceTree = "<group>"; };
-		D874424D2DA020F2937825E2BEEA43BD /* WKYTPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WKYTPlayerView.m; path = WKYTPlayerView/WKYTPlayerView.m; sourceTree = "<group>"; };
-		DD874C5A8802CC0D213F345617CD0300 /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.h"; sourceTree = "<group>"; };
+		B309D1594575BC90BE5705E609440ED5 /* YoutubePlayer-in-WKWebView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "YoutubePlayer-in-WKWebView.modulemap"; sourceTree = "<group>"; };
+		B6110EFC914E5C71001F37DD8FDBEC14 /* DDTTYLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = Sources/CocoaLumberjack/DDTTYLogger.m; sourceTree = "<group>"; };
+		B804F420001745326A190EBC58E80343 /* ChameleonFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChameleonFramework-dummy.m"; sourceTree = "<group>"; };
+		B8BA3EF65EA79779AC13228D1B3092DF /* UINavigationController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Chameleon.h"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.h"; sourceTree = "<group>"; };
+		B9949615E592027B490C52EE5D8223B5 /* CocoaLumberjack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaLumberjack.release.xcconfig; sourceTree = "<group>"; };
+		BA4B97FB58FFF96DC9F41C2E95AF4013 /* DDFileLogger+Buffering.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DDFileLogger+Buffering.m"; path = "Sources/CocoaLumberjack/Extensions/DDFileLogger+Buffering.m"; sourceTree = "<group>"; };
+		BCB9513FC5DCBD02B057C720A5005EF5 /* UIAppearance+Swift.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAppearance+Swift.m"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.m"; sourceTree = "<group>"; };
+		BEC3E0AC713AEF41CCA566BE4EBE3859 /* DDLog+LOGV.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DDLog+LOGV.h"; path = "Sources/CocoaLumberjack/include/DDLog+LOGV.h"; sourceTree = "<group>"; };
+		C2298E9DEC2A7227B2B2F0B219CEA727 /* YoutubePlayer-in-WKWebView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YoutubePlayer-in-WKWebView-dummy.m"; sourceTree = "<group>"; };
+		C261436D14052AE3C35F240BCD155CAC /* CocoaLumberjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaLumberjack.framework; path = CocoaLumberjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C33930A5F642609228EF19E8ED5DA200 /* DDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDDispatchQueueLogFormatter.h; path = Sources/CocoaLumberjack/include/DDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		C54BAECDDD20A3B1D54A36FD06497893 /* CocoaLumberjack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CocoaLumberjack.h; path = "Sources/CocoaLumberjack/Supporting Files/CocoaLumberjack.h"; sourceTree = "<group>"; };
+		C5D825AF0934E8728D6596715E4289BC /* DDLoggerNames.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLoggerNames.h; path = Sources/CocoaLumberjack/include/DDLoggerNames.h; sourceTree = "<group>"; };
+		C73A567D370AA4F992E00887CDDD5BB7 /* ChameleonFramework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChameleonFramework.debug.xcconfig; sourceTree = "<group>"; };
+		C9A67DA05212FA119F4674956EB4A5CC /* CocoaLumberjack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CocoaLumberjack.swift; path = Sources/CocoaLumberjackSwift/CocoaLumberjack.swift; sourceTree = "<group>"; };
+		CBB1832692A5EC757CD39FD0EA933649 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDDispatchQueueLogFormatter.m; path = Sources/CocoaLumberjack/Extensions/DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		D025BA23742A941E1E438623D4CC401F /* UIColor+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		D04A30FDADD85FCA949F0DF6C56B22A1 /* YoutubePlayer-in-WKWebView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YoutubePlayer-in-WKWebView-Info.plist"; sourceTree = "<group>"; };
+		D4C0412D977CD0A06B39765A3ABCF75C /* ChameleonFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChameleonFramework.release.xcconfig; sourceTree = "<group>"; };
+		D6D0111B4DEF03D8051531A349B83305 /* DDASLLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogger.h; path = Sources/CocoaLumberjack/include/DDASLLogger.h; sourceTree = "<group>"; };
 		DE0FAB1DA724AB86C0E299518F5E580A /* YoutubePlayer_in_WKWebView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YoutubePlayer_in_WKWebView.framework; path = "YoutubePlayer-in-WKWebView.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E77563F3B1F979CEBEAFD336D614CAD8 /* ChameleonFramework-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ChameleonFramework-Info.plist"; sourceTree = "<group>"; };
+		DFED38B564683643F107C4689C60953E /* YoutubePlayer-in-WKWebView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YoutubePlayer-in-WKWebView-umbrella.h"; sourceTree = "<group>"; };
+		E1961F019D09A95282107E16F26EA7E9 /* DDLogMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLogMacros.h; path = Sources/CocoaLumberjack/include/DDLogMacros.h; sourceTree = "<group>"; };
+		E2C4B08D502F90C97DF9A84C55C6C153 /* ChameleonConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChameleonConstants.m; path = "Pod/Classes/Objective-C/ChameleonConstants.m"; sourceTree = "<group>"; };
+		E42F46F3D40489C10701414A071D9424 /* UINavigationController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Chameleon.m"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.m"; sourceTree = "<group>"; };
+		E51A7730FB67D7391A4A97ECCC271CD4 /* DDContextFilterLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDContextFilterLogFormatter.h; path = Sources/CocoaLumberjack/include/DDContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		E74A74D06E37B93CAA0DDFEEFA07D44B /* YoutubePlayer-in-WKWebView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YoutubePlayer-in-WKWebView-prefix.pch"; sourceTree = "<group>"; };
 		EC52B314F24BC32CDA7B523FAA24A727 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		EE3653D9B1E702AE0830BAE212B239A0 /* Pods-gorb-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gorb-frameworks.sh"; sourceTree = "<group>"; };
-		F21FDEFA90AD8668FC043C2E50518F91 /* YoutubePlayer-in-WKWebView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YoutubePlayer-in-WKWebView-Info.plist"; sourceTree = "<group>"; };
-		F57D3F6E5ED7CD7FBCCFDAC9033CEFD8 /* YoutubePlayer-in-WKWebView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YoutubePlayer-in-WKWebView-prefix.pch"; sourceTree = "<group>"; };
-		F67E7A78356ABC5C8AC5CD368DFD2A92 /* ChameleonConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonConstants.h; path = "Pod/Classes/Objective-C/ChameleonConstants.h"; sourceTree = "<group>"; };
+		EF1308507280003B6775ACA92C126F40 /* ChameleonEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonEnums.h; path = "Pod/Classes/Objective-C/ChameleonEnums.h"; sourceTree = "<group>"; };
+		EF76C93D76FB8BFA3BEE3C0AC9DB2F56 /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.h"; sourceTree = "<group>"; };
+		F0BEDF51DB69C3CB8CDE0516B135CA2B /* DDMultiFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDMultiFormatter.h; path = Sources/CocoaLumberjack/include/DDMultiFormatter.h; sourceTree = "<group>"; };
+		F8C58D93C7E62D7964584D7A62525615 /* Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon.h; path = "Pod/Classes/Objective-C/Chameleon.h"; sourceTree = "<group>"; };
+		F9193E419057D809CC0CDE902E64B01D /* CocoaLumberjack-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CocoaLumberjack-Info.plist"; sourceTree = "<group>"; };
+		FFBA15B596DC2987920D1482D93C20D0 /* UIColor+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Chameleon.h"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,14 +234,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7EDAE5DD4EA443DB94C26262A0B092E9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F5F63CF6B31A0700ABB37F17AEE969D3 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		83B31952B9520750E964E0A44C07C4B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,21 +242,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7E706839BEF46EB03B167770549C1C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74A40A682F3E7F665D2B3986EAF64E8A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6F61ADF2C0842D7617E67EA6B2E4639 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6949BF2A8CF492225A02F703377EA0D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08C6CDBEEA0A6425C4064BBC570D6546 /* YoutubePlayer-in-WKWebView */ = {
-			isa = PBXGroup;
-			children = (
-				4C742DB69C0C271D52C0A5CD82D34135 /* WKYTPlayerView.h */,
-				D874424D2DA020F2937825E2BEEA43BD /* WKYTPlayerView.m */,
-				EE88C4E470822195C9397D15F9875F20 /* Resources */,
-				1F89E329D5006D4FBD2E93B33C1EFCC4 /* Support Files */,
-			);
-			name = "YoutubePlayer-in-WKWebView";
-			path = "YoutubePlayer-in-WKWebView";
-			sourceTree = "<group>";
-		};
 		1392D6857A44D3453F28181918F307C8 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,104 +272,146 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		1F89E329D5006D4FBD2E93B33C1EFCC4 /* Support Files */ = {
+		2F51412C2B7A083C10A5D74550612A16 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C5EEC8A16E522E774BDC901EF11ED0AF /* YoutubePlayer-in-WKWebView.modulemap */,
-				29CFCF5567C413598734F903F8FCFC99 /* YoutubePlayer-in-WKWebView.xcconfig */,
-				A90C18FD62B8B9150CFF863BB1D15E0C /* YoutubePlayer-in-WKWebView-dummy.m */,
-				F21FDEFA90AD8668FC043C2E50518F91 /* YoutubePlayer-in-WKWebView-Info.plist */,
-				F57D3F6E5ED7CD7FBCCFDAC9033CEFD8 /* YoutubePlayer-in-WKWebView-prefix.pch */,
-				30F0A0F2D622AC2C8860531717CBB9BE /* YoutubePlayer-in-WKWebView-umbrella.h */,
+				B309D1594575BC90BE5705E609440ED5 /* YoutubePlayer-in-WKWebView.modulemap */,
+				C2298E9DEC2A7227B2B2F0B219CEA727 /* YoutubePlayer-in-WKWebView-dummy.m */,
+				D04A30FDADD85FCA949F0DF6C56B22A1 /* YoutubePlayer-in-WKWebView-Info.plist */,
+				E74A74D06E37B93CAA0DDFEEFA07D44B /* YoutubePlayer-in-WKWebView-prefix.pch */,
+				DFED38B564683643F107C4689C60953E /* YoutubePlayer-in-WKWebView-umbrella.h */,
+				4A9C4F46D504281BE425FAB58011BEB1 /* YoutubePlayer-in-WKWebView.debug.xcconfig */,
+				99451B3BDCF1D232F8F87B8CC7E532BC /* YoutubePlayer-in-WKWebView.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/YoutubePlayer-in-WKWebView";
 			sourceTree = "<group>";
 		};
-		37607C0444EDD5F405559204C639419F /* Swift */ = {
+		372D8A61508FF11FB1601FB0D7A08963 /* ChameleonFramework */ = {
 			isa = PBXGroup;
 			children = (
-				A6568CDB56ECE66ACC87FC7115FF4C64 /* ChameleonShorthand.swift */,
-			);
-			name = Swift;
-			sourceTree = "<group>";
-		};
-		6E0738CD2AED3DC6BA7CAF2B7CF69797 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0383903D05EDD5C442C682C1F7A1752D /* ChameleonFramework.framework */,
-				3F9BEB1DF554E7D769991568033D4BBC /* Pods_gorb.framework */,
-				DE0FAB1DA724AB86C0E299518F5E580A /* YoutubePlayer_in_WKWebView.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		84DD4AE4F22B7ECD66584915E96CEE09 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				5BF5D6913EDFE2FBCECB8B0F247640A6 /* ChameleonFramework.modulemap */,
-				C64CF3461A9C3F2841C8F710E9E34C49 /* ChameleonFramework.xcconfig */,
-				0A6B2886BF4812957E573EFD49BD56FC /* ChameleonFramework-dummy.m */,
-				E77563F3B1F979CEBEAFD336D614CAD8 /* ChameleonFramework-Info.plist */,
-				7E9AEFF63BB9C0A524F5E895C5AE41F8 /* ChameleonFramework-prefix.pch */,
-				3D73439E29E37C14F61ACEAE76DD1D8D /* ChameleonFramework-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ChameleonFramework";
-			sourceTree = "<group>";
-		};
-		8CE97397196398272867ED0A72281EB9 /* ChameleonFramework */ = {
-			isa = PBXGroup;
-			children = (
-				B321723AB9BEE8AABA8E477DFE2F9AE0 /* Default */,
-				84DD4AE4F22B7ECD66584915E96CEE09 /* Support Files */,
-				37607C0444EDD5F405559204C639419F /* Swift */,
+				FC3A0A2E02DB3FFDAFC23E63BC875F23 /* Default */,
+				CA2865975708B4ED024F7D5C3AF268F6 /* Support Files */,
+				9351C2CFA6A952F6E781C904D26C46DF /* Swift */,
 			);
 			name = ChameleonFramework;
 			path = ChameleonFramework;
 			sourceTree = "<group>";
 		};
-		AB167368E29D81A69D02BF806E7AB602 /* Pods */ = {
+		4FF47ABD84CAA2BEA40391E94C4CB36B /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8CE97397196398272867ED0A72281EB9 /* ChameleonFramework */,
-				08C6CDBEEA0A6425C4064BBC570D6546 /* YoutubePlayer-in-WKWebView */,
+				725C2639A9D351E5D47761398D8D49A4 /* CLIColor.h */,
+				8B00C2DD2E5C674B2ACEB7959F33F20B /* CLIColor.m */,
+				C54BAECDDD20A3B1D54A36FD06497893 /* CocoaLumberjack.h */,
+				89DBCCF4B3C0D7480186CB5EC287C52E /* DDAbstractDatabaseLogger.h */,
+				5EEB9CCB6B8C54A5C403029A6CB2F83C /* DDAbstractDatabaseLogger.m */,
+				9EACC677038309A61ED6CCF98995DE3D /* DDASLLogCapture.h */,
+				9578D64C0FF598D48B2013DAF8048046 /* DDASLLogCapture.m */,
+				D6D0111B4DEF03D8051531A349B83305 /* DDASLLogger.h */,
+				387E962FBCA869A3B1DFD259651FD5E0 /* DDASLLogger.m */,
+				53DD5B8A487183E6B43A9EFE71CD17D5 /* DDAssertMacros.h */,
+				E51A7730FB67D7391A4A97ECCC271CD4 /* DDContextFilterLogFormatter.h */,
+				63C1CE7923A2C3D820F28ED5B81187DC /* DDContextFilterLogFormatter.m */,
+				C33930A5F642609228EF19E8ED5DA200 /* DDDispatchQueueLogFormatter.h */,
+				CBB1832692A5EC757CD39FD0EA933649 /* DDDispatchQueueLogFormatter.m */,
+				9C3C70D0095FB9A07256D72BB963BF64 /* DDFileLogger.h */,
+				74CDDE998A298A50FFDFA77016DEB926 /* DDFileLogger.m */,
+				7B0994906B011BEF1CE7E4632D3F02B3 /* DDFileLogger+Buffering.h */,
+				BA4B97FB58FFF96DC9F41C2E95AF4013 /* DDFileLogger+Buffering.m */,
+				39BCE8746F6032B5EB05A5C3C3F21BC1 /* DDFileLogger+Internal.h */,
+				119234675A386F8BFC42F9E50C9E9B63 /* DDLegacyMacros.h */,
+				09AA9D7607F6E0DF3AA7759CD7BBB41E /* DDLog.h */,
+				1B001213377E81D2BC75D985FE8C1DA5 /* DDLog.m */,
+				BEC3E0AC713AEF41CCA566BE4EBE3859 /* DDLog+LOGV.h */,
+				C5D825AF0934E8728D6596715E4289BC /* DDLoggerNames.h */,
+				4A86C84AE4A8770CBA0A52ED263AFEDD /* DDLoggerNames.m */,
+				E1961F019D09A95282107E16F26EA7E9 /* DDLogMacros.h */,
+				F0BEDF51DB69C3CB8CDE0516B135CA2B /* DDMultiFormatter.h */,
+				81013426E43FE66F3AC4CE4F1FE010BD /* DDMultiFormatter.m */,
+				530288CFA4C695A8F768B6F1D9928227 /* DDOSLogger.h */,
+				9B561DE73FDD218066EBD735F86ACE20 /* DDOSLogger.m */,
+				3CB6A0A8A36F76A3E982BE453D99B403 /* DDTTYLogger.h */,
+				B6110EFC914E5C71001F37DD8FDBEC14 /* DDTTYLogger.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		8B755C29202BC6E900EA89D2D21E9CBE /* YoutubePlayer-in-WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				75A7DA2BD7A7C39749937E3D5D3C9DD5 /* WKYTPlayerView.h */,
+				7B8F04C67090A6558ABF1231FD0FFF14 /* WKYTPlayerView.m */,
+				CBDD2C189E587C888822B226AA3BD6D3 /* Resources */,
+				2F51412C2B7A083C10A5D74550612A16 /* Support Files */,
+			);
+			name = "YoutubePlayer-in-WKWebView";
+			path = "YoutubePlayer-in-WKWebView";
+			sourceTree = "<group>";
+		};
+		8CC9D061368A7017C0ED4943615036D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				372D8A61508FF11FB1601FB0D7A08963 /* ChameleonFramework */,
+				A8947572CEB3437E27FB9F9FF983BED1 /* CocoaLumberjack */,
+				8B755C29202BC6E900EA89D2D21E9CBE /* YoutubePlayer-in-WKWebView */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B321723AB9BEE8AABA8E477DFE2F9AE0 /* Default */ = {
+		9351C2CFA6A952F6E781C904D26C46DF /* Swift */ = {
 			isa = PBXGroup;
 			children = (
-				50988B537C0C281A22462E8258F05F2B /* Chameleon.h */,
-				AA19C8AACEBD6FD8681362A978AB3CC8 /* Chameleon_.h */,
-				63A9949FF04E699D6CC60974173126F5 /* Chameleon_.m */,
-				F67E7A78356ABC5C8AC5CD368DFD2A92 /* ChameleonConstants.h */,
-				96E8E8573F3264395178065A397114A5 /* ChameleonConstants.m */,
-				9AA14CC35BC991AC16EF9D8ABB983E19 /* ChameleonEnums.h */,
-				6BE040A085BCFF7DC7D6D5E60C36BD9D /* ChameleonMacros.h */,
-				C327F588BCE0CDB376DC7FC99C3FDCB3 /* NSArray+Chameleon.h */,
-				A10333BA9A4E3CA0A78C5D9CF73A5BEA /* NSArray+Chameleon.m */,
-				199563B2F70516369C0703685297E325 /* UIAppearance+Swift.h */,
-				D573A44DB09D7A0C04AC9A9A64A91E16 /* UIAppearance+Swift.m */,
-				341C8807E963FC7D557C3C67A9806F6C /* UIButton+Chameleon.h */,
-				5FAF494452923D620AAECED373AA7D56 /* UIButton+Chameleon.m */,
-				326D53589D3588F2C1CA3E875F82319B /* UIColor+Chameleon.h */,
-				49F44FB7CD7B3A9B472067E9228BC423 /* UIColor+Chameleon.m */,
-				1C0C6158D62655B1CDAE8BB7372BBF97 /* UIColor+ChameleonPrivate.h */,
-				4D3B9C280E795F9446A183C99EF940E0 /* UIColor+ChameleonPrivate.m */,
-				7E62E670ABCD3B9957CFBE1EC2D9DFDA /* UIImage+ChameleonPrivate.h */,
-				46FC0D78A5504FFD26E6ED7E2B221508 /* UIImage+ChameleonPrivate.m */,
-				BEB297EE2BEBC8C71698754ACB8A8D69 /* UILabel+Chameleon.h */,
-				B2AB5FE3A9C094A595D069A81B523616 /* UILabel+Chameleon.m */,
-				57E526A4F7F8788FCE8B8D3C3D0BE69A /* UINavigationController+Chameleon.h */,
-				5EDC39E44C845C304EB236BF7D29586B /* UINavigationController+Chameleon.m */,
-				3C86EA8AE35A2EAAA72DE03EB3B295A4 /* UIView+ChameleonPrivate.h */,
-				D16E5D4524DB41343E10F9D986C2AC4A /* UIView+ChameleonPrivate.m */,
-				DD874C5A8802CC0D213F345617CD0300 /* UIViewController+Chameleon.h */,
-				0BA8EFC2608C2E57F2F75AAB293118C0 /* UIViewController+Chameleon.m */,
+				A9CCBA0A9DCA52CD7C745FF38B27C923 /* ChameleonShorthand.swift */,
 			);
-			name = Default;
+			name = Swift;
+			sourceTree = "<group>";
+		};
+		A32E26F0F3052D3356032A121DCA387E /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				C9A67DA05212FA119F4674956EB4A5CC /* CocoaLumberjack.swift */,
+				196611C5715A75E169D2DE0722C426FE /* DDAssert.swift */,
+				A5B419C48F7B09EE0F7DCA17EABF78EA /* SwiftLogLevel.h */,
+			);
+			name = Swift;
+			sourceTree = "<group>";
+		};
+		A8947572CEB3437E27FB9F9FF983BED1 /* CocoaLumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				4FF47ABD84CAA2BEA40391E94C4CB36B /* Core */,
+				B040946E9B0B3100F159278778FE5310 /* Support Files */,
+				A32E26F0F3052D3356032A121DCA387E /* Swift */,
+			);
+			name = CocoaLumberjack;
+			path = CocoaLumberjack;
+			sourceTree = "<group>";
+		};
+		B040946E9B0B3100F159278778FE5310 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				535C4059F3E34FF291D9F567226CDB1D /* CocoaLumberjack.modulemap */,
+				99A9E75ACE431F62621D7785912FCE30 /* CocoaLumberjack-dummy.m */,
+				F9193E419057D809CC0CDE902E64B01D /* CocoaLumberjack-Info.plist */,
+				03721B142CB2191489AD708246B46E5E /* CocoaLumberjack-prefix.pch */,
+				12C3C2958317EA8333F924FAB19EBD36 /* CocoaLumberjack-umbrella.h */,
+				5C119EEA050DEE73B29040E63C7558E4 /* CocoaLumberjack.debug.xcconfig */,
+				B9949615E592027B490C52EE5D8223B5 /* CocoaLumberjack.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CocoaLumberjack";
+			sourceTree = "<group>";
+		};
+		B247293DE33EBE7B7719490F81A944FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0383903D05EDD5C442C682C1F7A1752D /* ChameleonFramework.framework */,
+				C261436D14052AE3C35F240BCD155CAC /* CocoaLumberjack.framework */,
+				3F9BEB1DF554E7D769991568033D4BBC /* Pods_gorb.framework */,
+				DE0FAB1DA724AB86C0E299518F5E580A /* YoutubePlayer_in_WKWebView.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
@@ -294,6 +422,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CA2865975708B4ED024F7D5C3AF268F6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				99899B4F1DAFBD00F86D3082001FB58F /* ChameleonFramework.modulemap */,
+				B804F420001745326A190EBC58E80343 /* ChameleonFramework-dummy.m */,
+				8AC6D48C3D95C46784CF88346442C7B0 /* ChameleonFramework-Info.plist */,
+				772F42B214D6F799E6D0736FD63901D0 /* ChameleonFramework-prefix.pch */,
+				832D086A8587AA3AAE9B56221C3393B5 /* ChameleonFramework-umbrella.h */,
+				C73A567D370AA4F992E00887CDDD5BB7 /* ChameleonFramework.debug.xcconfig */,
+				D4C0412D977CD0A06B39765A3ABCF75C /* ChameleonFramework.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ChameleonFramework";
+			sourceTree = "<group>";
+		};
 		CAD2CF8D34F63E4E0998FB96C75D2B97 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,13 +445,21 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		CBDD2C189E587C888822B226AA3BD6D3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				90BB7C7B8C7B25036267C441E6F2BF50 /* WKYTPlayerView.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
-				AB167368E29D81A69D02BF806E7AB602 /* Pods */,
-				6E0738CD2AED3DC6BA7CAF2B7CF69797 /* Products */,
+				8CC9D061368A7017C0ED4943615036D5 /* Pods */,
+				B247293DE33EBE7B7719490F81A944FF /* Products */,
 				CAD2CF8D34F63E4E0998FB96C75D2B97 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -330,12 +481,38 @@
 			path = "Target Support Files/Pods-gorb";
 			sourceTree = "<group>";
 		};
-		EE88C4E470822195C9397D15F9875F20 /* Resources */ = {
+		FC3A0A2E02DB3FFDAFC23E63BC875F23 /* Default */ = {
 			isa = PBXGroup;
 			children = (
-				5C0C7E42887E9F095A3620273CFDF228 /* WKYTPlayerView.bundle */,
+				F8C58D93C7E62D7964584D7A62525615 /* Chameleon.h */,
+				04A36A0484B0727D13432A8E4349B5A8 /* Chameleon_.h */,
+				8BBA0EE2995329875B7E972A0491B4B6 /* Chameleon_.m */,
+				9F55DB573EE8B5EFA82701F39D937DC0 /* ChameleonConstants.h */,
+				E2C4B08D502F90C97DF9A84C55C6C153 /* ChameleonConstants.m */,
+				EF1308507280003B6775ACA92C126F40 /* ChameleonEnums.h */,
+				A5A4B7AC705DFFE5F7805291B69AA094 /* ChameleonMacros.h */,
+				6F26B1303836F01A004C89FD82F02DFB /* NSArray+Chameleon.h */,
+				AE0B7F3CF7AD1CD4A0CF70341F8A6243 /* NSArray+Chameleon.m */,
+				20F186FFD4D9E67D681E10656065B085 /* UIAppearance+Swift.h */,
+				BCB9513FC5DCBD02B057C720A5005EF5 /* UIAppearance+Swift.m */,
+				79BD7806291DAEFA4501A28BC3394E65 /* UIButton+Chameleon.h */,
+				45EF4130D2ABB6410346D7322D0B3502 /* UIButton+Chameleon.m */,
+				FFBA15B596DC2987920D1482D93C20D0 /* UIColor+Chameleon.h */,
+				11CC7D02C5D512EC845BDE56EF2BE2C7 /* UIColor+Chameleon.m */,
+				D025BA23742A941E1E438623D4CC401F /* UIColor+ChameleonPrivate.h */,
+				3B0055C777870AB6BF1155155B3A52ED /* UIColor+ChameleonPrivate.m */,
+				3B6540821CBDD367A507F4EEFB93317C /* UIImage+ChameleonPrivate.h */,
+				1DF650FA5C231C4DFE9940BB5D3D9153 /* UIImage+ChameleonPrivate.m */,
+				9D23B211D68EC9B79F8C9325BF5AFA90 /* UILabel+Chameleon.h */,
+				59987B1DEC02C3B95ABC24D8162BA29A /* UILabel+Chameleon.m */,
+				B8BA3EF65EA79779AC13228D1B3092DF /* UINavigationController+Chameleon.h */,
+				E42F46F3D40489C10701414A071D9424 /* UINavigationController+Chameleon.m */,
+				A711DF84EA397ED10DA7E014627A4966 /* UIView+ChameleonPrivate.h */,
+				24D42D24C5A89D23A3477BF26250663D /* UIView+ChameleonPrivate.m */,
+				EF76C93D76FB8BFA3BEE3C0AC9DB2F56 /* UIViewController+Chameleon.h */,
+				62883B7AC15DC3883D8E681956E7ADB3 /* UIViewController+Chameleon.m */,
 			);
-			name = Resources;
+			name = Default;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,11 +527,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67A453D99E606B65738802871DFC1DB9 /* Headers */ = {
+		3D266023E04E16B1B76145D432C8C354 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C2A824F41664B50CFCC10F00485FCEE /* Pods-gorb-umbrella.h in Headers */,
+				FCFA53A0A359E33E514B981BB7AF7771 /* CLIColor.h in Headers */,
+				5D56BA969D6EFFB8F15A0D7EB435C41F /* CocoaLumberjack-umbrella.h in Headers */,
+				EFFCEE76EDA4E17534AA3E8D48523439 /* CocoaLumberjack.h in Headers */,
+				66D72D5B6EA704BE40B393A6F0A1B5F6 /* DDAbstractDatabaseLogger.h in Headers */,
+				C4E060E3D1AB869610D1ACBA2AD852FD /* DDASLLogCapture.h in Headers */,
+				E28271382E0061543ADBF1D1A026692D /* DDASLLogger.h in Headers */,
+				E9E9554C02CA5FC8F7F134D4BA53B6C6 /* DDAssertMacros.h in Headers */,
+				7916B3022F0E241D986698991C745C16 /* DDContextFilterLogFormatter.h in Headers */,
+				A907EF76A9D5FF8E392290B10E97ED69 /* DDDispatchQueueLogFormatter.h in Headers */,
+				27586B29124FABF82AAC55429964450A /* DDFileLogger+Buffering.h in Headers */,
+				E3AEEA91A67D0F8E24F52FE562ABF1B6 /* DDFileLogger+Internal.h in Headers */,
+				ECCD7732CF0D16FCC90DB83E75D73495 /* DDFileLogger.h in Headers */,
+				9A4D43262635B18C802B17485FAE2D38 /* DDLegacyMacros.h in Headers */,
+				353FC14BE702BFB5D9BAD92F7338B3EB /* DDLog+LOGV.h in Headers */,
+				B8FFCC85726A84D09376205AB404513D /* DDLog.h in Headers */,
+				649A9096456A7DC5E1045E443722991D /* DDLoggerNames.h in Headers */,
+				DA2DD0CB6F0E3CC436D18CF167DA4484 /* DDLogMacros.h in Headers */,
+				7BFEE239D45EF5FC4026052A712A2D49 /* DDMultiFormatter.h in Headers */,
+				CA98B616E393378017EB03F4997E9476 /* DDOSLogger.h in Headers */,
+				5965234C5F96F04527E7FFBEBAF6E191 /* DDTTYLogger.h in Headers */,
+				EBD52493DDF31B7F9F1F731195214D80 /* SwiftLogLevel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64931583F67B65DE83BEC7EC62B2EC94 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20A6E70302CFB17A82915675AE33CB9A /* Pods-gorb-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,22 +627,41 @@
 		};
 		DDA5D8A9D4EBD8BC2709EEB7C13E425B /* Pods-gorb */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FDA2BE4621F56F5D055037F21AE68190 /* Build configuration list for PBXNativeTarget "Pods-gorb" */;
+			buildConfigurationList = 216BADB3ED449F8B1439FABEE2FED59C /* Build configuration list for PBXNativeTarget "Pods-gorb" */;
 			buildPhases = (
-				67A453D99E606B65738802871DFC1DB9 /* Headers */,
-				A81E7C6F7F46049062EE945840B47B2A /* Sources */,
-				7EDAE5DD4EA443DB94C26262A0B092E9 /* Frameworks */,
-				A8EB0BACF1A68E3DA99899E2597D0D0A /* Resources */,
+				64931583F67B65DE83BEC7EC62B2EC94 /* Headers */,
+				1E15DA84933950DFF7D7B4804DEA20E1 /* Sources */,
+				B7E706839BEF46EB03B167770549C1C3 /* Frameworks */,
+				A13CE74C3DB239E599279B7D6F473469 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F705A8678B837DC987ECBB2246B85D12 /* PBXTargetDependency */,
-				25F8806FCD123C65B192D48B96813FD6 /* PBXTargetDependency */,
+				EE17D44E4B8D039B40F9F3833B8AA4F0 /* PBXTargetDependency */,
+				F53AC46BB76DECA4418FD1169323448A /* PBXTargetDependency */,
+				43A8A8BC41FB826F568CF97FCC106A2B /* PBXTargetDependency */,
 			);
 			name = "Pods-gorb";
 			productName = "Pods-gorb";
 			productReference = 3F9BEB1DF554E7D769991568033D4BBC /* Pods_gorb.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E95654B155D25890BE8E26081FCA8265 /* CocoaLumberjack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE1656DF5D916841ABB86B9B166CBEEC /* Build configuration list for PBXNativeTarget "CocoaLumberjack" */;
+			buildPhases = (
+				3D266023E04E16B1B76145D432C8C354 /* Headers */,
+				36F1C9E0484289644008D84C2CFB28FC /* Sources */,
+				C6F61ADF2C0842D7617E67EA6B2E4639 /* Frameworks */,
+				0A8F69AD0BDE81B314AAE7E7A7701D75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CocoaLumberjack;
+			productName = CocoaLumberjack;
+			productReference = C261436D14052AE3C35F240BCD155CAC /* CocoaLumberjack.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -455,13 +679,15 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 6E0738CD2AED3DC6BA7CAF2B7CF69797 /* Products */;
+			productRefGroup = B247293DE33EBE7B7719490F81A944FF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				28BFDC89BA4363F4F3576DEC70EE10AE /* ChameleonFramework */,
+				E95654B155D25890BE8E26081FCA8265 /* CocoaLumberjack */,
 				DDA5D8A9D4EBD8BC2709EEB7C13E425B /* Pods-gorb */,
 				DABE3AD6EBA3822D4F04FBC550E7158D /* YoutubePlayer-in-WKWebView */,
 			);
@@ -469,6 +695,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0A8F69AD0BDE81B314AAE7E7A7701D75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1D826F16ECC69FA6D6365B89430D4D32 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -484,7 +717,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A8EB0BACF1A68E3DA99899E2597D0D0A /* Resources */ = {
+		A13CE74C3DB239E599279B7D6F473469 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -494,11 +727,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A81E7C6F7F46049062EE945840B47B2A /* Sources */ = {
+		1E15DA84933950DFF7D7B4804DEA20E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F1D744AD2156DB3581A5513E500BDA0 /* Pods-gorb-dummy.m in Sources */,
+				E6EF9C4EE2E7816925C2D48EC6753D7C /* Pods-gorb-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36F1C9E0484289644008D84C2CFB28FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82773CC13612C373B4D313D10D016985 /* CLIColor.m in Sources */,
+				0265F252A09E5FA6C26381DA4CAF8079 /* CocoaLumberjack-dummy.m in Sources */,
+				8F5BD7EB4F1FDF034E047D01B616197D /* CocoaLumberjack.swift in Sources */,
+				BA873BE7155FCC56E178360D4E54992B /* DDAbstractDatabaseLogger.m in Sources */,
+				AAC9ECA67A80A03C3761E73F34F043A3 /* DDASLLogCapture.m in Sources */,
+				7D486A49BC79417C10B6ED59D1F29973 /* DDASLLogger.m in Sources */,
+				F7A1CB7A1DAC0FFC21CE547FFC3F09C6 /* DDAssert.swift in Sources */,
+				77451FEEC21F5F4F94A37CE52F87CA58 /* DDContextFilterLogFormatter.m in Sources */,
+				83EF552F3D8D3E12E3F0F3B7ADD6D3A4 /* DDDispatchQueueLogFormatter.m in Sources */,
+				A3DD30BA881E3D94258F0887BCF4944B /* DDFileLogger+Buffering.m in Sources */,
+				65B3B0A18B7A1D742BB467F959FB9E41 /* DDFileLogger.m in Sources */,
+				1ACE18FB9618325E6761FC7BB8E35376 /* DDLog.m in Sources */,
+				22568D121F150FCFA640B0175197C7C4 /* DDLoggerNames.m in Sources */,
+				DCB4BC4CB3BFC32F3A975995BEB6F92B /* DDMultiFormatter.m in Sources */,
+				B99DB958F2C7DA6223C0D2CABE7299AD /* DDOSLogger.m in Sources */,
+				051FAF71CAED233F64E10A1FE97ADEFD /* DDTTYLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,94 +791,27 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		25F8806FCD123C65B192D48B96813FD6 /* PBXTargetDependency */ = {
+		43A8A8BC41FB826F568CF97FCC106A2B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "YoutubePlayer-in-WKWebView";
 			target = DABE3AD6EBA3822D4F04FBC550E7158D /* YoutubePlayer-in-WKWebView */;
-			targetProxy = CF176388BA2AD845C133C3875E855622 /* PBXContainerItemProxy */;
+			targetProxy = B2E4D186E1BFB6414357C5FCB965747C /* PBXContainerItemProxy */;
 		};
-		F705A8678B837DC987ECBB2246B85D12 /* PBXTargetDependency */ = {
+		EE17D44E4B8D039B40F9F3833B8AA4F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ChameleonFramework;
 			target = 28BFDC89BA4363F4F3576DEC70EE10AE /* ChameleonFramework */;
-			targetProxy = C0F3F531437C076028364EA98E8CFE5F /* PBXContainerItemProxy */;
+			targetProxy = DDF0A4B9B1B627244492FC9D6E218A94 /* PBXContainerItemProxy */;
+		};
+		F53AC46BB76DECA4418FD1169323448A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaLumberjack;
+			target = E95654B155D25890BE8E26081FCA8265 /* CocoaLumberjack */;
+			targetProxy = F4000CB05B2AA83E2B2A8FCAAEF4108C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0CE58E7886E78128815B46A8266C2674 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52F168D641AF8DCADE86860B6FD3D590 /* Pods-gorb.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-gorb/Pods-gorb-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-gorb/Pods-gorb.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		106EEC3E40AC21727ED219175AC154F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C64CF3461A9C3F2841C8F710E9E34C49 /* ChameleonFramework.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ChameleonFramework/ChameleonFramework-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ChameleonFramework/ChameleonFramework-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ChameleonFramework/ChameleonFramework.modulemap";
-				PRODUCT_MODULE_NAME = ChameleonFramework;
-				PRODUCT_NAME = ChameleonFramework;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -683,7 +872,77 @@
 			};
 			name = Release;
 		};
-		300BB090F4B0C6A45A6549EECE0B8A74 /* Release */ = {
+		1E0693244CFBC122A3A9D33965096A2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A9C4F46D504281BE425FAB58011BEB1 /* YoutubePlayer-in-WKWebView.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YoutubePlayer-in-WKWebView/YoutubePlayer-in-WKWebView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YoutubePlayer-in-WKWebView/YoutubePlayer-in-WKWebView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/YoutubePlayer-in-WKWebView/YoutubePlayer-in-WKWebView.modulemap";
+				PRODUCT_MODULE_NAME = YoutubePlayer_in_WKWebView;
+				PRODUCT_NAME = YoutubePlayer_in_WKWebView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7F3740EAF7B41ADCFF120398141B734E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C119EEA050DEE73B29040E63C7558E4 /* CocoaLumberjack.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaLumberjack/CocoaLumberjack-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaLumberjack/CocoaLumberjack-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CocoaLumberjack/CocoaLumberjack.modulemap";
+				PRODUCT_MODULE_NAME = CocoaLumberjack;
+				PRODUCT_NAME = CocoaLumberjack;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		91C2CB1A51B722222CB0BDF7E09A68DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 75BF9FE356CA81A70A00CD8A925C9C55 /* Pods-gorb.release.xcconfig */;
 			buildSettings = {
@@ -722,9 +981,83 @@
 			};
 			name = Release;
 		};
-		780D2E6778CB133E33AABC06CC48B52A /* Release */ = {
+		CC823CC43FA050601F0DB36212618689 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C64CF3461A9C3F2841C8F710E9E34C49 /* ChameleonFramework.xcconfig */;
+			baseConfigurationReference = 52F168D641AF8DCADE86860B6FD3D590 /* Pods-gorb.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-gorb/Pods-gorb-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-gorb/Pods-gorb.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CDA7B62BED0C588EE94EFC0D7445369C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99451B3BDCF1D232F8F87B8CC7E532BC /* YoutubePlayer-in-WKWebView.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/YoutubePlayer-in-WKWebView/YoutubePlayer-in-WKWebView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/YoutubePlayer-in-WKWebView/YoutubePlayer-in-WKWebView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/YoutubePlayer-in-WKWebView/YoutubePlayer-in-WKWebView.modulemap";
+				PRODUCT_MODULE_NAME = YoutubePlayer_in_WKWebView;
+				PRODUCT_NAME = YoutubePlayer_in_WKWebView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D210A258F45D012926C950C581E4C9EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C73A567D370AA4F992E00887CDDD5BB7 /* ChameleonFramework.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -752,82 +1085,10 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C283CCE0FDEDC41C8F0F0FB568F14500 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29CFCF5567C413598734F903F8FCFC99 /* YoutubePlayer-in-WKWebView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/YoutubePlayer-in-WKWebView/YoutubePlayer-in-WKWebView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/YoutubePlayer-in-WKWebView/YoutubePlayer-in-WKWebView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/YoutubePlayer-in-WKWebView/YoutubePlayer-in-WKWebView.modulemap";
-				PRODUCT_MODULE_NAME = YoutubePlayer_in_WKWebView;
-				PRODUCT_NAME = YoutubePlayer_in_WKWebView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		C388FB829F42D2C5EDBFE005872CC531 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29CFCF5567C413598734F903F8FCFC99 /* YoutubePlayer-in-WKWebView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/YoutubePlayer-in-WKWebView/YoutubePlayer-in-WKWebView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/YoutubePlayer-in-WKWebView/YoutubePlayer-in-WKWebView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/YoutubePlayer-in-WKWebView/YoutubePlayer-in-WKWebView.modulemap";
-				PRODUCT_MODULE_NAME = YoutubePlayer_in_WKWebView;
-				PRODUCT_NAME = YoutubePlayer_in_WKWebView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		ED7888FA6713EABBF66D26A8003AD1CA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -893,14 +1154,95 @@
 			};
 			name = Debug;
 		};
+		F7590B83E6E1794488EE97382CA5A78F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4C0412D977CD0A06B39765A3ABCF75C /* ChameleonFramework.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ChameleonFramework/ChameleonFramework-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ChameleonFramework/ChameleonFramework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ChameleonFramework/ChameleonFramework.modulemap";
+				PRODUCT_MODULE_NAME = ChameleonFramework;
+				PRODUCT_NAME = ChameleonFramework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FA5E101FAED2975F0B43EB305BF54010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9949615E592027B490C52EE5D8223B5 /* CocoaLumberjack.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaLumberjack/CocoaLumberjack-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CocoaLumberjack/CocoaLumberjack-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CocoaLumberjack/CocoaLumberjack.modulemap";
+				PRODUCT_MODULE_NAME = CocoaLumberjack;
+				PRODUCT_NAME = CocoaLumberjack;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		047221B88B466188D7B28CF17DB79C8D /* Build configuration list for PBXNativeTarget "YoutubePlayer-in-WKWebView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C283CCE0FDEDC41C8F0F0FB568F14500 /* Debug */,
-				C388FB829F42D2C5EDBFE005872CC531 /* Release */,
+				1E0693244CFBC122A3A9D33965096A2D /* Debug */,
+				CDA7B62BED0C588EE94EFC0D7445369C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		216BADB3ED449F8B1439FABEE2FED59C /* Build configuration list for PBXNativeTarget "Pods-gorb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC823CC43FA050601F0DB36212618689 /* Debug */,
+				91C2CB1A51B722222CB0BDF7E09A68DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -917,17 +1259,17 @@
 		911E8CAE5BC7C27912E3245FC75091FA /* Build configuration list for PBXNativeTarget "ChameleonFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				106EEC3E40AC21727ED219175AC154F6 /* Debug */,
-				780D2E6778CB133E33AABC06CC48B52A /* Release */,
+				D210A258F45D012926C950C581E4C9EE /* Debug */,
+				F7590B83E6E1794488EE97382CA5A78F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FDA2BE4621F56F5D055037F21AE68190 /* Build configuration list for PBXNativeTarget "Pods-gorb" */ = {
+		FE1656DF5D916841ABB86B9B166CBEEC /* Build configuration list for PBXNativeTarget "CocoaLumberjack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0CE58E7886E78128815B46A8266C2674 /* Debug */,
-				300BB090F4B0C6A45A6549EECE0B8A74 /* Release */,
+				7F3740EAF7B41ADCFF120398141B734E /* Debug */,
+				FA5E101FAED2975F0B43EB305BF54010 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

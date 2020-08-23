@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CocoaLumberjack
 
 class VideoTableViewController: UITableViewController, VideoTableViewCellDelegate {
     
@@ -14,6 +15,7 @@ class VideoTableViewController: UITableViewController, VideoTableViewCellDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DDLogDebug("viewDidLoad")
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refreshAllVideos(_:)), for: .valueChanged)
 //        tableView.refreshControl = refreshControl
@@ -21,6 +23,7 @@ class VideoTableViewController: UITableViewController, VideoTableViewCellDelegat
     }
     
     @objc func refreshAllVideos(_ sender: Any) {
+        DDLogDebug("refreshAllVideos")
         parentController.refreshAllVideos()
         refreshControl?.endRefreshing()
       }
@@ -37,13 +40,15 @@ class VideoTableViewController: UITableViewController, VideoTableViewCellDelegat
     }
     
     func reloadRows(at indexPaths: [IndexPath]) {
-       tableView.beginUpdates()
-       tableView.reloadRows(at: indexPaths, with: .none)
-       tableView.endUpdates()
+        DDLogDebug("Reload views at indexPaths \(indexPaths)")
+        assert(Thread.isMainThread)
+        tableView.beginUpdates()
+        tableView.reloadRows(at: indexPaths, with: .none)
+        tableView.endUpdates()
     }
     
     func finishedRefresh(withVideos videos: [Video], error : Error?) {
-        
+        DDLogDebug("Finished refresh with video count: \(videos.count) and error: \(String(describing: error))")
         refreshControl?.endRefreshing()
         
         if error == nil, videos.count > 0 {
@@ -59,6 +64,7 @@ class VideoTableViewController: UITableViewController, VideoTableViewCellDelegat
             tableView.isHidden = true
         }
         
+        DDLogDebug("Reloading table data")
         tableView.reloadData()
         tableView.selectRow(at: IndexPath.init(row: 0, section: 0), animated: false, scrollPosition: .none)
     }
@@ -68,6 +74,7 @@ class VideoTableViewController: UITableViewController, VideoTableViewCellDelegat
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        DDLogDebug("tableView numberOfRowsInSection returning \(parentController.getVideoCount())")
         return parentController.getVideoCount()
     }
     
@@ -113,7 +120,7 @@ class VideoTableViewController: UITableViewController, VideoTableViewCellDelegat
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         updateLinkButtons(forCurrentIndex: parentController.getIndex(), newIndex: indexPath)
-        
+        DDLogDebug("didSelectRowAt \(indexPath)")
         parentController.loadVideo(at: indexPath.row)
     }
 
