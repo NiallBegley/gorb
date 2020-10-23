@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CocoaLumberjack
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +24,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             vc.persistentContainer = persistentContainer
         }
         
+        DDLog.add(DDOSLogger.sharedInstance) // Uses os_log
+
+        let fileLogger: DDFileLogger = DDFileLogger() // File Logger
+        fileLogger.rollingFrequency = 60 * 60 * 24 // 24 hours
+        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+        DDOSLogger.sharedInstance.logFormatter = CustomDDLogFormatter()
+        DDLog.add(fileLogger)
+        
         return true
+    }
+    
+    func redirectLogToDocuments() {
+      let allPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+      let documentsDirectory = allPaths.first!
+      let pathForLog = "\(documentsDirectory)/yourfile.log"
+      freopen(pathForLog.cString(using: String.Encoding.ascii)!, "a+", stdout)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

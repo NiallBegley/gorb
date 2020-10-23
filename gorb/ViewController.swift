@@ -11,6 +11,7 @@ import YoutubePlayer_in_WKWebView
 import CoreData
 import ChameleonFramework
 import Network
+import CocoaLumberjack
 
 class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewDelegate, SettingsDelegate {
     @IBOutlet weak var progressView: UIActivityIndicatorView!
@@ -24,12 +25,15 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     var autoplay = false
     weak var tableViewController : VideoTableViewController?
     fileprivate let wifiMonitor = WifiMonitor.init()
+    fileprivate var refreshing = false
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     override func viewDidLoad() {
+        DDLogDebug("viewDidLoad")
+        
         super.viewDidLoad()
         
         if let persistentContainer = self.persistentContainer {
@@ -55,17 +59,21 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
         view.backgroundColor = UIColor.black
         
         if !wifiMonitor.isExpensive {
-            videoController?.refreshVideos()
+            DDLogDebug("Internet isn't expensive")
+            refreshAllVideos()
         } else {
+            DDLogDebug("Internet IS expensive")
             finishedRefresh(error: wifiMonitor.getWifiError())
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        DDLogDebug("viewDidAppear")
         view.backgroundColor = UIColor.black
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        DDLogDebug("Performing \(String(describing: segue.identifier)) segue")
         if segue.identifier == "SETTINGS_SEGUE",
             let vc = segue.destination as? SettingsTableViewController {
                 view.backgroundColor = UIColor.white
@@ -78,12 +86,22 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
             }
     }
     
+    override func didReceiveMemoryWarning() {
+        DDLogDebug("didReceiveMemoryWarning")
+        videoController?.cancelRefresh()
+        super.didReceiveMemoryWarning()
+    }
+    
     // MARK: - Interaction Callbacks
     func refreshAllVideos() {
+        DDLogDebug("refreshAllVideos")
         
         if !wifiMonitor.isExpensive {
+            refreshing = true
             _ = videoController?.deleteAll()
             videoController?.refreshVideos()
+        } else if refreshing {
+            DDLogDebug("Ignoring refresh request - we're already refreshing")
         } else {
             displayError(wifiMonitor.getWifiError())
         }
@@ -96,8 +114,10 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
         let oldIndex = index
         
         if sender.direction == .left {
+            DDLogDebug("User swiped left")
             index += 1
         } else if sender.direction == .right {
+            DDLogDebug("User swiped right")
             index -= 1
         }
         
@@ -110,6 +130,7 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     }
     
     @IBAction func buttonClickedTryAgain(_ sender: Any) {
+        DDLogDebug("Button clicked try again")
         if wifiMonitor.isExpensive {
             displayError(wifiMonitor.getWifiError())
             return
@@ -121,6 +142,7 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     }
     
     func loadVideo(at index : Int) {
+        DDLogDebug("loadVideo at index: \(index) of \(videos.count)")
         self.index = index
         loadVideo(videos[index], autoplay: true)
     }
@@ -148,9 +170,9 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     }
     
     // MARK: - VideoControllerDelegate
-    
     func updateThumbnails(indexPaths: [IndexPath]) {
         DispatchQueue.main.async() {
+            DDLogDebug("updateThumnails on main thread reloading cells at paths: \(indexPaths) with a total video count of \(self.videos.count)")
             self.tableViewController?.reloadRows(at: indexPaths)
      
             //Maintain the selection of the first cell after reload
@@ -170,6 +192,8 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     }
     
     func finishedRefresh(error: Error?) {
+        DDLogDebug("Finished refresh")
+        refreshing = false
         
         if let videoController = videoController,
             error == nil {
@@ -177,8 +201,8 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
             videos = videoController.getAllVideos()
             
             DispatchQueue.main.async() {
-               
-            self.tableViewController?.finishedRefresh(withVideos: self.videos, error: error)
+               DDLogDebug("Calling into tableViewController.finishedRefresh from main thread with video count \(self.videos.count)")
+                self.tableViewController?.finishedRefresh(withVideos: self.videos, error: error)
 
                 self.noVideosLabel.isHidden = (self.videos.count > 0)
                 self.toggleControls(hidden: false)
@@ -228,7 +252,7 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     // MARK: - YTPlayerViewDelegate
     
     func playerViewDidBecomeReady(_ playerView: WKYTPlayerView) {
-        
+        DDLogDebug("playerViewDidBecomeReady")
         if self.autoplay, UserDefaults.standard.getAutoplay() {
             playerView.playVideo()
         }
@@ -239,6 +263,8 @@ class ViewController: UIViewController, VideoControllerDelegate, WKYTPlayerViewD
     func getVideo(at index: Int) -> Video? {
         if index >= 0, index < videos.count {
             return videos[index]
+        } else {
+            DDLogDebug("Error fetching video in getVideo - Asked for index \(index) but our total video count is \(videos.count)")
         }
         
         return nil
