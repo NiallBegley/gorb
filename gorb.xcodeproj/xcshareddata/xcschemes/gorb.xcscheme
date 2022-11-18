@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1100"
+   LastUpgradeVersion = "1410"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "391354BD2323CA8A00FCE75C"
+               BlueprintIdentifier = "806A5444292294F00028A36E"
                BuildableName = "gorb.app"
                BlueprintName = "gorb"
                ReferencedContainer = "container:gorb.xcodeproj">
@@ -28,6 +28,28 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "806A545A292294F10028A36E"
+               BuildableName = "gorbTests.xctest"
+               BlueprintName = "gorbTests"
+               ReferencedContainer = "container:gorb.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "806A5464292294F10028A36E"
+               BuildableName = "gorbUITests.xctest"
+               BlueprintName = "gorbUITests"
+               ReferencedContainer = "container:gorb.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -44,12 +66,18 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "391354BD2323CA8A00FCE75C"
+            BlueprintIdentifier = "806A5444292294F00028A36E"
             BuildableName = "gorb.app"
             BlueprintName = "gorb"
             ReferencedContainer = "container:gorb.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-com.apple.CoreData.ConcurrencyDebug 1"
+            isEnabled = "NO">
+         </CommandLineArgument>
+      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -61,7 +89,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "391354BD2323CA8A00FCE75C"
+            BlueprintIdentifier = "806A5444292294F00028A36E"
             BuildableName = "gorb.app"
             BlueprintName = "gorb"
             ReferencedContainer = "container:gorb.xcodeproj">
