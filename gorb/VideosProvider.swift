@@ -14,8 +14,8 @@ struct VideosProvider {
     static var preview: VideosProvider = {
         let result = VideosProvider(inMemory: true)
         let viewContext = result.container.viewContext
-
-        Video.makePreviews(count: 10)
+//
+//        Video.makePreviews(count: 10)
         return result
     }()
 
@@ -63,7 +63,7 @@ struct VideosProvider {
     }
 
 
-    func deleteAll() -> Bool {
+    @discardableResult func deleteAll() -> Bool {
         DDLogDebug("deleteAll")
         let context = self.container.viewContext
 
@@ -120,7 +120,7 @@ struct VideosProvider {
 
         DDLogDebug("refreshing videos from network")
 
-        guard var urlcomp = URLComponents(string: "https://www.reddit.com/r/videos/hot.json") else { return }
+        guard var urlcomp = URLComponents(string: "https://www.reddit.com/r/\(UserSettings.shared.subreddit.name)/hot.json") else { return }
         urlcomp.queryItems = [
             URLQueryItem.init(name: "limit", value: "100")
         ]

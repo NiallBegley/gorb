@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		806A5449292294F00028A36E /* gorbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A5448292294F00028A36E /* gorbApp.swift */; };
-		806A544B292294F00028A36E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A544A292294F00028A36E /* Persistence.swift */; };
+		806A544B292294F00028A36E /* VideosProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A544A292294F00028A36E /* VideosProvider.swift */; };
 		806A544E292294F00028A36E /* gorb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 806A544C292294F00028A36E /* gorb.xcdatamodeld */; };
 		806A5450292294F00028A36E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A544F292294F00028A36E /* ContentView.swift */; };
 		806A5452292294F10028A36E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 806A5451292294F10028A36E /* Assets.xcassets */; };
@@ -31,15 +31,15 @@
 		806A54A5292406080028A36E /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A54A4292406080028A36E /* VideoCell.swift */; };
 		806A54A6292406080028A36E /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A54A4292406080028A36E /* VideoCell.swift */; };
 		806A54A7292406080028A36E /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A54A4292406080028A36E /* VideoCell.swift */; };
-		806A54A929242B470028A36E /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A54A829242B470028A36E /* VideoController.swift */; };
-		806A54AA29242B470028A36E /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A54A829242B470028A36E /* VideoController.swift */; };
-		806A54AB29242B470028A36E /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A54A829242B470028A36E /* VideoController.swift */; };
 		806A54AE29256F830028A36E /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A54AD29256F830028A36E /* VideoViewModel.swift */; };
 		806A54AF29256F830028A36E /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A54AD29256F830028A36E /* VideoViewModel.swift */; };
 		806A54B029256F830028A36E /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A54AD29256F830028A36E /* VideoViewModel.swift */; };
 		806A54B629281AE90028A36E /* CustomLogDDFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A54B529281AE90028A36E /* CustomLogDDFormatter.swift */; };
 		806A54B729281AE90028A36E /* CustomLogDDFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A54B529281AE90028A36E /* CustomLogDDFormatter.swift */; };
 		806A54B829281AE90028A36E /* CustomLogDDFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806A54B529281AE90028A36E /* CustomLogDDFormatter.swift */; };
+		80750C0D293D2EE50079E8D1 /* SubredditPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80750C0C293D2EE50079E8D1 /* SubredditPicker.swift */; };
+		8093BFD02932C48400146F19 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093BFCF2932C48400146F19 /* UserSettings.swift */; };
+		8093BFD2293393EF00146F19 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8093BFD1293393EF00146F19 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,7 @@
 /* Begin PBXFileReference section */
 		806A5445292294F00028A36E /* gorb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gorb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806A5448292294F00028A36E /* gorbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gorbApp.swift; sourceTree = "<group>"; };
-		806A544A292294F00028A36E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		806A544A292294F00028A36E /* VideosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosProvider.swift; sourceTree = "<group>"; };
 		806A544D292294F00028A36E /* gorb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = gorb.xcdatamodel; sourceTree = "<group>"; };
 		806A544F292294F00028A36E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		806A5451292294F10028A36E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,9 +76,11 @@
 		806A547929229CC60028A36E /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		806A54A02923F06D0028A36E /* YTWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTWrapper.swift; sourceTree = "<group>"; };
 		806A54A4292406080028A36E /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
-		806A54A829242B470028A36E /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
 		806A54AD29256F830028A36E /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		806A54B529281AE90028A36E /* CustomLogDDFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogDDFormatter.swift; sourceTree = "<group>"; };
+		80750C0C293D2EE50079E8D1 /* SubredditPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubredditPicker.swift; sourceTree = "<group>"; };
+		8093BFCF2932C48400146F19 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		8093BFD1293393EF00146F19 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,13 +139,13 @@
 				806A549A2923EE010028A36E /* Views */,
 				806A547829229CA80028A36E /* Models */,
 				806A5448292294F00028A36E /* gorbApp.swift */,
-				806A544A292294F00028A36E /* Persistence.swift */,
+				806A544A292294F00028A36E /* VideosProvider.swift */,
 				806A5451292294F10028A36E /* Assets.xcassets */,
 				806A5453292294F10028A36E /* gorb.entitlements */,
 				806A544C292294F00028A36E /* gorb.xcdatamodeld */,
 				806A5454292294F10028A36E /* Preview Content */,
-				806A54A829242B470028A36E /* VideoController.swift */,
 				806A54B529281AE90028A36E /* CustomLogDDFormatter.swift */,
+				8093BFCF2932C48400146F19 /* UserSettings.swift */,
 			);
 			path = gorb;
 			sourceTree = "<group>";
@@ -187,6 +189,8 @@
 				806A544F292294F00028A36E /* ContentView.swift */,
 				806A54A02923F06D0028A36E /* YTWrapper.swift */,
 				806A54A4292406080028A36E /* VideoCell.swift */,
+				8093BFD1293393EF00146F19 /* SettingsView.swift */,
+				80750C0C293D2EE50079E8D1 /* SubredditPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,13 +345,15 @@
 			files = (
 				806A54A12923F06D0028A36E /* YTWrapper.swift in Sources */,
 				806A54AE29256F830028A36E /* VideoViewModel.swift in Sources */,
+				80750C0D293D2EE50079E8D1 /* SubredditPicker.swift in Sources */,
 				806A54A5292406080028A36E /* VideoCell.swift in Sources */,
 				806A544E292294F00028A36E /* gorb.xcdatamodeld in Sources */,
 				806A54B629281AE90028A36E /* CustomLogDDFormatter.swift in Sources */,
-				806A54A929242B470028A36E /* VideoController.swift in Sources */,
 				806A5449292294F00028A36E /* gorbApp.swift in Sources */,
 				806A5450292294F00028A36E /* ContentView.swift in Sources */,
-				806A544B292294F00028A36E /* Persistence.swift in Sources */,
+				8093BFD02932C48400146F19 /* UserSettings.swift in Sources */,
+				8093BFD2293393EF00146F19 /* SettingsView.swift in Sources */,
+				806A544B292294F00028A36E /* VideosProvider.swift in Sources */,
 				806A547A29229CC60028A36E /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +363,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				806A54A6292406080028A36E /* VideoCell.swift in Sources */,
-				806A54AA29242B470028A36E /* VideoController.swift in Sources */,
 				806A54A22923F06D0028A36E /* YTWrapper.swift in Sources */,
 				806A5460292294F10028A36E /* gorbTests.swift in Sources */,
 				806A54AF29256F830028A36E /* VideoViewModel.swift in Sources */,
@@ -379,7 +384,6 @@
 				806A549B2923EE0F0028A36E /* ContentView.swift in Sources */,
 				806A546A292294F10028A36E /* gorbUITests.swift in Sources */,
 				806A54A7292406080028A36E /* VideoCell.swift in Sources */,
-				806A54AB29242B470028A36E /* VideoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,8 +728,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:CocoaLumberjack/CocoaLumberjack.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.8.0;
 			};
 		};
 		806A549D2923F0570028A36E /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {

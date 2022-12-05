@@ -17,6 +17,7 @@ struct VideoProperties: Decodable {
         case num_comments
         case ups
         case permalink
+        case id
     }
 
     var url : String
@@ -25,6 +26,7 @@ struct VideoProperties: Decodable {
     var ups : Int
     var permalink : String
     var thumbnail : String
+    var id: String
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -35,6 +37,7 @@ struct VideoProperties: Decodable {
         self.num_comments = try container.decode(Int.self, forKey: .ups)
         self.permalink = try container.decode(String.self, forKey: .permalink)
         self.thumbnail = try container.decode(String.self, forKey: .thumbnail)
+        self.id = try container.decode(String.self, forKey: .id)
     }
 
     var dictionaryValue: [String: Any] {
@@ -44,7 +47,8 @@ struct VideoProperties: Decodable {
             "num_comments": num_comments,
             "ups": ups,
             "permalink": permalink,
-            "thumbnail": thumbnail
+            "thumbnail": thumbnail,
+            "id": id,
         ]
     }
 }
@@ -55,6 +59,7 @@ class Video: NSManagedObject, Identifiable {
     @NSManaged var url : String
     @NSManaged var title : String
     @NSManaged var id : String
+    @NSManaged var video_id: String
     @NSManaged var args : String
     @NSManaged var num_comments : Int
     @NSManaged var ups : Int
@@ -71,7 +76,9 @@ class Video: NSManagedObject, Identifiable {
               let newThumbnail = dictionary["thumbnail"] as? String,
               let newComments = dictionary["num_comments"] as? Int,
               let newUps = dictionary["ups"] as? Int,
-              let newPermalink = dictionary["permalink"] as? String else {
+              let newPermalink = dictionary["permalink"] as? String,
+              let newId = dictionary["id"] as? String
+        else {
             fatalError()
         }
 
@@ -81,8 +88,9 @@ class Video: NSManagedObject, Identifiable {
         self.ups = newUps
         self.permalink = newPermalink
         self.thumbnail = newThumbnail
-        self.id = extractYoutubeID(from: url)
+        self.video_id = extractYoutubeID(from: url)
         self.created_at = Date()
+        self.id = newId
 
     }
 
@@ -154,9 +162,4 @@ extension Video {
         }
         return videos
     }
-}
-
-extension CodingUserInfoKey {
-    // Helper property to retrieve the Core Data managed object context
-    static let managedObjectContext = CodingUserInfoKey(rawValue: "managedObjectContext")
 }

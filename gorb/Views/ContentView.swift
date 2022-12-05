@@ -9,28 +9,42 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @ObservedObject var userSettings = UserSettings.shared
     @EnvironmentObject var videosViewModel : VideoViewModel
     private let player = YTWrapper()
+    
     var body: some View {
-        VStack{
-            player
-            NavigationView {
+        NavigationView {
+            VStack{
+                player
                 List {
-                    ForEach(videosViewModel.videos) { item in
-                        VideoCell(video: item).onTapGesture {
-                            player.playerView.load(withVideoId: item.id)
+                    Section {
+                        ForEach(videosViewModel.videos) { item in
+                            VideoCell(video: item).onTapGesture {
+                                player.playerView.load(withVideoId: item.id)
+                            }
+                        }
+                    } header: {
+                        HStack {
+                            Text(userSettings.subreddit.name)
+                            Spacer()
+                            NavigationLink(destination: SettingsView()) {
+                                Image(systemName: "gear")
+                            }
                         }
                     }
                 }
                 .listStyle(.plain)
-                Text("Select an item")
+                .onAppear(perform: {
+
+                })
             }
         }
     }
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-//    }
-//}
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView().environment(\.managedObjectContext, VideosProvider.preview.container.viewContext)
+    }
+}

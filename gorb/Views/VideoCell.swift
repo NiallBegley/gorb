@@ -13,7 +13,9 @@ struct VideoCell: View {
     var body: some View {
         HStack {
             AsyncImage(url: URL(string: video.thumbnail)) { image in
-                image.image?.resizable()
+                image.resizable()
+            } placeholder: {
+                Image("placeholder").resizable()
             }.frame(maxWidth: 66.0, maxHeight: 66.0)
             Text((video.title))
                 .font(Font.system(size: 13.0))

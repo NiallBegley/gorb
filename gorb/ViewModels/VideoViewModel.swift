@@ -9,10 +9,11 @@ import Foundation
 import CocoaLumberjackSwift
 
 class VideoViewModel: ObservableObject {
-    let videoController = VideoController()
     @Published private(set) var videos: [Video] = []
 
-    init() {
+    func refreshVideos() {
+        videos.removeAll()
+        
         Task {
             VideosProvider.shared.deleteAll()
             do {
@@ -24,8 +25,12 @@ class VideoViewModel: ObservableObject {
             let vids = await VideosProvider.shared.getAllVideos()
             DDLogInfo("Found \(vids.count) videos in core data")
             DispatchQueue.main.async {
-                self.videos.append(contentsOf:   vids)
+                self.videos.append(contentsOf: vids)
             }
         }
+    }
+
+    init() {
+        refreshVideos()
     }
 }
